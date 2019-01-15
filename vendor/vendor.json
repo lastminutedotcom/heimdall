@@ -1,0 +1,40 @@
+{
+	"comment": "",
+	"ignore": "test",
+	"package": [
+		{
+			"checksumSHA1": "T9TfkNYj8pDHwUD26GKZNAZuElw=",
+			"path": "github.com/cloudflare/cloudflare-go",
+			"revision": "07b37288fa84ed909716a7c560fcd5806bb193c1",
+			"revisionTime": "2018-11-21T17:35:33Z"
+		},
+		{
+			"checksumSHA1": "2mnJso72OK8g3NJY1/peCMDY40Y=",
+			"path": "github.com/marpaia/graphite-golang",
+			"revision": "134b9af18cf31f936ebddbd11c03eead4d501601",
+			"revisionTime": "2017-12-31T17:21:05Z"
+		},
+		{
+			"checksumSHA1": "ynJSWoF6v+3zMnh9R0QmmG6iGV8=",
+			"origin": "github.com/cloudflare/cloudflare-go/vendor/github.com/pkg/errors",
+			"path": "github.com/pkg/errors",
+			"revision": "07b37288fa84ed909716a7c560fcd5806bb193c1",
+			"revisionTime": "2018-11-21T17:35:33Z"
+		},
+		{
+			"checksumSHA1": "GtamqiJoL7PGHsN454AoffBFMa8=",
+			"origin": "github.com/cloudflare/cloudflare-go/vendor/golang.org/x/net/context",
+			"path": "golang.org/x/net/context",
+			"revision": "07b37288fa84ed909716a7c560fcd5806bb193c1",
+			"revisionTime": "2018-11-21T17:35:33Z"
+		},
+		{
+			"checksumSHA1": "HoCvrd3hEhsFeBOdEw7cbcfyk50=",
+			"origin": "github.com/cloudflare/cloudflare-go/vendor/golang.org/x/time/rate",
+			"path": "golang.org/x/time/rate",
+			"revision": "07b37288fa84ed909716a7c560fcd5806bb193c1",
+			"revisionTime": "2018-11-21T17:35:33Z"
+		}
+	],
+	"rootPath": "git01.bravofly.com/n7/heimdall"
+}
