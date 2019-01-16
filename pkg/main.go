@@ -6,6 +6,8 @@ import (
 	"fmt"
 	"github.com/cloudflare/cloudflare-go"
 	"github.com/marpaia/graphite-golang"
+	"golang.org/x/net/context"
+	"golang.org/x/time/rate"
 	"gopkg.in/robfig/cron.v2"
 	"io/ioutil"
 	"log"
@@ -25,6 +27,7 @@ const (
 )
 
 var logger = log.New(os.Stdout, "[HEIMDALL] ", log.LstdFlags)
+var rateLimiter = rate.NewLimiter(rate.Limit(4), 1)
 
 type DataAggregation struct {
 	ZoneName               string
@@ -142,6 +145,7 @@ func cloudflareClient() *cloudflare.API {
 }
 
 func doHttpCall(request *http.Request) (*http.Response, error) {
+	rateLimiter.Wait(context.TODO())
 	request = setHeaders(request)
 	return client.Do(request)
 }
