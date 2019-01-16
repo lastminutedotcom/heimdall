@@ -17,12 +17,12 @@ const METRICS_PREFIX = "cloudflare.new."
 func adaptDataToMetrics(datas []*model.Aggregate) []graphite.Metric {
 	metrics := make([]graphite.Metric, 0)
 	for _, data := range datas {
-		metrics = append(metrics, metric(data.ZoneName, "total.requests.all", strconv.Itoa(data.TotalRequestAll), data.Date))
-		metrics = append(metrics, metric(data.ZoneName, "total.requests.cached", strconv.Itoa(data.TotalRequestCached), data.Date))
-		metrics = append(metrics, metric(data.ZoneName, "total.requests.uncached", strconv.Itoa(data.TotalRequestUncached), data.Date))
-		metrics = append(metrics, metric(data.ZoneName, "total.bandwidth.all", strconv.Itoa(data.TotalBandwidthAll), data.Date))
-		metrics = append(metrics, metric(data.ZoneName, "total.bandwidth.cached", strconv.Itoa(data.TotalBandwidthCached), data.Date))
-		metrics = append(metrics, metric(data.ZoneName, "total.bandwidth.uncached", strconv.Itoa(data.TotalBandwidthUncached), data.Date))
+		metrics = append(metrics, metric(data.ZoneName, data.TotalRequestAll.Key, strconv.Itoa(data.TotalRequestAll.Value), data.Date))
+		metrics = append(metrics, metric(data.ZoneName, data.TotalRequestCached.Key, strconv.Itoa(data.TotalRequestCached.Value), data.Date))
+		metrics = append(metrics, metric(data.ZoneName, data.TotalRequestUncached.Key, strconv.Itoa(data.TotalRequestUncached.Value), data.Date))
+		metrics = append(metrics, metric(data.ZoneName, data.TotalBandwidthAll.Key, strconv.Itoa(data.TotalBandwidthAll.Value), data.Date))
+		metrics = append(metrics, metric(data.ZoneName, data.TotalBandwidthCached.Key, strconv.Itoa(data.TotalBandwidthCached.Value), data.Date))
+		metrics = append(metrics, metric(data.ZoneName, data.TotalBandwidthUncached.Key, strconv.Itoa(data.TotalBandwidthUncached.Value), data.Date))
 
 		for httpFamily, counter := range data.HTTPStatus {
 			metrics = append(metrics, metric(data.ZoneName, "total.requests.http_status."+httpFamily, strconv.Itoa(counter), data.Date))

@@ -10,16 +10,19 @@ type Aggregate struct {
 	ZoneID   string
 	Date     time.Time
 
-	TotalRequestAll        int
-	TotalRequestCached     int
-	TotalRequestUncached   int
-	HTTPStatus             map[string]int
-	TotalBandwidthAll      int
-	TotalBandwidthCached   int
-	TotalBandwidthUncached int
-	TotalUniquesAll        int
-	//WafTrigger       map[string]int
-	//RateLimitTrigger map[string]int
+	TotalRequestAll        KeyValue
+	TotalRequestCached     KeyValue
+	TotalRequestUncached   KeyValue
+	TotalBandwidthAll      KeyValue
+	TotalBandwidthCached   KeyValue
+	TotalBandwidthUncached KeyValue
+
+	HTTPStatus map[string]int
+}
+
+type KeyValue struct {
+	Key   string
+	Value int
 }
 
 type ZoneAnalyticsColocationResponse struct {

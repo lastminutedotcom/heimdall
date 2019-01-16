@@ -74,9 +74,15 @@ func getZonesId(client *cloudflare.API) ([]*model.Aggregate, error) {
 	result := make([]*model.Aggregate, 0)
 	for _, zone := range zones {
 		result = append(result, &model.Aggregate{
-			ZoneName:   zone.Name,
-			ZoneID:     zone.ID,
-			HTTPStatus: map[string]int{"2xx": 0, "3xx": 0, "4xx": 0, "5xx": 0},
+			ZoneName:               zone.Name,
+			ZoneID:                 zone.ID,
+			TotalRequestAll:        model.KeyValue{Key: "total.requests.all", Value: 0},
+			TotalRequestCached:     model.KeyValue{Key: "total.requests.cached", Value: 0},
+			TotalRequestUncached:   model.KeyValue{Key: "total.requests.uncached", Value: 0},
+			TotalBandwidthAll:      model.KeyValue{Key: "total.bandwidth.all", Value: 0},
+			TotalBandwidthCached:   model.KeyValue{Key: "total.bandwidth.cached", Value: 0},
+			TotalBandwidthUncached: model.KeyValue{Key: "total.bandwidth.uncached", Value: 0},
+			HTTPStatus:             map[string]int{"2xx": 0, "3xx": 0, "4xx": 0, "5xx": 0},
 		})
 	}
 
@@ -96,12 +102,12 @@ func getColocationTotals(dataAggregations []*model.Aggregate) ([]*model.Aggregat
 		data.Date = date
 		for _, zoneAnalyticsData := range zoneAnalyticsDataArray {
 			for _, timeSeries := range zoneAnalyticsData.Timeseries {
-				data.TotalRequestAll += timeSeries.Requests.All
-				data.TotalRequestCached += timeSeries.Requests.Cached
-				data.TotalRequestUncached += timeSeries.Requests.Uncached
-				data.TotalBandwidthAll += timeSeries.Bandwidth.All
-				data.TotalBandwidthCached += timeSeries.Bandwidth.Cached
-				data.TotalBandwidthUncached += timeSeries.Bandwidth.Uncached
+				data.TotalRequestAll.Value += timeSeries.Requests.All
+				data.TotalRequestCached.Value += timeSeries.Requests.Cached
+				data.TotalRequestUncached.Value += timeSeries.Requests.Uncached
+				data.TotalBandwidthAll.Value += timeSeries.Bandwidth.All
+				data.TotalBandwidthCached.Value += timeSeries.Bandwidth.Cached
+				data.TotalBandwidthUncached.Value += timeSeries.Bandwidth.Uncached
 
 				data.HTTPStatus = totals(timeSeries.Requests.HTTPStatus, data.HTTPStatus)
 			}
@@ -188,15 +194,3 @@ func createHeaders() map[string]string {
 		"Content-Type": "application/json",
 	}
 }
-
-//func pushMetrics(aggregate []*model.Aggregate) {
-//
-//	newGraphite, err := graphite.NewGraphite("10.120.172.134", 2113)
-//
-//	if err != nil {
-//		newGraphite = graphite.NewGraphiteNop("10.120.172.134", 2113)
-//	}
-//
-//	metrics := metric.AdaptDataToMetrics(aggregate)
-//	newGraphite.SendMetrics(metrics)
-//}
