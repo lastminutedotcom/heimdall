@@ -17,7 +17,7 @@ type Aggregate struct {
 	TotalBandwidthCached   KeyValue
 	TotalBandwidthUncached KeyValue
 
-	HTTPStatus map[string]int
+	HTTPStatus map[string]KeyValue
 }
 
 type KeyValue struct {

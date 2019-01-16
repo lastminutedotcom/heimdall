@@ -82,7 +82,11 @@ func getZonesId(client *cloudflare.API) ([]*model.Aggregate, error) {
 			TotalBandwidthAll:      model.KeyValue{Key: "total.bandwidth.all", Value: 0},
 			TotalBandwidthCached:   model.KeyValue{Key: "total.bandwidth.cached", Value: 0},
 			TotalBandwidthUncached: model.KeyValue{Key: "total.bandwidth.uncached", Value: 0},
-			HTTPStatus:             map[string]int{"2xx": 0, "3xx": 0, "4xx": 0, "5xx": 0},
+			HTTPStatus: map[string]model.KeyValue{
+				"2xx": {Key: "total.requests.http_status.2xx", Value: 0},
+				"3xx": {Key: "total.requests.http_status.3xx", Value: 0},
+				"4xx": {Key: "total.requests.http_status.4xx", Value: 0},
+				"5xx": {Key: "total.requests.http_status.5xx", Value: 0}},
 		})
 	}
 
@@ -116,16 +120,11 @@ func getColocationTotals(dataAggregations []*model.Aggregate) ([]*model.Aggregat
 	return dataAggregations, nil
 }
 
-func totals(source, target map[string]int) map[string]int {
-
+func totals(source map[string]int, target map[string]model.KeyValue) map[string]model.KeyValue {
 	for k, v := range source {
-		key := getKey(k)
-		if value, present := target[key]; present {
-			value += v
-			target[key] = value
-		} else {
-			target[key] = v
-		}
+		value := target[getKey(k)]
+		value.Value += v
+		target[getKey(k)] = value
 	}
 	return target
 }

@@ -24,8 +24,8 @@ func adaptDataToMetrics(datas []*model.Aggregate) []graphite.Metric {
 		metrics = append(metrics, metric(data.ZoneName, data.TotalBandwidthCached.Key, strconv.Itoa(data.TotalBandwidthCached.Value), data.Date))
 		metrics = append(metrics, metric(data.ZoneName, data.TotalBandwidthUncached.Key, strconv.Itoa(data.TotalBandwidthUncached.Value), data.Date))
 
-		for httpFamily, counter := range data.HTTPStatus {
-			metrics = append(metrics, metric(data.ZoneName, "total.requests.http_status."+httpFamily, strconv.Itoa(counter), data.Date))
+		for _, entry := range data.HTTPStatus {
+			metrics = append(metrics, metric(data.ZoneName, entry.Key, strconv.Itoa(entry.Value), data.Date))
 		}
 	}
 	return metrics
