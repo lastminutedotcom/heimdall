@@ -4,6 +4,7 @@ import "C"
 import (
 	"encoding/json"
 	"fmt"
+	"git01.bravofly.com/n7/heimdall/src/model"
 	"github.com/cloudflare/cloudflare-go"
 	"github.com/marpaia/graphite-golang"
 	"golang.org/x/net/context"
@@ -29,27 +30,27 @@ const (
 var logger = log.New(os.Stdout, "[HEIMDALL] ", log.LstdFlags)
 var rateLimiter = rate.NewLimiter(rate.Limit(4), 1)
 
-type DataAggregation struct {
-	ZoneName string
-	ZoneID   string
-	Date     time.Time
-
-	TotalRequestAll        int
-	TotalRequestCached     int
-	TotalRequestUncached   int
-	HTTPStatus             map[string]int
-	TotalBandwidthAll      int
-	TotalBandwidthCached   int
-	TotalBandwidthUncached int
-	TotalUniquesAll        int
-	//WafTrigger       map[string]int
-	//RateLimitTrigger map[string]int
-}
-
-type zoneAnalyticsColocationResponse struct {
-	cloudflare.Response
-	Result []cloudflare.ZoneAnalyticsColocation
-}
+//type DataAggregation struct {
+//	ZoneName string
+//	ZoneID   string
+//	Date     time.Time
+//
+//	TotalRequestAll        int
+//	TotalRequestCached     int
+//	TotalRequestUncached   int
+//	HTTPStatus             map[string]int
+//	TotalBandwidthAll      int
+//	TotalBandwidthCached   int
+//	TotalBandwidthUncached int
+//	TotalUniquesAll        int
+//	//WafTrigger       map[string]int
+//	//RateLimitTrigger map[string]int
+//}
+//
+//type zoneAnalyticsColocationResponse struct {
+//	cloudflare.Response
+//	Result []cloudflare.ZoneAnalyticsColocation
+//}
 
 var client = &http.Client{
 	Timeout: time.Duration(5 * time.Second),
@@ -83,16 +84,16 @@ func collectingData() {
 	pushMetrics(aggregations)
 }
 
-func getZonesId(client *cloudflare.API) ([]*DataAggregation, error) {
+func getZonesId(client *cloudflare.API) ([]*model.DataAggregation, error) {
 	zones, err := client.ListZones()
 	if err != nil {
 		logger.Printf("ERROR ZoneName from CF Client %v", zones)
 		return nil, err
 	}
 
-	result := make([]*DataAggregation, 0)
+	result := make([]*model.DataAggregation, 0)
 	for _, zone := range zones {
-		result = append(result, &DataAggregation{
+		result = append(result, &model.DataAggregation{
 			ZoneName:   zone.Name,
 			ZoneID:     zone.ID,
 			HTTPStatus: map[string]int{"2xx": 0, "3xx": 0, "4xx": 0, "5xx": 0},
@@ -102,19 +103,19 @@ func getZonesId(client *cloudflare.API) ([]*DataAggregation, error) {
 	return result, nil
 }
 
-func getColocationTotals(dataAggregations []*DataAggregation) ([]*DataAggregation, error) {
+func getColocationTotals(dataAggregations []*model.DataAggregation) ([]*model.DataAggregation, error) {
 	for _, data := range dataAggregations {
 		logger.Printf("collecting metrics for %s", data.ZoneName)
 
-		zoneAnalyticsDataArray, err := callColocationAnalyticsAPI(data.ZoneID)
-
+		zoneAnalyticsDataArray, date, err := callColocationAnalyticsAPI(data.ZoneID)
 		if err != nil {
 			logger.Printf("ERROR Getting ZoneName Analytics for zone %v, %v", data.ZoneName, err)
 			return nil, err
 		}
+
+		data.Date = date
 		for _, zoneAnalyticsData := range zoneAnalyticsDataArray {
 			for _, timeSeries := range zoneAnalyticsData.Timeseries {
-				data.Date = timeSeries.Until
 				data.TotalRequestAll += timeSeries.Requests.All
 				data.TotalRequestCached += timeSeries.Requests.Cached
 				data.TotalRequestUncached += timeSeries.Requests.Uncached
@@ -142,6 +143,7 @@ func totals(source, target map[string]int) map[string]int {
 	}
 	return target
 }
+
 func getKey(httpCode string) string {
 	if strings.HasPrefix(httpCode, "2") {
 		return "2xx"
@@ -159,23 +161,23 @@ func getKey(httpCode string) string {
 	return "1xx"
 }
 
-func callColocationAnalyticsAPI(zoneID string) ([]cloudflare.ZoneAnalyticsColocation, error) {
+func callColocationAnalyticsAPI(zoneID string) ([]cloudflare.ZoneAnalyticsColocation, time.Time, error) {
 	url := fmt.Sprintf(CloudFlareAPIRoot+"zones/%s/analytics/colos?since=%s&until=%s&continuous=%s", zoneID, "-1", "-1", "false")
 	request, _ := http.NewRequest(http.MethodGet, url, nil)
 
 	resp, err := doHttpCall(request)
 	if err != nil {
-		return nil, fmt.Errorf("get zones HTTP call error: %v", err)
+		return nil, time.Now(), fmt.Errorf("get zones HTTP call error: %v", err)
 	}
-	response := zoneAnalyticsColocationResponse{}
+	response := model.ZoneAnalyticsColocationResponse{}
 	b, _ := ioutil.ReadAll(resp.Body)
 	if err := json.Unmarshal(b, &response); err != nil {
-		return nil, fmt.Errorf("HTTP body marshal to JSON error: %v", err)
+		return nil, time.Now(), fmt.Errorf("HTTP body marshal to JSON error: %v", err)
 	}
 	if resp.StatusCode == http.StatusOK {
-		return response.Result, nil
+		return response.Result, response.Query.Until, nil
 	}
-	return nil, fmt.Errorf("getZoneID HTTP error %d", resp.StatusCode)
+	return nil, time.Now(), fmt.Errorf("get colocation analytics HTTP error %d", resp.StatusCode)
 }
 
 func cloudflareClient() *cloudflare.API {
@@ -207,7 +209,7 @@ func createHeaders() map[string]string {
 	}
 }
 
-func pushMetrics(datas []*DataAggregation) {
+func pushMetrics(datas []*model.DataAggregation) {
 
 	newGraphite, err := graphite.NewGraphite("10.120.172.134", 2113)
 
