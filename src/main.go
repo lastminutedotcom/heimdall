@@ -4,9 +4,9 @@ import "C"
 import (
 	"encoding/json"
 	"fmt"
+	"git01.bravofly.com/n7/heimdall/src/metric"
 	"git01.bravofly.com/n7/heimdall/src/model"
 	"github.com/cloudflare/cloudflare-go"
-	"github.com/marpaia/graphite-golang"
 	"golang.org/x/net/context"
 	"golang.org/x/time/rate"
 	"gopkg.in/robfig/cron.v2"
@@ -15,7 +15,6 @@ import (
 	"net/http"
 	"os"
 	"os/signal"
-	"strconv"
 	"strings"
 	"time"
 )
@@ -30,28 +29,6 @@ const (
 var logger = log.New(os.Stdout, "[HEIMDALL] ", log.LstdFlags)
 var rateLimiter = rate.NewLimiter(rate.Limit(4), 1)
 
-//type DataAggregation struct {
-//	ZoneName string
-//	ZoneID   string
-//	Date     time.Time
-//
-//	TotalRequestAll        int
-//	TotalRequestCached     int
-//	TotalRequestUncached   int
-//	HTTPStatus             map[string]int
-//	TotalBandwidthAll      int
-//	TotalBandwidthCached   int
-//	TotalBandwidthUncached int
-//	TotalUniquesAll        int
-//	//WafTrigger       map[string]int
-//	//RateLimitTrigger map[string]int
-//}
-//
-//type zoneAnalyticsColocationResponse struct {
-//	cloudflare.Response
-//	Result []cloudflare.ZoneAnalyticsColocation
-//}
-
 var client = &http.Client{
 	Timeout: time.Duration(5 * time.Second),
 }
@@ -62,7 +39,7 @@ func main() {
 	logger.Printf("start collecting data %s", cronExp)
 
 	c := cron.New()
-	c.AddFunc(cronExp, collectingData)
+	c.AddFunc(cronExp, orchestrator)
 
 	go c.Start()
 	sig := make(chan os.Signal)
@@ -72,28 +49,31 @@ func main() {
 	c.Stop()
 	fmt.Println("Got signal:", s)
 
-	//collectingData()
+	//orchestrator()
 
 }
 
-func collectingData() {
-	logger.Printf("get zones")
-	aggregations, _ := getZonesId(cloudflareClient())
-	aggregations, _ = getColocationTotals(aggregations)
-
-	pushMetrics(aggregations)
+func orchestrator() {
+	aggregate := dataCollector()
+	metric.PushMetrics(aggregate)
 }
 
-func getZonesId(client *cloudflare.API) ([]*model.DataAggregation, error) {
+func dataCollector() []*model.Aggregate {
+	aggregate, _ := getZonesId(cloudflareClient())
+	aggregate, _ = getColocationTotals(aggregate)
+	return aggregate
+}
+
+func getZonesId(client *cloudflare.API) ([]*model.Aggregate, error) {
 	zones, err := client.ListZones()
 	if err != nil {
 		logger.Printf("ERROR ZoneName from CF Client %v", zones)
 		return nil, err
 	}
 
-	result := make([]*model.DataAggregation, 0)
+	result := make([]*model.Aggregate, 0)
 	for _, zone := range zones {
-		result = append(result, &model.DataAggregation{
+		result = append(result, &model.Aggregate{
 			ZoneName:   zone.Name,
 			ZoneID:     zone.ID,
 			HTTPStatus: map[string]int{"2xx": 0, "3xx": 0, "4xx": 0, "5xx": 0},
@@ -103,7 +83,7 @@ func getZonesId(client *cloudflare.API) ([]*model.DataAggregation, error) {
 	return result, nil
 }
 
-func getColocationTotals(dataAggregations []*model.DataAggregation) ([]*model.DataAggregation, error) {
+func getColocationTotals(dataAggregations []*model.Aggregate) ([]*model.Aggregate, error) {
 	for _, data := range dataAggregations {
 		logger.Printf("collecting metrics for %s", data.ZoneName)
 
@@ -209,34 +189,14 @@ func createHeaders() map[string]string {
 	}
 }
 
-func pushMetrics(datas []*model.DataAggregation) {
-
-	newGraphite, err := graphite.NewGraphite("10.120.172.134", 2113)
-
-	if err != nil {
-		newGraphite = graphite.NewGraphiteNop("10.120.172.134", 2113)
-	}
-
-	metrics := make([]graphite.Metric, 0)
-	for _, data := range datas {
-		metrics = append(metrics, metric(data.ZoneName, "total.requests.all", strconv.Itoa(data.TotalRequestAll), data.Date))
-		metrics = append(metrics, metric(data.ZoneName, "total.requests.cached", strconv.Itoa(data.TotalRequestCached), data.Date))
-		metrics = append(metrics, metric(data.ZoneName, "total.requests.uncached", strconv.Itoa(data.TotalRequestUncached), data.Date))
-		metrics = append(metrics, metric(data.ZoneName, "total.bandwidth.all", strconv.Itoa(data.TotalBandwidthAll), data.Date))
-		metrics = append(metrics, metric(data.ZoneName, "total.bandwidth.cached", strconv.Itoa(data.TotalBandwidthCached), data.Date))
-		metrics = append(metrics, metric(data.ZoneName, "total.bandwidth.uncached", strconv.Itoa(data.TotalBandwidthUncached), data.Date))
-
-		for httpFamily, counter := range data.HTTPStatus {
-			metrics = append(metrics, metric(data.ZoneName, "total.requests.http_status."+httpFamily, strconv.Itoa(counter), data.Date))
-		}
-	}
-	newGraphite.SendMetrics(metrics)
-}
-
-func metric(zone, key, value string, date time.Time) graphite.Metric {
-	metricKey := strings.ToLower("cloudflare.new." + strings.Replace(zone, ".", "_", -1) + "." + key)
-
-	logger.Printf("added metric %s, value %s, %v", metricKey, value, date.Unix())
-
-	return graphite.NewMetric(metricKey, value, date.Unix())
-}
+//func pushMetrics(aggregate []*model.Aggregate) {
+//
+//	newGraphite, err := graphite.NewGraphite("10.120.172.134", 2113)
+//
+//	if err != nil {
+//		newGraphite = graphite.NewGraphiteNop("10.120.172.134", 2113)
+//	}
+//
+//	metrics := metric.AdaptDataToMetrics(aggregate)
+//	newGraphite.SendMetrics(metrics)
+//}

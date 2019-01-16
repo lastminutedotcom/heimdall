@@ -5,7 +5,7 @@ import (
 	"time"
 )
 
-type DataAggregation struct {
+type Aggregate struct {
 	ZoneName string
 	ZoneID   string
 	Date     time.Time
