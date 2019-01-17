@@ -73,21 +73,7 @@ func getZonesId(client *cloudflare.API) ([]*model.Aggregate, error) {
 
 	result := make([]*model.Aggregate, 0)
 	for _, zone := range zones {
-		result = append(result, &model.Aggregate{
-			ZoneName:               zone.Name,
-			ZoneID:                 zone.ID,
-			TotalRequestAll:        model.KeyValue{Key: "total.requests.all", Value: 0},
-			TotalRequestCached:     model.KeyValue{Key: "total.requests.cached", Value: 0},
-			TotalRequestUncached:   model.KeyValue{Key: "total.requests.uncached", Value: 0},
-			TotalBandwidthAll:      model.KeyValue{Key: "total.bandwidth.all", Value: 0},
-			TotalBandwidthCached:   model.KeyValue{Key: "total.bandwidth.cached", Value: 0},
-			TotalBandwidthUncached: model.KeyValue{Key: "total.bandwidth.uncached", Value: 0},
-			HTTPStatus: map[string]model.KeyValue{
-				"2xx": {Key: "total.requests.http_status.2xx", Value: 0},
-				"3xx": {Key: "total.requests.http_status.3xx", Value: 0},
-				"4xx": {Key: "total.requests.http_status.4xx", Value: 0},
-				"5xx": {Key: "total.requests.http_status.5xx", Value: 0}},
-		})
+		result = append(result, model.NewAggregate(zone))
 	}
 
 	return result, nil
@@ -152,7 +138,7 @@ func callColocationAnalyticsAPI(zoneID string) ([]cloudflare.ZoneAnalyticsColoca
 
 	resp, err := doHttpCall(request)
 	if err != nil {
-		return nil, time.Now(), fmt.Errorf("get zones HTTP call error: %v", err)
+		return nil, time.Now(), fmt.Errorf("get colocation analytics HTTP call error: %v", err)
 	}
 	response := model.ZoneAnalyticsColocationResponse{}
 	b, _ := ioutil.ReadAll(resp.Body)
