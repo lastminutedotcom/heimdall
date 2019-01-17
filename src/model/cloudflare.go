@@ -14,3 +14,19 @@ type ZoneAnalyticsColocationResponse struct {
 	}
 	Result []cloudflare.ZoneAnalyticsColocation
 }
+
+type WAFResponse struct {
+	cloudflare.Response
+	ResultInfo  ResultInfo   `json:"result_info"`
+	WafTriggers []WafTrigger `json:"result"`
+}
+
+type ResultInfo struct {
+	NextPageId string `json:"next_page_id"`
+}
+
+type WafTrigger struct {
+	Host       string    `json:"host"`
+	Action     string    `json:"action"`
+	OccurredAt time.Time `json:"occurred_at"`
+}

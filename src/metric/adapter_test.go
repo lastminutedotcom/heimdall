@@ -19,7 +19,6 @@ func Test_correctAdapting(t *testing.T) {
 
 	now := time.Now()
 	aggregate.Date = now
-
 	data = append(data, aggregate)
 
 	metrics := adaptDataToMetrics(data)
