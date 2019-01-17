@@ -7,12 +7,13 @@ import (
 
 func PushMetrics(aggregate []*model.Aggregate) {
 
+	metrics := adaptDataToMetrics(aggregate)
+
 	newGraphite, err := graphite.NewGraphite("10.120.172.134", 2113)
 
 	if err != nil {
 		newGraphite = graphite.NewGraphiteNop("10.120.172.134", 2113)
 	}
 
-	metrics := adaptDataToMetrics(aggregate)
 	newGraphite.SendMetrics(metrics)
 }

@@ -47,26 +47,26 @@ func dataCollector() []*model.Aggregate {
 }
 
 func getColocationTotals(dataAggregations []*model.Aggregate) ([]*model.Aggregate, error) {
-	for _, data := range dataAggregations {
-		logger.Printf("collecting metrics for %s", data.ZoneName)
+	for _, aggregate := range dataAggregations {
+		logger.Printf("collecting metrics for %s", aggregate.ZoneName)
 
-		zoneAnalyticsDataArray, date, err := client.GetColosAPI(data.ZoneID)
+		zoneAnalyticsDataArray, date, err := client.GetColosAPI(aggregate.ZoneID)
 		if err != nil {
-			logger.Printf("ERROR Getting ZoneName Analytics for zone %v, %v", data.ZoneName, err)
+			logger.Printf("ERROR Getting ZoneName Analytics for zone %v, %v", aggregate.ZoneName, err)
 			return nil, err
 		}
 
-		data.Date = date
+		aggregate.Date = date
 		for _, zoneAnalyticsData := range zoneAnalyticsDataArray {
 			for _, timeSeries := range zoneAnalyticsData.Timeseries {
-				data.TotalRequestAll.Value += timeSeries.Requests.All
-				data.TotalRequestCached.Value += timeSeries.Requests.Cached
-				data.TotalRequestUncached.Value += timeSeries.Requests.Uncached
-				data.TotalBandwidthAll.Value += timeSeries.Bandwidth.All
-				data.TotalBandwidthCached.Value += timeSeries.Bandwidth.Cached
-				data.TotalBandwidthUncached.Value += timeSeries.Bandwidth.Uncached
+				aggregate.TotalRequestAll.Value += timeSeries.Requests.All
+				aggregate.TotalRequestCached.Value += timeSeries.Requests.Cached
+				aggregate.TotalRequestUncached.Value += timeSeries.Requests.Uncached
+				aggregate.TotalBandwidthAll.Value += timeSeries.Bandwidth.All
+				aggregate.TotalBandwidthCached.Value += timeSeries.Bandwidth.Cached
+				aggregate.TotalBandwidthUncached.Value += timeSeries.Bandwidth.Uncached
 
-				data.HTTPStatus = totals(timeSeries.Requests.HTTPStatus, data.HTTPStatus)
+				aggregate.HTTPStatus = totals(timeSeries.Requests.HTTPStatus, aggregate.HTTPStatus)
 			}
 		}
 	}
