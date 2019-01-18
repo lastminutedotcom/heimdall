@@ -29,17 +29,6 @@ func adaptDataToMetrics(aggregates []*model.Aggregate) []graphite.Metric {
 				metrics = append(metrics, metric(aggregate.ZoneName, entry.Key, strconv.Itoa(entry.Value), date))
 			}
 		}
-
-		//metrics = append(metrics, metric(aggregate.ZoneName, aggregate.TotalRequestAll.Key, strconv.Itoa(aggregate.TotalRequestAll.Value), aggregate.Date))
-		//metrics = append(metrics, metric(aggregate.ZoneName, aggregate.TotalRequestCached.Key, strconv.Itoa(aggregate.TotalRequestCached.Value), aggregate.Date))
-		//metrics = append(metrics, metric(aggregate.ZoneName, aggregate.TotalRequestUncached.Key, strconv.Itoa(aggregate.TotalRequestUncached.Value), aggregate.Date))
-		//metrics = append(metrics, metric(aggregate.ZoneName, aggregate.TotalBandwidthAll.Key, strconv.Itoa(aggregate.TotalBandwidthAll.Value), aggregate.Date))
-		//metrics = append(metrics, metric(aggregate.ZoneName, aggregate.TotalBandwidthCached.Key, strconv.Itoa(aggregate.TotalBandwidthCached.Value), aggregate.Date))
-		//metrics = append(metrics, metric(aggregate.ZoneName, aggregate.TotalBandwidthUncached.Key, strconv.Itoa(aggregate.TotalBandwidthUncached.Value), aggregate.Date))
-
-		//for _, entry := range aggregate.HTTPStatus {
-		//	metrics = append(metrics, metric(aggregate.ZoneName, entry.Key, strconv.Itoa(entry.Value), aggregate.Date))
-		//}
 	}
 	return metrics
 }

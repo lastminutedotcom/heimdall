@@ -12,7 +12,7 @@ func PushMetrics(aggregate []*model.Aggregate) {
 	newGraphite, err := graphite.NewGraphite("10.120.172.134", 2113)
 
 	if err != nil {
-		newGraphite = graphite.NewGraphiteNop("10.120.172.134", 2113)
+		logger.Fatalf("error creating graphite connection. %v", err)
 	}
 
 	newGraphite.SendMetrics(metrics)
