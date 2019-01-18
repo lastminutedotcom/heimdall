@@ -57,23 +57,23 @@ func createHeaders() map[string]string {
 	}
 }
 
-func GetColosAPI(zoneID string) ([]cloudflare.ZoneAnalyticsColocation, time.Time, error) {
-	url := fmt.Sprintf(CloudFlareAPIRoot+"zones/%s/analytics/colos?since=%s&until=%s&continuous=%s", zoneID, "-1", "-1", "false")
+func GetColosAPI(zoneID string) ([]cloudflare.ZoneAnalyticsColocation, error) {
+	url := fmt.Sprintf(CloudFlareAPIRoot+"zones/%s/analytics/colos?since=%s&until=%s&continuous=%s", zoneID, "-5", "-1", "false")
 	request, _ := http.NewRequest(http.MethodGet, url, nil)
 
 	resp, err := doHttpCall(request)
 	if err != nil {
-		return nil, time.Now(), fmt.Errorf("get colocation analytics HTTP call error: %v", err)
+		return nil, fmt.Errorf("get colocation analytics HTTP call error: %v", err)
 	}
 	response := model.ZoneAnalyticsColocationResponse{}
 	b, _ := ioutil.ReadAll(resp.Body)
 	if err := json.Unmarshal(b, &response); err != nil {
-		return nil, time.Now(), fmt.Errorf("HTTP body marshal to JSON error: %v", err)
+		return nil, fmt.Errorf("HTTP body marshal to JSON error: %v", err)
 	}
 	if resp.StatusCode == http.StatusOK {
-		return response.Result, response.Query.Until, nil
+		return response.Result, nil
 	}
-	return nil, time.Now(), fmt.Errorf("get colocation analytics HTTP error %d", resp.StatusCode)
+	return nil, fmt.Errorf("get colocation analytics HTTP error %d", resp.StatusCode)
 }
 
 func GetWafTriggersBy(zoneID string, since, until time.Time) ([]*model.WafTrigger, error) {

@@ -17,16 +17,29 @@ const METRICS_PREFIX = "cloudflare.new."
 func adaptDataToMetrics(aggregates []*model.Aggregate) []graphite.Metric {
 	metrics := make([]graphite.Metric, 0)
 	for _, aggregate := range aggregates {
-		metrics = append(metrics, metric(aggregate.ZoneName, aggregate.TotalRequestAll.Key, strconv.Itoa(aggregate.TotalRequestAll.Value), aggregate.Date))
-		metrics = append(metrics, metric(aggregate.ZoneName, aggregate.TotalRequestCached.Key, strconv.Itoa(aggregate.TotalRequestCached.Value), aggregate.Date))
-		metrics = append(metrics, metric(aggregate.ZoneName, aggregate.TotalRequestUncached.Key, strconv.Itoa(aggregate.TotalRequestUncached.Value), aggregate.Date))
-		metrics = append(metrics, metric(aggregate.ZoneName, aggregate.TotalBandwidthAll.Key, strconv.Itoa(aggregate.TotalBandwidthAll.Value), aggregate.Date))
-		metrics = append(metrics, metric(aggregate.ZoneName, aggregate.TotalBandwidthCached.Key, strconv.Itoa(aggregate.TotalBandwidthCached.Value), aggregate.Date))
-		metrics = append(metrics, metric(aggregate.ZoneName, aggregate.TotalBandwidthUncached.Key, strconv.Itoa(aggregate.TotalBandwidthUncached.Value), aggregate.Date))
+		for date, counters := range aggregate.Totals {
+			metrics = append(metrics, metric(aggregate.ZoneName, counters.RequestAll.Key, strconv.Itoa(counters.RequestAll.Value), date))
+			metrics = append(metrics, metric(aggregate.ZoneName, counters.RequestCached.Key, strconv.Itoa(counters.RequestCached.Value), date))
+			metrics = append(metrics, metric(aggregate.ZoneName, counters.RequestUncached.Key, strconv.Itoa(counters.RequestUncached.Value), date))
+			metrics = append(metrics, metric(aggregate.ZoneName, counters.BandwidthAll.Key, strconv.Itoa(counters.BandwidthAll.Value), date))
+			metrics = append(metrics, metric(aggregate.ZoneName, counters.BandwidthCached.Key, strconv.Itoa(counters.BandwidthCached.Value), date))
+			metrics = append(metrics, metric(aggregate.ZoneName, counters.BandwidthUncached.Key, strconv.Itoa(counters.BandwidthUncached.Value), date))
 
-		for _, entry := range aggregate.HTTPStatus {
-			metrics = append(metrics, metric(aggregate.ZoneName, entry.Key, strconv.Itoa(entry.Value), aggregate.Date))
+			for _, entry := range counters.HTTPStatus {
+				metrics = append(metrics, metric(aggregate.ZoneName, entry.Key, strconv.Itoa(entry.Value), date))
+			}
 		}
+
+		//metrics = append(metrics, metric(aggregate.ZoneName, aggregate.TotalRequestAll.Key, strconv.Itoa(aggregate.TotalRequestAll.Value), aggregate.Date))
+		//metrics = append(metrics, metric(aggregate.ZoneName, aggregate.TotalRequestCached.Key, strconv.Itoa(aggregate.TotalRequestCached.Value), aggregate.Date))
+		//metrics = append(metrics, metric(aggregate.ZoneName, aggregate.TotalRequestUncached.Key, strconv.Itoa(aggregate.TotalRequestUncached.Value), aggregate.Date))
+		//metrics = append(metrics, metric(aggregate.ZoneName, aggregate.TotalBandwidthAll.Key, strconv.Itoa(aggregate.TotalBandwidthAll.Value), aggregate.Date))
+		//metrics = append(metrics, metric(aggregate.ZoneName, aggregate.TotalBandwidthCached.Key, strconv.Itoa(aggregate.TotalBandwidthCached.Value), aggregate.Date))
+		//metrics = append(metrics, metric(aggregate.ZoneName, aggregate.TotalBandwidthUncached.Key, strconv.Itoa(aggregate.TotalBandwidthUncached.Value), aggregate.Date))
+
+		//for _, entry := range aggregate.HTTPStatus {
+		//	metrics = append(metrics, metric(aggregate.ZoneName, entry.Key, strconv.Itoa(entry.Value), aggregate.Date))
+		//}
 	}
 	return metrics
 }

@@ -15,10 +15,14 @@ func Test_correctAdapting(t *testing.T) {
 		ID:   ":: ID ::",
 		Name: ":: Name ::",
 	})
-	aggregate.TotalBandwidthAll.Value = 5
+	//aggregate.TotalBandwidthAll.Value = 5
 
 	now := time.Now()
-	aggregate.Date = now
+
+	aggregate.Totals[now] = model.NewCounters()
+
+	aggregate.Totals[now].BandwidthAll.Value = 5
+
 	data = append(data, aggregate)
 
 	metrics := adaptDataToMetrics(data)

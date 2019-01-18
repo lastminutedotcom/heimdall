@@ -14,30 +14,36 @@ func GetColocationTotals(aggregates []*model.Aggregate) ([]*model.Aggregate, err
 	for _, aggregate := range aggregates {
 		logger.Printf("collecting co-location metrics for %s", aggregate.ZoneName)
 
-		zoneAnalyticsDataArray, date, err := client.GetColosAPI(aggregate.ZoneID)
+		zoneAnalyticsDataArray, err := client.GetColosAPI(aggregate.ZoneID)
 		if err != nil {
 			logger.Printf("ERROR Getting ZoneName Analytics for zone %v, %v", aggregate.ZoneName, err)
 			return nil, err
 		}
 
-		aggregate.Date = date
 		for _, zoneAnalyticsData := range zoneAnalyticsDataArray {
 			for _, timeSeries := range zoneAnalyticsData.Timeseries {
-				aggregate.TotalRequestAll.Value += timeSeries.Requests.All
-				aggregate.TotalRequestCached.Value += timeSeries.Requests.Cached
-				aggregate.TotalRequestUncached.Value += timeSeries.Requests.Uncached
-				aggregate.TotalBandwidthAll.Value += timeSeries.Bandwidth.All
-				aggregate.TotalBandwidthCached.Value += timeSeries.Bandwidth.Cached
-				aggregate.TotalBandwidthUncached.Value += timeSeries.Bandwidth.Uncached
 
-				aggregate.HTTPStatus = totals(timeSeries.Requests.HTTPStatus, aggregate.HTTPStatus)
+				counters, present := aggregate.Totals[timeSeries.Until]
+				if !present {
+					counters = model.NewCounters()
+					aggregate.Totals[timeSeries.Until] = counters
+				}
+
+				counters.RequestAll.Value += timeSeries.Requests.All
+				counters.RequestCached.Value += timeSeries.Requests.Cached
+				counters.RequestUncached.Value += timeSeries.Requests.Uncached
+				counters.BandwidthAll.Value += timeSeries.Bandwidth.All
+				counters.BandwidthCached.Value += timeSeries.Bandwidth.Cached
+				counters.BandwidthUncached.Value += timeSeries.Bandwidth.Uncached
+				counters.HTTPStatus = totals(timeSeries.Requests.HTTPStatus, counters.HTTPStatus)
+
 			}
 		}
 	}
 	return aggregates, nil
 }
 
-func totals(source map[string]int, target map[string]model.KeyValue) map[string]model.KeyValue {
+func totals(source map[string]int, target map[string]model.Counter) map[string]model.Counter {
 	for k, v := range source {
 		value := target[getKey(k)]
 		value.Value += v
