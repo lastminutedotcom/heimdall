@@ -1,8 +1,8 @@
 package data_collector
 
 import (
-	"git01.bravofly.com/n7/heimdall/src/client"
-	"git01.bravofly.com/n7/heimdall/src/model"
+	"git01.bravofly.com/n7/heimdall/cmd/client"
+	"git01.bravofly.com/n7/heimdall/cmd/model"
 	"log"
 	"os"
 	"strings"

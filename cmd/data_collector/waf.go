@@ -1,7 +1,7 @@
 package data_collector
 
 import (
-	"git01.bravofly.com/n7/heimdall/src/model"
+	"git01.bravofly.com/n7/heimdall/cmd/model"
 )
 
 //var logger = log.New(os.Stdout, "[HEIMDALL] ", log.LstdFlags)

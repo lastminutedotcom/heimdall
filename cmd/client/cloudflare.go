@@ -3,7 +3,7 @@ package client
 import (
 	"encoding/json"
 	"fmt"
-	"git01.bravofly.com/n7/heimdall/src/model"
+	"git01.bravofly.com/n7/heimdall/cmd/model"
 	"github.com/cloudflare/cloudflare-go"
 	"golang.org/x/net/context"
 	"golang.org/x/time/rate"

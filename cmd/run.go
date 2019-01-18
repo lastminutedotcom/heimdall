@@ -1,12 +1,12 @@
-package main
+package cmd
 
 import (
 	"encoding/json"
 	"fmt"
-	"git01.bravofly.com/n7/heimdall/src/client"
-	"git01.bravofly.com/n7/heimdall/src/data_collector"
-	"git01.bravofly.com/n7/heimdall/src/metric"
-	"git01.bravofly.com/n7/heimdall/src/model"
+	"git01.bravofly.com/n7/heimdall/cmd/client"
+	"git01.bravofly.com/n7/heimdall/cmd/data_collector"
+	"git01.bravofly.com/n7/heimdall/cmd/metric"
+	"git01.bravofly.com/n7/heimdall/cmd/model"
 	"gopkg.in/robfig/cron.v2"
 	"io/ioutil"
 	"log"
@@ -16,9 +16,9 @@ import (
 
 var logger = log.New(os.Stdout, "[HEIMDALL] ", log.LstdFlags)
 
-func main() {
+func Run(filePath string) {
 
-	config := readConfig("config.json")
+	config := readConfig(filePath)
 
 	logger.Printf("start collecting data %s", config.CronExpression)
 
@@ -39,7 +39,7 @@ func main() {
 func readConfig(filePath string) *model.Config {
 	file, err := os.Open(filePath)
 	if err != nil {
-		logger.Printf("could not open config file %s: %v", file, err)
+		logger.Printf("error reading configuration. %v", err)
 		return model.DefautConfig()
 	}
 	defer file.Close()
