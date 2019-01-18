@@ -1,13 +1,14 @@
 package main
 
-import "C"
 import (
+	"encoding/json"
 	"fmt"
 	"git01.bravofly.com/n7/heimdall/src/client"
 	"git01.bravofly.com/n7/heimdall/src/data_collector"
 	"git01.bravofly.com/n7/heimdall/src/metric"
 	"git01.bravofly.com/n7/heimdall/src/model"
 	"gopkg.in/robfig/cron.v2"
+	"io/ioutil"
 	"log"
 	"os"
 	"os/signal"
@@ -16,10 +17,13 @@ import (
 var logger = log.New(os.Stdout, "[HEIMDALL] ", log.LstdFlags)
 
 func main() {
-	logger.Printf("start collecting data %s", "0 * * * * *")
+
+	config := readConfig("config.json")
+
+	logger.Printf("start collecting data %s", config.CronExpression)
 
 	c := cron.New()
-	c.AddFunc("*/5 * * * *", orchestrator)
+	c.AddFunc(config.CronExpression, orchestrator)
 
 	go c.Start()
 	sig := make(chan os.Signal)
@@ -30,6 +34,19 @@ func main() {
 	fmt.Println("Got signal:", s)
 
 	//orchestrator()
+}
+
+func readConfig(filePath string) *model.Config {
+	file, err := os.Open(filePath)
+	if err != nil {
+		logger.Printf("could not open config file %s: %v", file, err)
+		return model.DefautConfig()
+	}
+	defer file.Close()
+	byteValue, _ := ioutil.ReadAll(file)
+	var config *model.Config
+	json.Unmarshal([]byte(byteValue), &config)
+	return config
 }
 
 func orchestrator() {

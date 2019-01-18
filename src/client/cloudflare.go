@@ -16,9 +16,9 @@ import (
 
 const (
 	CloudFlareAPIRoot = "https://api.cloudflare.com/client/v4/"
-	key               = "f73d2fd09a50dd1234a26d37e794de982fc0c"
-	email             = "api.sre@lastminute.com"
-	orgId             = "f5fd3b3741817e2080883b52b5995643"
+	//key               = "f73d2fd09a50dd1234a26d37e794de982fc0c"
+	//email             = "api.sre@lastminute.com"
+	//orgId             = "f5fd3b3741817e2080883b52b5995643"
 )
 
 var logger = log.New(os.Stdout, "[HEIMDALL] ", log.LstdFlags)
@@ -29,7 +29,8 @@ var client = &http.Client{
 }
 
 func cloudflareClient() *cloudflare.API {
-	c, err := cloudflare.New(key, email, cloudflare.UsingOrganization(orgId), cloudflare.UsingRateLimit(2), cloudflare.HTTPClient(client))
+	c, err := cloudflare.New(os.Getenv("CLOUDFLARE_TOKEN"), os.Getenv("CLOUDFLARE_EMAIL"),
+		cloudflare.UsingOrganization(os.Getenv("CLOUDFLARE_ORG_ID")), cloudflare.HTTPClient(client))
 	if err != nil {
 		logger.Fatalf("could not create client for Cloudflare: %v", err)
 	}
@@ -51,8 +52,8 @@ func setHeaders(request *http.Request) *http.Request {
 
 func createHeaders() map[string]string {
 	return map[string]string{
-		"X-Auth-Email": email,
-		"X-Auth-Key":   key,
+		"X-Auth-Email": os.Getenv("CLOUDFLARE_EMAIL"),
+		"X-Auth-Key":   os.Getenv("CLOUDFLARE_TOKEN"),
 		"Content-Type": "application/json",
 	}
 }
