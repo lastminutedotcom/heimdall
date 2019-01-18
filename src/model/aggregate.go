@@ -8,16 +8,15 @@ import (
 type Aggregate struct {
 	ZoneName string
 	ZoneID   string
-	Date     time.Time
 
+	Date                   time.Time
 	TotalRequestAll        KeyValue
 	TotalRequestCached     KeyValue
 	TotalRequestUncached   KeyValue
 	TotalBandwidthAll      KeyValue
 	TotalBandwidthCached   KeyValue
 	TotalBandwidthUncached KeyValue
-
-	HTTPStatus map[string]KeyValue
+	HTTPStatus             map[string]KeyValue
 }
 
 type KeyValue struct {
