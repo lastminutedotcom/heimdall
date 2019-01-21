@@ -18,7 +18,8 @@ var logger = log.New(os.Stdout, "[HEIMDALL] ", log.LstdFlags)
 
 func Run(filePath string) {
 
-	config := readConfig(filePath)
+//	config := readConfig(filePath)
+	config := readConfig("/appfw/config/config.json")
 
 	cronExpression := fmt.Sprintf("*/%s * * * *", config.CollectEveryMinutes)
 

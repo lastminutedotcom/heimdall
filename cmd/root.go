@@ -47,8 +47,8 @@ func Execute() {
 
 func init() {
 	cobra.OnInitialize(initConfig)
-	rootCmd.Flags().StringVarP(&configFile, "file", "f", "", "relative path to a json config file")
-	rootCmd.MarkFlagRequired("file")
+//	rootCmd.Flags().StringVarP(&configFile, "file", "f", "", "relative path to a json config file")
+//	rootCmd.MarkFlagRequired("file")
 }
 
 // initConfig reads in config file and ENV variables if set.
