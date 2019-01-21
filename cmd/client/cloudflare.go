@@ -16,9 +16,6 @@ import (
 
 const (
 	CloudFlareAPIRoot = "https://api.cloudflare.com/client/v4/"
-	//key               = "f73d2fd09a50dd1234a26d37e794de982fc0c"
-	//email             = "api.sre@lastminute.com"
-	//orgId             = "f5fd3b3741817e2080883b52b5995643"
 )
 
 var logger = log.New(os.Stdout, "[HEIMDALL] ", log.LstdFlags)
