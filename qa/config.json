@@ -1,0 +1,7 @@
+{
+  "cron_expression": "*/5 * * * *",
+  "graphite_config": {
+    "host": "10.120.172.134",
+    "port": 2113
+  }
+}
