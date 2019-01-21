@@ -20,10 +20,12 @@ func Run(filePath string) {
 
 	config := readConfig(filePath)
 
-	logger.Printf("start collecting data %s", config.CronExpression)
+	cronExpression := fmt.Sprintf("*/%s * * * *", config.CollectEveryMinutes)
+
+	logger.Printf("start collecting data at every %sth minute", config.CollectEveryMinutes)
 
 	c := cron.New()
-	c.AddFunc(config.CronExpression, orchestrator(config))
+	c.AddFunc(cronExpression, orchestrator(config))
 
 	go c.Start()
 	sig := make(chan os.Signal)
@@ -51,14 +53,14 @@ func readConfig(filePath string) *model.Config {
 
 func orchestrator(config *model.Config) func() {
 	return func() {
-		aggregate := dataCollector()
+		aggregate := dataCollector(config)
 		metric.PushMetrics(aggregate, config)
 	}
 }
 
-func dataCollector() []*model.Aggregate {
+func dataCollector(config *model.Config) []*model.Aggregate {
 	aggregate, _ := client.GetZonesId()
-	aggregate, _ = data_collector.GetColocationTotals(aggregate)
+	aggregate, _ = data_collector.GetColocationTotals(aggregate, config)
 	//aggregate, _ = data_collector.GetWafTotals(aggregate)
 
 	return aggregate

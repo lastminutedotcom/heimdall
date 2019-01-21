@@ -10,11 +10,11 @@ import (
 
 var logger = log.New(os.Stdout, "[HEIMDALL] ", log.LstdFlags)
 
-func GetColocationTotals(aggregates []*model.Aggregate) ([]*model.Aggregate, error) {
+func GetColocationTotals(aggregates []*model.Aggregate, config *model.Config) ([]*model.Aggregate, error) {
 	for _, aggregate := range aggregates {
 		logger.Printf("collecting co-location metrics for %s", aggregate.ZoneName)
 
-		zoneAnalyticsDataArray, err := client.GetColosAPI(aggregate.ZoneID)
+		zoneAnalyticsDataArray, err := client.GetColosAPI(aggregate.ZoneID, config)
 		if err != nil {
 			logger.Printf("ERROR Getting ZoneName Analytics for zone %v, %v", aggregate.ZoneName, err)
 			return nil, err

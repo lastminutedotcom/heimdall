@@ -1,8 +1,8 @@
 package model
 
 type Config struct {
-	CronExpression string         `json:"cron_expression"`
-	GraphiteConfig GraphiteConfig `json:"graphite_config"`
+	GraphiteConfig      GraphiteConfig `json:"graphite_config"`
+	CollectEveryMinutes string         `json:"collect_every_minutes"`
 }
 
 type GraphiteConfig struct {
@@ -12,6 +12,6 @@ type GraphiteConfig struct {
 
 func DefautConfig() *Config {
 	return &Config{
-		CronExpression: "*/5 * * * *",
+		CollectEveryMinutes: "5",
 	}
 }

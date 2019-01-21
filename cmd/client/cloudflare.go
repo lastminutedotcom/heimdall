@@ -55,8 +55,8 @@ func createHeaders() map[string]string {
 	}
 }
 
-func GetColosAPI(zoneID string) ([]cloudflare.ZoneAnalyticsColocation, error) {
-	url := fmt.Sprintf(CloudFlareAPIRoot+"zones/%s/analytics/colos?since=%s&until=%s&continuous=%s", zoneID, "-5", "-1", "false")
+func GetColosAPI(zoneID string, config *model.Config) ([]cloudflare.ZoneAnalyticsColocation, error) {
+	url := fmt.Sprintf(CloudFlareAPIRoot+"zones/%s/analytics/colos?since=-%s&until=-%s&continuous=%s", zoneID, config.CollectEveryMinutes, "1", "false")
 	request, _ := http.NewRequest(http.MethodGet, url, nil)
 
 	resp, err := doHttpCall(request)
