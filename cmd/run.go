@@ -3,6 +3,7 @@ package cmd
 import (
 	"encoding/json"
 	"fmt"
+	"git01.bravofly.com/golang/appfw/pkg/http/mgmt"
 	"git01.bravofly.com/n7/heimdall/cmd/client"
 	"git01.bravofly.com/n7/heimdall/cmd/data_collector"
 	"git01.bravofly.com/n7/heimdall/cmd/metric"
@@ -10,6 +11,7 @@ import (
 	"gopkg.in/robfig/cron.v2"
 	"io/ioutil"
 	"log"
+	"net/http"
 	"os"
 	"os/signal"
 )
@@ -17,8 +19,16 @@ import (
 var logger = log.New(os.Stdout, "[HEIMDALL] ", log.LstdFlags)
 
 func Run(filePath string) {
+	mgmt.ConfigureLiveness(func(w http.ResponseWriter, r *http.Request) {
+		w.WriteHeader(http.StatusOK)
+		return
+	})
+	mgmt.ConfigureReadiness(func(w http.ResponseWriter, r *http.Request) {
+		w.WriteHeader(http.StatusOK)
+		return
+	})
 
-//	config := readConfig(filePath)
+	//	config := readConfig(filePath)
 	config := readConfig("/appfw/config/config.json")
 
 	cronExpression := fmt.Sprintf("*/%s * * * *", config.CollectEveryMinutes)
