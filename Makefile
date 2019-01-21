@@ -5,8 +5,8 @@ VERSION=$(shell cat .version)
 test:
 	go test -v ./...
 
-	clean:
- 	go clean -i ./cmd
+clean:
+	go clean -i ./cmd
 
 build: clean
 	GOOS=linux GOARCH=amd64 go build  -a -ldflags '-extldflags "-static"' -o $(APPNAME) ./cmd
