@@ -1,64 +1,6 @@
 {
 	"comment": "",
 	"ignore": "test",
-	"package": [
-		{
-			"checksumSHA1": "T9TfkNYj8pDHwUD26GKZNAZuElw=",
-			"path": "github.com/cloudflare/cloudflare-go",
-			"revision": "07b37288fa84ed909716a7c560fcd5806bb193c1",
-			"revisionTime": "2018-11-21T17:35:33Z"
-		},
-		{
-			"checksumSHA1": "2mnJso72OK8g3NJY1/peCMDY40Y=",
-			"path": "github.com/marpaia/graphite-golang",
-			"revision": "134b9af18cf31f936ebddbd11c03eead4d501601",
-			"revisionTime": "2017-12-31T17:21:05Z"
-		},
-		{
-			"checksumSHA1": "a58zUNtDH/gEd6F6KI3FqT2iEo0=",
-			"path": "github.com/mitchellh/go-homedir",
-			"revision": "ae18d6b8b3205b561c79e8e5f69bff09736185f4",
-			"revisionTime": "2018-08-24T00:42:36Z"
-		},
-		{
-			"checksumSHA1": "ynJSWoF6v+3zMnh9R0QmmG6iGV8=",
-			"origin": "github.com/cloudflare/cloudflare-go/vendor/github.com/pkg/errors",
-			"path": "github.com/pkg/errors",
-			"revision": "07b37288fa84ed909716a7c560fcd5806bb193c1",
-			"revisionTime": "2018-11-21T17:35:33Z"
-		},
-		{
-			"checksumSHA1": "WYd7aI5YkeiRSv5pqr12emezBIg=",
-			"path": "github.com/spf13/cobra",
-			"revision": "7547e83b2d85fd1893c7d76916f67689d761fecb",
-			"revisionTime": "2019-01-09T00:34:09Z"
-		},
-		{
-			"checksumSHA1": "e5baWaL9kzmQuekB8o4sVoMghVQ=",
-			"path": "github.com/spf13/viper",
-			"revision": "6d33b5a963d922d182c91e8a1c88d81fd150cfd4",
-			"revisionTime": "2018-12-07T10:02:11Z"
-		},
-		{
-			"checksumSHA1": "GtamqiJoL7PGHsN454AoffBFMa8=",
-			"origin": "github.com/cloudflare/cloudflare-go/vendor/golang.org/x/net/context",
-			"path": "golang.org/x/net/context",
-			"revision": "07b37288fa84ed909716a7c560fcd5806bb193c1",
-			"revisionTime": "2018-11-21T17:35:33Z"
-		},
-		{
-			"checksumSHA1": "HoCvrd3hEhsFeBOdEw7cbcfyk50=",
-			"origin": "github.com/cloudflare/cloudflare-go/vendor/golang.org/x/time/rate",
-			"path": "golang.org/x/time/rate",
-			"revision": "07b37288fa84ed909716a7c560fcd5806bb193c1",
-			"revisionTime": "2018-11-21T17:35:33Z"
-		},
-		{
-			"checksumSHA1": "CzLpoHWYgSP+mT3bcW/jt8epp5I=",
-			"path": "gopkg.in/robfig/cron.v2",
-			"revision": "be2e0b0deed5a68ffee390b4583a13aff8321535",
-			"revisionTime": "2015-01-07T22:02:07Z"
-		}
-	],
+	"package": [],
 	"rootPath": "git01.bravofly.com/n7/heimdall"
 }
