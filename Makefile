@@ -9,7 +9,7 @@ clean:
 	go clean -i ./cmd
 
 build: clean
-	GOOS=linux GOARCH=amd64 go build  -a -ldflags '-extldflags "-static"' -o $(APPNAME) ./cmd
+	GOOS=linux GOARCH=amd64 go build  -a -ldflags '-extldflags "-static"' -o $(APPNAME) .
 
 package: build
 	docker build --build-arg APP_NAME=$(APPNAME) --build-arg TAG_NAME=stable \
