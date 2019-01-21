@@ -23,7 +23,7 @@ func Run(filePath string) {
 	logger.Printf("start collecting data %s", config.CronExpression)
 
 	c := cron.New()
-	c.AddFunc(config.CronExpression, orchestrator)
+	c.AddFunc(config.CronExpression, orchestrator(config))
 
 	go c.Start()
 	sig := make(chan os.Signal)
@@ -33,7 +33,7 @@ func Run(filePath string) {
 
 	fmt.Println("Got signal:", s)
 
-	//orchestrator()
+	//orchestrator(config)
 }
 
 func readConfig(filePath string) *model.Config {
@@ -49,9 +49,11 @@ func readConfig(filePath string) *model.Config {
 	return config
 }
 
-func orchestrator() {
-	aggregate := dataCollector()
-	metric.PushMetrics(aggregate)
+func orchestrator(config *model.Config) func() {
+	return func() {
+		aggregate := dataCollector()
+		metric.PushMetrics(aggregate, config)
+	}
 }
 
 func dataCollector() []*model.Aggregate {
