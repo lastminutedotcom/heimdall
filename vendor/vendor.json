@@ -3,6 +3,12 @@
 	"ignore": "test",
 	"package": [
 		{
+			"checksumSHA1": "ctF7efEGII+VnM5cG7IQNefopyM=",
+			"path": "git01.bravofly.com/golang/appfw/pkg/http/mgmt",
+			"revision": "3da53b55abdce96761846e3b3498d1922cfe3080",
+			"revisionTime": "2018-03-15T09:15:42Z"
+		},
+		{
 			"checksumSHA1": "yJcjGHojcz79gC5rj9YnJqBc4w8=",
 			"path": "git01.bravofly.com/n7/heimdall",
 			"revision": "dc6ac309304fde084c3082cd4a2119786ddad083",
