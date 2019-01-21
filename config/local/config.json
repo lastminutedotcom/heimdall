@@ -1,0 +1,7 @@
+{
+  "collect_every_minutes" : "1",
+  "graphite_config": {
+    "host": "qa-graphin-f5.qa.bravofly.intra",
+    "port": 2113
+  }
+}

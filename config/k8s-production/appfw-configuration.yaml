@@ -1,0 +1,12 @@
+management-endpoint:
+  timeout: 10s
+#namespaces:
+#  excluded:
+#    - kube-system
+#    - kube-public
+#    - default
+#    - quay-enterprise
+#    - recommendation-system-preview
+#    - recommendation-system-production
+#    - maab-production
+#    - maab-updater-production

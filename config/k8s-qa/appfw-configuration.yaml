@@ -1,0 +1,10 @@
+management-endpoint:
+  timeout: 10s
+#namespaces:
+    ##  excluded:
+    ##    - kube-system
+    ##    - kube-public
+    ##    - default
+    ##    - maab-qa
+  ##    - recommendation-system-dev
+  ##    - recommendation-system-qa
