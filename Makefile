@@ -5,6 +5,9 @@ VERSION=$(shell cat .version)
 test:
 	go test -v ./...
 
+clean:
+
+
 build: clean
 	GOOS=linux GOARCH=amd64 go build  -a -ldflags '-extldflags "-static"' -o $(APPNAME) .
 
@@ -14,4 +17,4 @@ package: build
 	docker push registry.bravofly.intra:5000/application/heimdall:$(VERSION)
 	go clean .
 
-.PHONY: test  build package
+.PHONY: test build package
