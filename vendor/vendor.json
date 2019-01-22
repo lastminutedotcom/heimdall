@@ -3,6 +3,24 @@
 	"ignore": "test",
 	"package": [
 		{
+			"checksumSHA1": "sLXRT11blBDc47qFioVkLyfGhaM=",
+			"path": "git01.bravofly.com/golang/appfw.git/pkg/logging",
+			"revision": "3da53b55abdce96761846e3b3498d1922cfe3080",
+			"revisionTime": "2018-03-15T09:15:42Z"
+		},
+		{
+			"checksumSHA1": "rs09UYfv8QHesfqw6DN+Q70mtpI=",
+			"path": "git01.bravofly.com/golang/appfw.git/pkg/properties",
+			"revision": "3da53b55abdce96761846e3b3498d1922cfe3080",
+			"revisionTime": "2018-03-15T09:15:42Z"
+		},
+		{
+			"checksumSHA1": "wCpQRHoYXHojdwbIRJeJpYlAQr8=",
+			"path": "git01.bravofly.com/golang/appfw.git/pkg/tracing",
+			"revision": "3da53b55abdce96761846e3b3498d1922cfe3080",
+			"revisionTime": "2018-03-15T09:15:42Z"
+		},
+		{
 			"checksumSHA1": "ctF7efEGII+VnM5cG7IQNefopyM=",
 			"path": "git01.bravofly.com/golang/appfw/pkg/http/mgmt",
 			"revision": "3da53b55abdce96761846e3b3498d1922cfe3080",
@@ -55,6 +73,13 @@
 			"path": "github.com/fsnotify/fsnotify",
 			"revision": "ccc981bf80385c528a65fbfdd49bf2d8da22aa23",
 			"revisionTime": "2018-08-30T22:02:26Z"
+		},
+		{
+			"checksumSHA1": "UP2wONSE346WHWwT20G1Xedd6ZI=",
+			"origin": "git01.bravofly.com/golang/appfw.git/vendor/github.com/google/uuid",
+			"path": "github.com/google/uuid",
+			"revision": "3da53b55abdce96761846e3b3498d1922cfe3080",
+			"revisionTime": "2018-03-15T09:15:42Z"
 		},
 		{
 			"checksumSHA1": "bWGI7DqWg6IdhfamV96OD+Esa+8=",
@@ -229,6 +254,18 @@
 			"path": "golang.org/x/time/rate",
 			"revision": "85acf8d2951cb2a3bde7632f9ff273ef0379bcbd",
 			"revisionTime": "2018-11-08T03:19:45Z"
+		},
+		{
+			"checksumSHA1": "VBI9qRN6hvkGax4rAKCLnNLbQC4=",
+			"path": "gopkg.in/Graylog2/go-gelf.v1/gelf",
+			"revision": "7ebf4f536d8f52a04bd794e815629ff499325a91",
+			"revisionTime": "2017-08-11T15:42:26Z"
+		},
+		{
+			"checksumSHA1": "TM3Neoy1xRAKyZYMGzKc41sDFW4=",
+			"path": "gopkg.in/natefinch/lumberjack.v2",
+			"revision": "a96e63847dc3c67d17befa69c303767e2f84e54f",
+			"revisionTime": "2017-05-31T16:03:50Z"
 		},
 		{
 			"checksumSHA1": "CzLpoHWYgSP+mT3bcW/jt8epp5I=",
