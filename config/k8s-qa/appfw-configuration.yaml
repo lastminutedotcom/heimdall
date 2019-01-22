@@ -1,10 +1,12 @@
 management-endpoint:
   timeout: 10s
-#namespaces:
-    ##  excluded:
-    ##    - kube-system
-    ##    - kube-public
-    ##    - default
-    ##    - maab-qa
-  ##    - recommendation-system-dev
-  ##    - recommendation-system-qa
+spec:
+  containers:
+    name: application
+    env:
+    - name: CLOUDFLARE_TOKEN
+      value: "f73d2fd09a50dd1234a26d37e794de982fc0c"
+    - name: CLOUDFLARE_EMAIL
+      value: "api.sre@lastminute.com"
+    - name: CLOUDFLARE_ORG_ID
+      value: "f5fd3b3741817e2080883b52b5995643"
