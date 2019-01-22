@@ -18,7 +18,7 @@ import (
 
 var logger = log.New(os.Stdout, "[HEIMDALL] ", log.LstdFlags)
 
-func Run(filePath string) {
+func Run() {
 	mgmt.ConfigureLiveness(func(w http.ResponseWriter, r *http.Request) {
 		w.WriteHeader(http.StatusOK)
 		return
@@ -28,12 +28,10 @@ func Run(filePath string) {
 		return
 	})
 
-	//	config := readConfig(filePath)
-	config := readConfig("/appfw/config/config.json")
-
+	config := readConfig(os.Getenv("CONFIG_PATH"))
 	cronExpression := fmt.Sprintf("*/%s * * * *", config.CollectEveryMinutes)
 
-	logger.Printf("start collecting data at every %sth minute", config.CollectEveryMinutes)
+	logger.Printf("start collecting data at every %sth minute of the last %s minute ", config.CollectEveryMinutes, config.CollectEveryMinutes)
 
 	c := cron.New()
 	c.AddFunc(cronExpression, orchestrator(config))
@@ -45,8 +43,6 @@ func Run(filePath string) {
 	c.Stop()
 
 	fmt.Println("Got signal:", s)
-
-	//orchestrator(config)
 }
 
 func readConfig(filePath string) *model.Config {

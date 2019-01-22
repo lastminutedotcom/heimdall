@@ -25,16 +25,14 @@ import (
 
 var cfgFile string
 
-var configFile string
-
 // rootCmd represents the base command when called without any subcommands
 var rootCmd = &cobra.Command{
-	Use: "heimdall",
+	Use:   "heimdall",
 	Short: "Heimdall, all-seeing and all-hearing",
-	Long: `Metrics importer for Cloudflare API`,
+	Long:  `Metrics importer for Cloudflare API`,
 
 	Run: func(cmd *cobra.Command, args []string) {
-		Run(configFile)
+		Run()
 	},
 }
 
@@ -47,8 +45,6 @@ func Execute() {
 
 func init() {
 	cobra.OnInitialize(initConfig)
-//	rootCmd.Flags().StringVarP(&configFile, "file", "f", "", "relative path to a json config file")
-//	rootCmd.MarkFlagRequired("file")
 }
 
 // initConfig reads in config file and ENV variables if set.

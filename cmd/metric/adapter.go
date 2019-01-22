@@ -12,7 +12,7 @@ import (
 
 var logger = log.New(os.Stdout, "[HEIMDALL] ", log.LstdFlags)
 
-const METRICS_PREFIX = "cloudflare.new."
+const METRICS_PREFIX = "cloudflare."
 
 func adaptDataToMetrics(aggregates []*model.Aggregate) []graphite.Metric {
 	metrics := make([]graphite.Metric, 0)

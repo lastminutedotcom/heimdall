@@ -24,3 +24,8 @@ spec:
             secretKeyRef:
               name: heimdall-system-secret
               key:  HEIMDALL-CLOUDFLARE_ORG_ID
+        - name: CONFIG_PATH
+          valueFrom:
+            secretKeyRef:
+              name: heimdall-system-secret
+              key:  HEIMDALL-CONFIG_PATH
