@@ -1,5 +1,7 @@
 management-endpoint:
   timeout: 10s
+
+
 spec:
   containers:
     name: application

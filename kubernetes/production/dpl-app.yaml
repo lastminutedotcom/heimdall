@@ -4,3 +4,23 @@ spec:
     rollingUpdate:
       maxUnavailable: 0%
       maxSurge: 100%
+  template:
+    spec:
+      containers:
+      - name: application
+        env:
+        - name: CLOUDFLARE_TOKEN
+          valueFrom:
+            secretKeyRef:
+              name: heimdall-system-secret
+              key: HEIMDALL-CLOUDFLARE_TOKEN
+        - name: CLOUDFLARE_EMAIL
+          valueFrom:
+            secretKeyRef:
+              name: heimdall-system-secret
+              key:  HEIMDALL-CLOUDFLARE_EMAIL
+        - name: CLOUDFLARE_ORG_ID
+          valueFrom:
+            secretKeyRef:
+              name: heimdall-system-secret
+              key:  HEIMDALL-CLOUDFLARE_ORG_ID
