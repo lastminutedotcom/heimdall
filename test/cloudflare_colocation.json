@@ -1,0 +1,3781 @@
+{
+    "success": true,
+    "query": {
+        "since": "2019-01-23T15:00:00Z",
+        "until": "2019-01-23T15:05:00Z",
+        "time_delta": 1
+    },
+    "errors": [],
+    "messages": [],
+    "result": [
+        {
+            "colo_id": "AMS",
+            "timeseries": [
+                {
+                    "since": "2019-01-23T15:00:00Z",
+                    "until": "2019-01-23T15:01:00Z",
+                    "requests": {
+                        "all": 7,
+                        "cached": 0,
+                        "uncached": 7,
+                        "http_status": {
+                            "200": 7
+                        },
+                        "country": {
+                            "FR": 7
+                        }
+                    },
+                    "bandwidth": {
+                        "all": 110222,
+                        "cached": 0,
+                        "uncached": 110222
+                    },
+                    "threats": {
+                        "all": 0,
+                        "type": {},
+                        "country": {}
+                    }
+                },
+                {
+                    "since": "2019-01-23T15:01:00Z",
+                    "until": "2019-01-23T15:02:00Z",
+                    "requests": {
+                        "all": 8,
+                        "cached": 1,
+                        "uncached": 7,
+                        "http_status": {
+                            "200": 7,
+                            "403": 1
+                        },
+                        "country": {
+                            "FR": 8
+                        }
+                    },
+                    "bandwidth": {
+                        "all": 112064,
+                        "cached": 2723,
+                        "uncached": 109341
+                    },
+                    "threats": {
+                        "all": 0,
+                        "type": {},
+                        "country": {}
+                    }
+                },
+                {
+                    "since": "2019-01-23T15:02:00Z",
+                    "until": "2019-01-23T15:03:00Z",
+                    "requests": {
+                        "all": 9,
+                        "cached": 0,
+                        "uncached": 9,
+                        "http_status": {
+                            "200": 8,
+                            "301": 1
+                        },
+                        "country": {
+                            "FR": 9
+                        }
+                    },
+                    "bandwidth": {
+                        "all": 127051,
+                        "cached": 0,
+                        "uncached": 127051
+                    },
+                    "threats": {
+                        "all": 0,
+                        "type": {},
+                        "country": {}
+                    }
+                },
+                {
+                    "since": "2019-01-23T15:03:00Z",
+                    "until": "2019-01-23T15:04:00Z",
+                    "requests": {
+                        "all": 3,
+                        "cached": 1,
+                        "uncached": 2,
+                        "http_status": {
+                            "200": 2,
+                            "403": 1
+                        },
+                        "country": {
+                            "FR": 3
+                        }
+                    },
+                    "bandwidth": {
+                        "all": 34143,
+                        "cached": 2719,
+                        "uncached": 31424
+                    },
+                    "threats": {
+                        "all": 0,
+                        "type": {},
+                        "country": {}
+                    }
+                },
+                {
+                    "since": "2019-01-23T15:04:00Z",
+                    "until": "2019-01-23T15:05:00Z",
+                    "requests": {
+                        "all": 9,
+                        "cached": 1,
+                        "uncached": 8,
+                        "http_status": {
+                            "200": 7,
+                            "301": 1,
+                            "403": 1
+                        },
+                        "country": {
+                            "FR": 9
+                        }
+                    },
+                    "bandwidth": {
+                        "all": 112892,
+                        "cached": 2719,
+                        "uncached": 110173
+                    },
+                    "threats": {
+                        "all": 0,
+                        "type": {},
+                        "country": {}
+                    }
+                }
+            ],
+            "totals": {
+                "since": "2019-01-23T15:00:00Z",
+                "until": "2019-01-23T15:05:00Z",
+                "requests": {
+                    "all": 36,
+                    "cached": 3,
+                    "uncached": 33,
+                    "http_status": {
+                        "200": 31,
+                        "301": 2,
+                        "403": 3
+                    },
+                    "country": {
+                        "FR": 36
+                    }
+                },
+                "bandwidth": {
+                    "all": 496372,
+                    "cached": 8161,
+                    "uncached": 488211
+                },
+                "threats": {
+                    "all": 0,
+                    "type": {},
+                    "country": {}
+                }
+            }
+        },
+        {
+            "colo_id": "ARN",
+            "timeseries": [
+                {
+                    "since": "2019-01-23T15:00:00Z",
+                    "until": "2019-01-23T15:01:00Z",
+                    "requests": {
+                        "all": 0,
+                        "cached": 0,
+                        "uncached": 0,
+                        "http_status": {},
+                        "country": {}
+                    },
+                    "bandwidth": {
+                        "all": 0,
+                        "cached": 0,
+                        "uncached": 0
+                    },
+                    "threats": {
+                        "all": 0,
+                        "type": {},
+                        "country": {}
+                    }
+                },
+                {
+                    "since": "2019-01-23T15:01:00Z",
+                    "until": "2019-01-23T15:02:00Z",
+                    "requests": {
+                        "all": 1,
+                        "cached": 1,
+                        "uncached": 0,
+                        "http_status": {
+                            "499": 1
+                        },
+                        "country": {
+                            "RU": 1
+                        }
+                    },
+                    "bandwidth": {
+                        "all": 0,
+                        "cached": 0,
+                        "uncached": 0
+                    },
+                    "threats": {
+                        "all": 0,
+                        "type": {},
+                        "country": {}
+                    }
+                },
+                {
+                    "since": "2019-01-23T15:02:00Z",
+                    "until": "2019-01-23T15:03:00Z",
+                    "requests": {
+                        "all": 1,
+                        "cached": 0,
+                        "uncached": 1,
+                        "http_status": {
+                            "200": 1
+                        },
+                        "country": {
+                            "RU": 1
+                        }
+                    },
+                    "bandwidth": {
+                        "all": 16801,
+                        "cached": 0,
+                        "uncached": 16801
+                    },
+                    "threats": {
+                        "all": 0,
+                        "type": {},
+                        "country": {}
+                    }
+                },
+                {
+                    "since": "2019-01-23T15:03:00Z",
+                    "until": "2019-01-23T15:04:00Z",
+                    "requests": {
+                        "all": 0,
+                        "cached": 0,
+                        "uncached": 0,
+                        "http_status": {},
+                        "country": {}
+                    },
+                    "bandwidth": {
+                        "all": 0,
+                        "cached": 0,
+                        "uncached": 0
+                    },
+                    "threats": {
+                        "all": 0,
+                        "type": {},
+                        "country": {}
+                    }
+                },
+                {
+                    "since": "2019-01-23T15:04:00Z",
+                    "until": "2019-01-23T15:05:00Z",
+                    "requests": {
+                        "all": 0,
+                        "cached": 0,
+                        "uncached": 0,
+                        "http_status": {},
+                        "country": {}
+                    },
+                    "bandwidth": {
+                        "all": 0,
+                        "cached": 0,
+                        "uncached": 0
+                    },
+                    "threats": {
+                        "all": 0,
+                        "type": {},
+                        "country": {}
+                    }
+                }
+            ],
+            "totals": {
+                "since": "2019-01-23T15:00:00Z",
+                "until": "2019-01-23T15:05:00Z",
+                "requests": {
+                    "all": 2,
+                    "cached": 1,
+                    "uncached": 1,
+                    "http_status": {
+                        "200": 1,
+                        "499": 1
+                    },
+                    "country": {
+                        "RU": 2
+                    }
+                },
+                "bandwidth": {
+                    "all": 16801,
+                    "cached": 0,
+                    "uncached": 16801
+                },
+                "threats": {
+                    "all": 0,
+                    "type": {},
+                    "country": {}
+                }
+            }
+        },
+        {
+            "colo_id": "ATL",
+            "timeseries": [
+                {
+                    "since": "2019-01-23T15:00:00Z",
+                    "until": "2019-01-23T15:01:00Z",
+                    "requests": {
+                        "all": 0,
+                        "cached": 0,
+                        "uncached": 0,
+                        "http_status": {},
+                        "country": {}
+                    },
+                    "bandwidth": {
+                        "all": 0,
+                        "cached": 0,
+                        "uncached": 0
+                    },
+                    "threats": {
+                        "all": 0,
+                        "type": {},
+                        "country": {}
+                    }
+                },
+                {
+                    "since": "2019-01-23T15:01:00Z",
+                    "until": "2019-01-23T15:02:00Z",
+                    "requests": {
+                        "all": 0,
+                        "cached": 0,
+                        "uncached": 0,
+                        "http_status": {},
+                        "country": {}
+                    },
+                    "bandwidth": {
+                        "all": 0,
+                        "cached": 0,
+                        "uncached": 0
+                    },
+                    "threats": {
+                        "all": 0,
+                        "type": {},
+                        "country": {}
+                    }
+                },
+                {
+                    "since": "2019-01-23T15:02:00Z",
+                    "until": "2019-01-23T15:03:00Z",
+                    "requests": {
+                        "all": 0,
+                        "cached": 0,
+                        "uncached": 0,
+                        "http_status": {},
+                        "country": {}
+                    },
+                    "bandwidth": {
+                        "all": 0,
+                        "cached": 0,
+                        "uncached": 0
+                    },
+                    "threats": {
+                        "all": 0,
+                        "type": {},
+                        "country": {}
+                    }
+                },
+                {
+                    "since": "2019-01-23T15:03:00Z",
+                    "until": "2019-01-23T15:04:00Z",
+                    "requests": {
+                        "all": 7,
+                        "cached": 0,
+                        "uncached": 7,
+                        "http_status": {
+                            "200": 6,
+                            "201": 1
+                        },
+                        "country": {
+                            "US": 7
+                        }
+                    },
+                    "bandwidth": {
+                        "all": 22518,
+                        "cached": 0,
+                        "uncached": 22518
+                    },
+                    "threats": {
+                        "all": 0,
+                        "type": {},
+                        "country": {}
+                    }
+                },
+                {
+                    "since": "2019-01-23T15:04:00Z",
+                    "until": "2019-01-23T15:05:00Z",
+                    "requests": {
+                        "all": 5,
+                        "cached": 0,
+                        "uncached": 5,
+                        "http_status": {
+                            "200": 4,
+                            "401": 1
+                        },
+                        "country": {
+                            "US": 5
+                        }
+                    },
+                    "bandwidth": {
+                        "all": 6705,
+                        "cached": 0,
+                        "uncached": 6705
+                    },
+                    "threats": {
+                        "all": 0,
+                        "type": {},
+                        "country": {}
+                    }
+                }
+            ],
+            "totals": {
+                "since": "2019-01-23T15:00:00Z",
+                "until": "2019-01-23T15:05:00Z",
+                "requests": {
+                    "all": 12,
+                    "cached": 0,
+                    "uncached": 12,
+                    "http_status": {
+                        "200": 10,
+                        "201": 1,
+                        "401": 1
+                    },
+                    "country": {
+                        "US": 12
+                    }
+                },
+                "bandwidth": {
+                    "all": 29223,
+                    "cached": 0,
+                    "uncached": 29223
+                },
+                "threats": {
+                    "all": 0,
+                    "type": {},
+                    "country": {}
+                }
+            }
+        },
+        {
+            "colo_id": "BCN",
+            "timeseries": [
+                {
+                    "since": "2019-01-23T15:00:00Z",
+                    "until": "2019-01-23T15:01:00Z",
+                    "requests": {
+                        "all": 2,
+                        "cached": 0,
+                        "uncached": 2,
+                        "http_status": {
+                            "200": 1,
+                            "301": 1
+                        },
+                        "country": {
+                            "ES": 2
+                        }
+                    },
+                    "bandwidth": {
+                        "all": 25739,
+                        "cached": 0,
+                        "uncached": 25739
+                    },
+                    "threats": {
+                        "all": 0,
+                        "type": {},
+                        "country": {}
+                    }
+                },
+                {
+                    "since": "2019-01-23T15:01:00Z",
+                    "until": "2019-01-23T15:02:00Z",
+                    "requests": {
+                        "all": 0,
+                        "cached": 0,
+                        "uncached": 0,
+                        "http_status": {},
+                        "country": {}
+                    },
+                    "bandwidth": {
+                        "all": 0,
+                        "cached": 0,
+                        "uncached": 0
+                    },
+                    "threats": {
+                        "all": 0,
+                        "type": {},
+                        "country": {}
+                    }
+                },
+                {
+                    "since": "2019-01-23T15:02:00Z",
+                    "until": "2019-01-23T15:03:00Z",
+                    "requests": {
+                        "all": 0,
+                        "cached": 0,
+                        "uncached": 0,
+                        "http_status": {},
+                        "country": {}
+                    },
+                    "bandwidth": {
+                        "all": 0,
+                        "cached": 0,
+                        "uncached": 0
+                    },
+                    "threats": {
+                        "all": 0,
+                        "type": {},
+                        "country": {}
+                    }
+                },
+                {
+                    "since": "2019-01-23T15:03:00Z",
+                    "until": "2019-01-23T15:04:00Z",
+                    "requests": {
+                        "all": 2,
+                        "cached": 0,
+                        "uncached": 2,
+                        "http_status": {
+                            "200": 1,
+                            "301": 1
+                        },
+                        "country": {
+                            "ES": 2
+                        }
+                    },
+                    "bandwidth": {
+                        "all": 25788,
+                        "cached": 0,
+                        "uncached": 25788
+                    },
+                    "threats": {
+                        "all": 0,
+                        "type": {},
+                        "country": {}
+                    }
+                },
+                {
+                    "since": "2019-01-23T15:04:00Z",
+                    "until": "2019-01-23T15:05:00Z",
+                    "requests": {
+                        "all": 0,
+                        "cached": 0,
+                        "uncached": 0,
+                        "http_status": {},
+                        "country": {}
+                    },
+                    "bandwidth": {
+                        "all": 0,
+                        "cached": 0,
+                        "uncached": 0
+                    },
+                    "threats": {
+                        "all": 0,
+                        "type": {},
+                        "country": {}
+                    }
+                }
+            ],
+            "totals": {
+                "since": "2019-01-23T15:00:00Z",
+                "until": "2019-01-23T15:05:00Z",
+                "requests": {
+                    "all": 4,
+                    "cached": 0,
+                    "uncached": 4,
+                    "http_status": {
+                        "200": 2,
+                        "301": 2
+                    },
+                    "country": {
+                        "ES": 4
+                    }
+                },
+                "bandwidth": {
+                    "all": 51527,
+                    "cached": 0,
+                    "uncached": 51527
+                },
+                "threats": {
+                    "all": 0,
+                    "type": {},
+                    "country": {}
+                }
+            }
+        },
+        {
+            "colo_id": "BRU",
+            "timeseries": [
+                {
+                    "since": "2019-01-23T15:00:00Z",
+                    "until": "2019-01-23T15:01:00Z",
+                    "requests": {
+                        "all": 10,
+                        "cached": 0,
+                        "uncached": 10,
+                        "http_status": {
+                            "200": 4,
+                            "201": 6
+                        },
+                        "country": {
+                            "BE": 10
+                        }
+                    },
+                    "bandwidth": {
+                        "all": 13913,
+                        "cached": 0,
+                        "uncached": 13913
+                    },
+                    "threats": {
+                        "all": 0,
+                        "type": {},
+                        "country": {}
+                    }
+                },
+                {
+                    "since": "2019-01-23T15:01:00Z",
+                    "until": "2019-01-23T15:02:00Z",
+                    "requests": {
+                        "all": 30,
+                        "cached": 0,
+                        "uncached": 30,
+                        "http_status": {
+                            "200": 10,
+                            "201": 4,
+                            "202": 14,
+                            "204": 1,
+                            "401": 1
+                        },
+                        "country": {
+                            "BE": 30
+                        }
+                    },
+                    "bandwidth": {
+                        "all": 75465,
+                        "cached": 0,
+                        "uncached": 75465
+                    },
+                    "threats": {
+                        "all": 0,
+                        "type": {},
+                        "country": {}
+                    }
+                },
+                {
+                    "since": "2019-01-23T15:02:00Z",
+                    "until": "2019-01-23T15:03:00Z",
+                    "requests": {
+                        "all": 14,
+                        "cached": 0,
+                        "uncached": 14,
+                        "http_status": {
+                            "200": 3,
+                            "202": 10,
+                            "204": 1
+                        },
+                        "country": {
+                            "BE": 14
+                        }
+                    },
+                    "bandwidth": {
+                        "all": 17801,
+                        "cached": 0,
+                        "uncached": 17801
+                    },
+                    "threats": {
+                        "all": 0,
+                        "type": {},
+                        "country": {}
+                    }
+                },
+                {
+                    "since": "2019-01-23T15:03:00Z",
+                    "until": "2019-01-23T15:04:00Z",
+                    "requests": {
+                        "all": 0,
+                        "cached": 0,
+                        "uncached": 0,
+                        "http_status": {},
+                        "country": {}
+                    },
+                    "bandwidth": {
+                        "all": 0,
+                        "cached": 0,
+                        "uncached": 0
+                    },
+                    "threats": {
+                        "all": 0,
+                        "type": {},
+                        "country": {}
+                    }
+                },
+                {
+                    "since": "2019-01-23T15:04:00Z",
+                    "until": "2019-01-23T15:05:00Z",
+                    "requests": {
+                        "all": 2,
+                        "cached": 0,
+                        "uncached": 2,
+                        "http_status": {
+                            "202": 2
+                        },
+                        "country": {
+                            "BE": 2
+                        }
+                    },
+                    "bandwidth": {
+                        "all": 1818,
+                        "cached": 0,
+                        "uncached": 1818
+                    },
+                    "threats": {
+                        "all": 0,
+                        "type": {},
+                        "country": {}
+                    }
+                }
+            ],
+            "totals": {
+                "since": "2019-01-23T15:00:00Z",
+                "until": "2019-01-23T15:05:00Z",
+                "requests": {
+                    "all": 56,
+                    "cached": 0,
+                    "uncached": 56,
+                    "http_status": {
+                        "200": 17,
+                        "201": 10,
+                        "202": 26,
+                        "204": 2,
+                        "401": 1
+                    },
+                    "country": {
+                        "BE": 56
+                    }
+                },
+                "bandwidth": {
+                    "all": 108997,
+                    "cached": 0,
+                    "uncached": 108997
+                },
+                "threats": {
+                    "all": 0,
+                    "type": {},
+                    "country": {}
+                }
+            }
+        },
+        {
+            "colo_id": "CDG",
+            "timeseries": [
+                {
+                    "since": "2019-01-23T15:00:00Z",
+                    "until": "2019-01-23T15:01:00Z",
+                    "requests": {
+                        "all": 25,
+                        "cached": 0,
+                        "uncached": 25,
+                        "http_status": {
+                            "200": 11,
+                            "201": 8,
+                            "202": 1,
+                            "301": 2,
+                            "302": 1,
+                            "401": 2
+                        },
+                        "country": {
+                            "FR": 24,
+                            "XX": 1
+                        }
+                    },
+                    "bandwidth": {
+                        "all": 79280,
+                        "cached": 0,
+                        "uncached": 79280
+                    },
+                    "threats": {
+                        "all": 0,
+                        "type": {},
+                        "country": {}
+                    }
+                },
+                {
+                    "since": "2019-01-23T15:01:00Z",
+                    "until": "2019-01-23T15:02:00Z",
+                    "requests": {
+                        "all": 7,
+                        "cached": 0,
+                        "uncached": 7,
+                        "http_status": {
+                            "200": 3,
+                            "202": 3,
+                            "301": 1
+                        },
+                        "country": {
+                            "FR": 7
+                        }
+                    },
+                    "bandwidth": {
+                        "all": 50879,
+                        "cached": 0,
+                        "uncached": 50879
+                    },
+                    "threats": {
+                        "all": 0,
+                        "type": {},
+                        "country": {}
+                    }
+                },
+                {
+                    "since": "2019-01-23T15:02:00Z",
+                    "until": "2019-01-23T15:03:00Z",
+                    "requests": {
+                        "all": 9,
+                        "cached": 1,
+                        "uncached": 8,
+                        "http_status": {
+                            "200": 6,
+                            "202": 1,
+                            "301": 2
+                        },
+                        "country": {
+                            "FR": 9
+                        }
+                    },
+                    "bandwidth": {
+                        "all": 180462,
+                        "cached": 114384,
+                        "uncached": 66078
+                    },
+                    "threats": {
+                        "all": 0,
+                        "type": {},
+                        "country": {}
+                    }
+                },
+                {
+                    "since": "2019-01-23T15:03:00Z",
+                    "until": "2019-01-23T15:04:00Z",
+                    "requests": {
+                        "all": 80,
+                        "cached": 4,
+                        "uncached": 76,
+                        "http_status": {
+                            "200": 33,
+                            "201": 6,
+                            "202": 33,
+                            "204": 2,
+                            "301": 2,
+                            "302": 1,
+                            "401": 3
+                        },
+                        "country": {
+                            "FR": 80
+                        }
+                    },
+                    "bandwidth": {
+                        "all": 398698,
+                        "cached": 164690,
+                        "uncached": 234008
+                    },
+                    "threats": {
+                        "all": 0,
+                        "type": {},
+                        "country": {}
+                    }
+                },
+                {
+                    "since": "2019-01-23T15:04:00Z",
+                    "until": "2019-01-23T15:05:00Z",
+                    "requests": {
+                        "all": 34,
+                        "cached": 1,
+                        "uncached": 33,
+                        "http_status": {
+                            "200": 22,
+                            "302": 2,
+                            "401": 9,
+                            "499": 1
+                        },
+                        "country": {
+                            "FR": 34
+                        }
+                    },
+                    "bandwidth": {
+                        "all": 122108,
+                        "cached": 0,
+                        "uncached": 122108
+                    },
+                    "threats": {
+                        "all": 0,
+                        "type": {},
+                        "country": {}
+                    }
+                }
+            ],
+            "totals": {
+                "since": "2019-01-23T15:00:00Z",
+                "until": "2019-01-23T15:05:00Z",
+                "requests": {
+                    "all": 155,
+                    "cached": 6,
+                    "uncached": 149,
+                    "http_status": {
+                        "200": 75,
+                        "201": 14,
+                        "202": 38,
+                        "204": 2,
+                        "301": 7,
+                        "302": 4,
+                        "401": 14,
+                        "499": 1
+                    },
+                    "country": {
+                        "FR": 154,
+                        "XX": 1
+                    }
+                },
+                "bandwidth": {
+                    "all": 831427,
+                    "cached": 279074,
+                    "uncached": 552353
+                },
+                "threats": {
+                    "all": 0,
+                    "type": {},
+                    "country": {}
+                }
+            }
+        },
+        {
+            "colo_id": "DFW",
+            "timeseries": [
+                {
+                    "since": "2019-01-23T15:00:00Z",
+                    "until": "2019-01-23T15:01:00Z",
+                    "requests": {
+                        "all": 53,
+                        "cached": 3,
+                        "uncached": 50,
+                        "http_status": {
+                            "200": 30,
+                            "201": 17,
+                            "301": 5,
+                            "499": 1
+                        },
+                        "country": {
+                            "US": 53
+                        }
+                    },
+                    "bandwidth": {
+                        "all": 289924,
+                        "cached": 66708,
+                        "uncached": 223216
+                    },
+                    "threats": {
+                        "all": 0,
+                        "type": {},
+                        "country": {}
+                    }
+                },
+                {
+                    "since": "2019-01-23T15:01:00Z",
+                    "until": "2019-01-23T15:02:00Z",
+                    "requests": {
+                        "all": 38,
+                        "cached": 1,
+                        "uncached": 37,
+                        "http_status": {
+                            "200": 21,
+                            "201": 15,
+                            "301": 2
+                        },
+                        "country": {
+                            "US": 38
+                        }
+                    },
+                    "bandwidth": {
+                        "all": 178029,
+                        "cached": 15785,
+                        "uncached": 162244
+                    },
+                    "threats": {
+                        "all": 0,
+                        "type": {},
+                        "country": {}
+                    }
+                },
+                {
+                    "since": "2019-01-23T15:02:00Z",
+                    "until": "2019-01-23T15:03:00Z",
+                    "requests": {
+                        "all": 29,
+                        "cached": 1,
+                        "uncached": 28,
+                        "http_status": {
+                            "200": 18,
+                            "201": 11
+                        },
+                        "country": {
+                            "US": 29
+                        }
+                    },
+                    "bandwidth": {
+                        "all": 139415,
+                        "cached": 33354,
+                        "uncached": 106061
+                    },
+                    "threats": {
+                        "all": 0,
+                        "type": {},
+                        "country": {}
+                    }
+                },
+                {
+                    "since": "2019-01-23T15:03:00Z",
+                    "until": "2019-01-23T15:04:00Z",
+                    "requests": {
+                        "all": 27,
+                        "cached": 0,
+                        "uncached": 27,
+                        "http_status": {
+                            "200": 10,
+                            "201": 17
+                        },
+                        "country": {
+                            "US": 27
+                        }
+                    },
+                    "bandwidth": {
+                        "all": 83446,
+                        "cached": 0,
+                        "uncached": 83446
+                    },
+                    "threats": {
+                        "all": 0,
+                        "type": {},
+                        "country": {}
+                    }
+                },
+                {
+                    "since": "2019-01-23T15:04:00Z",
+                    "until": "2019-01-23T15:05:00Z",
+                    "requests": {
+                        "all": 49,
+                        "cached": 1,
+                        "uncached": 48,
+                        "http_status": {
+                            "200": 25,
+                            "201": 19,
+                            "301": 1,
+                            "410": 4
+                        },
+                        "country": {
+                            "US": 49
+                        }
+                    },
+                    "bandwidth": {
+                        "all": 429077,
+                        "cached": 33354,
+                        "uncached": 395723
+                    },
+                    "threats": {
+                        "all": 0,
+                        "type": {},
+                        "country": {}
+                    }
+                }
+            ],
+            "totals": {
+                "since": "2019-01-23T15:00:00Z",
+                "until": "2019-01-23T15:05:00Z",
+                "requests": {
+                    "all": 196,
+                    "cached": 6,
+                    "uncached": 190,
+                    "http_status": {
+                        "200": 104,
+                        "201": 79,
+                        "301": 8,
+                        "410": 4,
+                        "499": 1
+                    },
+                    "country": {
+                        "US": 196
+                    }
+                },
+                "bandwidth": {
+                    "all": 1119891,
+                    "cached": 149201,
+                    "uncached": 970690
+                },
+                "threats": {
+                    "all": 0,
+                    "type": {},
+                    "country": {}
+                }
+            }
+        },
+        {
+            "colo_id": "EWR",
+            "timeseries": [
+                {
+                    "since": "2019-01-23T15:00:00Z",
+                    "until": "2019-01-23T15:01:00Z",
+                    "requests": {
+                        "all": 0,
+                        "cached": 0,
+                        "uncached": 0,
+                        "http_status": {},
+                        "country": {}
+                    },
+                    "bandwidth": {
+                        "all": 0,
+                        "cached": 0,
+                        "uncached": 0
+                    },
+                    "threats": {
+                        "all": 0,
+                        "type": {},
+                        "country": {}
+                    }
+                },
+                {
+                    "since": "2019-01-23T15:01:00Z",
+                    "until": "2019-01-23T15:02:00Z",
+                    "requests": {
+                        "all": 0,
+                        "cached": 0,
+                        "uncached": 0,
+                        "http_status": {},
+                        "country": {}
+                    },
+                    "bandwidth": {
+                        "all": 0,
+                        "cached": 0,
+                        "uncached": 0
+                    },
+                    "threats": {
+                        "all": 0,
+                        "type": {},
+                        "country": {}
+                    }
+                },
+                {
+                    "since": "2019-01-23T15:02:00Z",
+                    "until": "2019-01-23T15:03:00Z",
+                    "requests": {
+                        "all": 0,
+                        "cached": 0,
+                        "uncached": 0,
+                        "http_status": {},
+                        "country": {}
+                    },
+                    "bandwidth": {
+                        "all": 0,
+                        "cached": 0,
+                        "uncached": 0
+                    },
+                    "threats": {
+                        "all": 0,
+                        "type": {},
+                        "country": {}
+                    }
+                },
+                {
+                    "since": "2019-01-23T15:03:00Z",
+                    "until": "2019-01-23T15:04:00Z",
+                    "requests": {
+                        "all": 22,
+                        "cached": 4,
+                        "uncached": 18,
+                        "http_status": {
+                            "200": 17,
+                            "201": 1,
+                            "401": 4
+                        },
+                        "country": {
+                            "US": 22
+                        }
+                    },
+                    "bandwidth": {
+                        "all": 131216,
+                        "cached": 56530,
+                        "uncached": 74686
+                    },
+                    "threats": {
+                        "all": 0,
+                        "type": {},
+                        "country": {}
+                    }
+                },
+                {
+                    "since": "2019-01-23T15:04:00Z",
+                    "until": "2019-01-23T15:05:00Z",
+                    "requests": {
+                        "all": 16,
+                        "cached": 0,
+                        "uncached": 16,
+                        "http_status": {
+                            "200": 10,
+                            "201": 3,
+                            "302": 1,
+                            "401": 1,
+                            "404": 1
+                        },
+                        "country": {
+                            "US": 16
+                        }
+                    },
+                    "bandwidth": {
+                        "all": 69618,
+                        "cached": 0,
+                        "uncached": 69618
+                    },
+                    "threats": {
+                        "all": 0,
+                        "type": {},
+                        "country": {}
+                    }
+                }
+            ],
+            "totals": {
+                "since": "2019-01-23T15:00:00Z",
+                "until": "2019-01-23T15:05:00Z",
+                "requests": {
+                    "all": 38,
+                    "cached": 4,
+                    "uncached": 34,
+                    "http_status": {
+                        "200": 27,
+                        "201": 4,
+                        "302": 1,
+                        "401": 5,
+                        "404": 1
+                    },
+                    "country": {
+                        "US": 38
+                    }
+                },
+                "bandwidth": {
+                    "all": 200834,
+                    "cached": 56530,
+                    "uncached": 144304
+                },
+                "threats": {
+                    "all": 0,
+                    "type": {},
+                    "country": {}
+                }
+            }
+        },
+        {
+            "colo_id": "GIG",
+            "timeseries": [
+                {
+                    "since": "2019-01-23T15:00:00Z",
+                    "until": "2019-01-23T15:01:00Z",
+                    "requests": {
+                        "all": 1,
+                        "cached": 0,
+                        "uncached": 1,
+                        "http_status": {
+                            "202": 1
+                        },
+                        "country": {
+                            "BR": 1
+                        }
+                    },
+                    "bandwidth": {
+                        "all": 909,
+                        "cached": 0,
+                        "uncached": 909
+                    },
+                    "threats": {
+                        "all": 0,
+                        "type": {},
+                        "country": {}
+                    }
+                },
+                {
+                    "since": "2019-01-23T15:01:00Z",
+                    "until": "2019-01-23T15:02:00Z",
+                    "requests": {
+                        "all": 3,
+                        "cached": 0,
+                        "uncached": 3,
+                        "http_status": {
+                            "200": 1,
+                            "202": 2
+                        },
+                        "country": {
+                            "BR": 3
+                        }
+                    },
+                    "bandwidth": {
+                        "all": 2922,
+                        "cached": 0,
+                        "uncached": 2922
+                    },
+                    "threats": {
+                        "all": 0,
+                        "type": {},
+                        "country": {}
+                    }
+                },
+                {
+                    "since": "2019-01-23T15:02:00Z",
+                    "until": "2019-01-23T15:03:00Z",
+                    "requests": {
+                        "all": 0,
+                        "cached": 0,
+                        "uncached": 0,
+                        "http_status": {},
+                        "country": {}
+                    },
+                    "bandwidth": {
+                        "all": 0,
+                        "cached": 0,
+                        "uncached": 0
+                    },
+                    "threats": {
+                        "all": 0,
+                        "type": {},
+                        "country": {}
+                    }
+                },
+                {
+                    "since": "2019-01-23T15:03:00Z",
+                    "until": "2019-01-23T15:04:00Z",
+                    "requests": {
+                        "all": 1,
+                        "cached": 0,
+                        "uncached": 1,
+                        "http_status": {
+                            "202": 1
+                        },
+                        "country": {
+                            "BR": 1
+                        }
+                    },
+                    "bandwidth": {
+                        "all": 909,
+                        "cached": 0,
+                        "uncached": 909
+                    },
+                    "threats": {
+                        "all": 0,
+                        "type": {},
+                        "country": {}
+                    }
+                },
+                {
+                    "since": "2019-01-23T15:04:00Z",
+                    "until": "2019-01-23T15:05:00Z",
+                    "requests": {
+                        "all": 1,
+                        "cached": 0,
+                        "uncached": 1,
+                        "http_status": {
+                            "202": 1
+                        },
+                        "country": {
+                            "BR": 1
+                        }
+                    },
+                    "bandwidth": {
+                        "all": 909,
+                        "cached": 0,
+                        "uncached": 909
+                    },
+                    "threats": {
+                        "all": 0,
+                        "type": {},
+                        "country": {}
+                    }
+                }
+            ],
+            "totals": {
+                "since": "2019-01-23T15:00:00Z",
+                "until": "2019-01-23T15:05:00Z",
+                "requests": {
+                    "all": 6,
+                    "cached": 0,
+                    "uncached": 6,
+                    "http_status": {
+                        "200": 1,
+                        "202": 5
+                    },
+                    "country": {
+                        "BR": 6
+                    }
+                },
+                "bandwidth": {
+                    "all": 5649,
+                    "cached": 0,
+                    "uncached": 5649
+                },
+                "threats": {
+                    "all": 0,
+                    "type": {},
+                    "country": {}
+                }
+            }
+        },
+        {
+            "colo_id": "GRU",
+            "timeseries": [
+                {
+                    "since": "2019-01-23T15:00:00Z",
+                    "until": "2019-01-23T15:01:00Z",
+                    "requests": {
+                        "all": 113,
+                        "cached": 9,
+                        "uncached": 104,
+                        "http_status": {
+                            "200": 47,
+                            "201": 10,
+                            "202": 42,
+                            "204": 2,
+                            "301": 2,
+                            "302": 1,
+                            "304": 3,
+                            "401": 4,
+                            "404": 1,
+                            "499": 1
+                        },
+                        "country": {
+                            "BR": 112,
+                            "PY": 1
+                        }
+                    },
+                    "bandwidth": {
+                        "all": 298147,
+                        "cached": 63746,
+                        "uncached": 234401
+                    },
+                    "threats": {
+                        "all": 0,
+                        "type": {},
+                        "country": {}
+                    }
+                },
+                {
+                    "since": "2019-01-23T15:01:00Z",
+                    "until": "2019-01-23T15:02:00Z",
+                    "requests": {
+                        "all": 82,
+                        "cached": 17,
+                        "uncached": 65,
+                        "http_status": {
+                            "200": 52,
+                            "201": 17,
+                            "202": 1,
+                            "301": 1,
+                            "302": 2,
+                            "401": 6,
+                            "404": 2,
+                            "410": 1
+                        },
+                        "country": {
+                            "BR": 82
+                        }
+                    },
+                    "bandwidth": {
+                        "all": 524560,
+                        "cached": 364443,
+                        "uncached": 160117
+                    },
+                    "threats": {
+                        "all": 0,
+                        "type": {},
+                        "country": {}
+                    }
+                },
+                {
+                    "since": "2019-01-23T15:02:00Z",
+                    "until": "2019-01-23T15:03:00Z",
+                    "requests": {
+                        "all": 42,
+                        "cached": 8,
+                        "uncached": 34,
+                        "http_status": {
+                            "200": 28,
+                            "201": 13,
+                            "202": 1
+                        },
+                        "country": {
+                            "BR": 42
+                        }
+                    },
+                    "bandwidth": {
+                        "all": 421608,
+                        "cached": 349582,
+                        "uncached": 72026
+                    },
+                    "threats": {
+                        "all": 0,
+                        "type": {},
+                        "country": {}
+                    }
+                },
+                {
+                    "since": "2019-01-23T15:03:00Z",
+                    "until": "2019-01-23T15:04:00Z",
+                    "requests": {
+                        "all": 95,
+                        "cached": 3,
+                        "uncached": 92,
+                        "http_status": {
+                            "200": 35,
+                            "201": 15,
+                            "202": 35,
+                            "204": 1,
+                            "302": 1,
+                            "400": 2,
+                            "401": 5,
+                            "404": 1
+                        },
+                        "country": {
+                            "BR": 95
+                        }
+                    },
+                    "bandwidth": {
+                        "all": 430261,
+                        "cached": 182805,
+                        "uncached": 247456
+                    },
+                    "threats": {
+                        "all": 0,
+                        "type": {},
+                        "country": {}
+                    }
+                },
+                {
+                    "since": "2019-01-23T15:04:00Z",
+                    "until": "2019-01-23T15:05:00Z",
+                    "requests": {
+                        "all": 42,
+                        "cached": 1,
+                        "uncached": 41,
+                        "http_status": {
+                            "200": 11,
+                            "202": 27,
+                            "204": 2,
+                            "302": 1,
+                            "499": 1
+                        },
+                        "country": {
+                            "BR": 42
+                        }
+                    },
+                    "bandwidth": {
+                        "all": 181167,
+                        "cached": 78626,
+                        "uncached": 102541
+                    },
+                    "threats": {
+                        "all": 0,
+                        "type": {},
+                        "country": {}
+                    }
+                }
+            ],
+            "totals": {
+                "since": "2019-01-23T15:00:00Z",
+                "until": "2019-01-23T15:05:00Z",
+                "requests": {
+                    "all": 374,
+                    "cached": 38,
+                    "uncached": 336,
+                    "http_status": {
+                        "200": 173,
+                        "201": 55,
+                        "202": 106,
+                        "204": 5,
+                        "301": 3,
+                        "302": 5,
+                        "304": 3,
+                        "400": 2,
+                        "401": 15,
+                        "404": 4,
+                        "410": 1,
+                        "499": 2
+                    },
+                    "country": {
+                        "BR": 373,
+                        "PY": 1
+                    }
+                },
+                "bandwidth": {
+                    "all": 1855743,
+                    "cached": 1039202,
+                    "uncached": 816541
+                },
+                "threats": {
+                    "all": 0,
+                    "type": {},
+                    "country": {}
+                }
+            }
+        },
+        {
+            "colo_id": "HKG",
+            "timeseries": [
+                {
+                    "since": "2019-01-23T15:00:00Z",
+                    "until": "2019-01-23T15:01:00Z",
+                    "requests": {
+                        "all": 10,
+                        "cached": 0,
+                        "uncached": 10,
+                        "http_status": {
+                            "200": 4,
+                            "201": 2,
+                            "405": 4
+                        },
+                        "country": {
+                            "HK": 10
+                        }
+                    },
+                    "bandwidth": {
+                        "all": 13783,
+                        "cached": 0,
+                        "uncached": 13783
+                    },
+                    "threats": {
+                        "all": 0,
+                        "type": {},
+                        "country": {}
+                    }
+                },
+                {
+                    "since": "2019-01-23T15:01:00Z",
+                    "until": "2019-01-23T15:02:00Z",
+                    "requests": {
+                        "all": 16,
+                        "cached": 0,
+                        "uncached": 16,
+                        "http_status": {
+                            "200": 9,
+                            "201": 4,
+                            "405": 3
+                        },
+                        "country": {
+                            "HK": 16
+                        }
+                    },
+                    "bandwidth": {
+                        "all": 21908,
+                        "cached": 0,
+                        "uncached": 21908
+                    },
+                    "threats": {
+                        "all": 0,
+                        "type": {},
+                        "country": {}
+                    }
+                },
+                {
+                    "since": "2019-01-23T15:02:00Z",
+                    "until": "2019-01-23T15:03:00Z",
+                    "requests": {
+                        "all": 10,
+                        "cached": 0,
+                        "uncached": 10,
+                        "http_status": {
+                            "200": 2,
+                            "201": 1,
+                            "405": 7
+                        },
+                        "country": {
+                            "HK": 10
+                        }
+                    },
+                    "bandwidth": {
+                        "all": 13608,
+                        "cached": 0,
+                        "uncached": 13608
+                    },
+                    "threats": {
+                        "all": 0,
+                        "type": {},
+                        "country": {}
+                    }
+                },
+                {
+                    "since": "2019-01-23T15:03:00Z",
+                    "until": "2019-01-23T15:04:00Z",
+                    "requests": {
+                        "all": 14,
+                        "cached": 0,
+                        "uncached": 14,
+                        "http_status": {
+                            "200": 6,
+                            "201": 3,
+                            "405": 5
+                        },
+                        "country": {
+                            "HK": 14
+                        }
+                    },
+                    "bandwidth": {
+                        "all": 18658,
+                        "cached": 0,
+                        "uncached": 18658
+                    },
+                    "threats": {
+                        "all": 0,
+                        "type": {},
+                        "country": {}
+                    }
+                },
+                {
+                    "since": "2019-01-23T15:04:00Z",
+                    "until": "2019-01-23T15:05:00Z",
+                    "requests": {
+                        "all": 17,
+                        "cached": 0,
+                        "uncached": 17,
+                        "http_status": {
+                            "200": 8,
+                            "201": 4,
+                            "405": 5
+                        },
+                        "country": {
+                            "HK": 17
+                        }
+                    },
+                    "bandwidth": {
+                        "all": 22268,
+                        "cached": 0,
+                        "uncached": 22268
+                    },
+                    "threats": {
+                        "all": 0,
+                        "type": {},
+                        "country": {}
+                    }
+                }
+            ],
+            "totals": {
+                "since": "2019-01-23T15:00:00Z",
+                "until": "2019-01-23T15:05:00Z",
+                "requests": {
+                    "all": 67,
+                    "cached": 0,
+                    "uncached": 67,
+                    "http_status": {
+                        "200": 29,
+                        "201": 14,
+                        "405": 24
+                    },
+                    "country": {
+                        "HK": 67
+                    }
+                },
+                "bandwidth": {
+                    "all": 90225,
+                    "cached": 0,
+                    "uncached": 90225
+                },
+                "threats": {
+                    "all": 0,
+                    "type": {},
+                    "country": {}
+                }
+            }
+        },
+        {
+            "colo_id": "IAD",
+            "timeseries": [
+                {
+                    "since": "2019-01-23T15:00:00Z",
+                    "until": "2019-01-23T15:01:00Z",
+                    "requests": {
+                        "all": 64,
+                        "cached": 0,
+                        "uncached": 64,
+                        "http_status": {
+                            "200": 41,
+                            "301": 17,
+                            "405": 6
+                        },
+                        "country": {
+                            "US": 64
+                        }
+                    },
+                    "bandwidth": {
+                        "all": 648448,
+                        "cached": 0,
+                        "uncached": 648448
+                    },
+                    "threats": {
+                        "all": 0,
+                        "type": {},
+                        "country": {}
+                    }
+                },
+                {
+                    "since": "2019-01-23T15:01:00Z",
+                    "until": "2019-01-23T15:02:00Z",
+                    "requests": {
+                        "all": 55,
+                        "cached": 0,
+                        "uncached": 55,
+                        "http_status": {
+                            "200": 37,
+                            "301": 12,
+                            "405": 6
+                        },
+                        "country": {
+                            "US": 55
+                        }
+                    },
+                    "bandwidth": {
+                        "all": 596479,
+                        "cached": 0,
+                        "uncached": 596479
+                    },
+                    "threats": {
+                        "all": 0,
+                        "type": {},
+                        "country": {}
+                    }
+                },
+                {
+                    "since": "2019-01-23T15:02:00Z",
+                    "until": "2019-01-23T15:03:00Z",
+                    "requests": {
+                        "all": 60,
+                        "cached": 0,
+                        "uncached": 60,
+                        "http_status": {
+                            "200": 35,
+                            "301": 21,
+                            "405": 4
+                        },
+                        "country": {
+                            "US": 60
+                        }
+                    },
+                    "bandwidth": {
+                        "all": 568639,
+                        "cached": 0,
+                        "uncached": 568639
+                    },
+                    "threats": {
+                        "all": 0,
+                        "type": {},
+                        "country": {}
+                    }
+                },
+                {
+                    "since": "2019-01-23T15:03:00Z",
+                    "until": "2019-01-23T15:04:00Z",
+                    "requests": {
+                        "all": 73,
+                        "cached": 0,
+                        "uncached": 73,
+                        "http_status": {
+                            "200": 45,
+                            "301": 19,
+                            "307": 1,
+                            "405": 8
+                        },
+                        "country": {
+                            "US": 73
+                        }
+                    },
+                    "bandwidth": {
+                        "all": 754861,
+                        "cached": 0,
+                        "uncached": 754861
+                    },
+                    "threats": {
+                        "all": 0,
+                        "type": {},
+                        "country": {}
+                    }
+                },
+                {
+                    "since": "2019-01-23T15:04:00Z",
+                    "until": "2019-01-23T15:05:00Z",
+                    "requests": {
+                        "all": 63,
+                        "cached": 2,
+                        "uncached": 61,
+                        "http_status": {
+                            "200": 42,
+                            "201": 1,
+                            "301": 15,
+                            "404": 2,
+                            "405": 1,
+                            "499": 2
+                        },
+                        "country": {
+                            "US": 63
+                        }
+                    },
+                    "bandwidth": {
+                        "all": 670727,
+                        "cached": 59398,
+                        "uncached": 611329
+                    },
+                    "threats": {
+                        "all": 0,
+                        "type": {},
+                        "country": {}
+                    }
+                }
+            ],
+            "totals": {
+                "since": "2019-01-23T15:00:00Z",
+                "until": "2019-01-23T15:05:00Z",
+                "requests": {
+                    "all": 315,
+                    "cached": 2,
+                    "uncached": 313,
+                    "http_status": {
+                        "200": 200,
+                        "201": 1,
+                        "301": 84,
+                        "307": 1,
+                        "404": 2,
+                        "405": 25,
+                        "499": 2
+                    },
+                    "country": {
+                        "US": 315
+                    }
+                },
+                "bandwidth": {
+                    "all": 3239154,
+                    "cached": 59398,
+                    "uncached": 3179756
+                },
+                "threats": {
+                    "all": 0,
+                    "type": {},
+                    "country": {}
+                }
+            }
+        },
+        {
+            "colo_id": "LAD",
+            "timeseries": [
+                {
+                    "since": "2019-01-23T15:00:00Z",
+                    "until": "2019-01-23T15:01:00Z",
+                    "requests": {
+                        "all": 0,
+                        "cached": 0,
+                        "uncached": 0,
+                        "http_status": {},
+                        "country": {}
+                    },
+                    "bandwidth": {
+                        "all": 0,
+                        "cached": 0,
+                        "uncached": 0
+                    },
+                    "threats": {
+                        "all": 0,
+                        "type": {},
+                        "country": {}
+                    }
+                },
+                {
+                    "since": "2019-01-23T15:01:00Z",
+                    "until": "2019-01-23T15:02:00Z",
+                    "requests": {
+                        "all": 0,
+                        "cached": 0,
+                        "uncached": 0,
+                        "http_status": {},
+                        "country": {}
+                    },
+                    "bandwidth": {
+                        "all": 0,
+                        "cached": 0,
+                        "uncached": 0
+                    },
+                    "threats": {
+                        "all": 0,
+                        "type": {},
+                        "country": {}
+                    }
+                },
+                {
+                    "since": "2019-01-23T15:02:00Z",
+                    "until": "2019-01-23T15:03:00Z",
+                    "requests": {
+                        "all": 0,
+                        "cached": 0,
+                        "uncached": 0,
+                        "http_status": {},
+                        "country": {}
+                    },
+                    "bandwidth": {
+                        "all": 0,
+                        "cached": 0,
+                        "uncached": 0
+                    },
+                    "threats": {
+                        "all": 0,
+                        "type": {},
+                        "country": {}
+                    }
+                },
+                {
+                    "since": "2019-01-23T15:03:00Z",
+                    "until": "2019-01-23T15:04:00Z",
+                    "requests": {
+                        "all": 20,
+                        "cached": 4,
+                        "uncached": 16,
+                        "http_status": {
+                            "200": 15,
+                            "201": 1,
+                            "401": 4
+                        },
+                        "country": {
+                            "AO": 20
+                        }
+                    },
+                    "bandwidth": {
+                        "all": 103794,
+                        "cached": 56261,
+                        "uncached": 47533
+                    },
+                    "threats": {
+                        "all": 0,
+                        "type": {},
+                        "country": {}
+                    }
+                },
+                {
+                    "since": "2019-01-23T15:04:00Z",
+                    "until": "2019-01-23T15:05:00Z",
+                    "requests": {
+                        "all": 0,
+                        "cached": 0,
+                        "uncached": 0,
+                        "http_status": {},
+                        "country": {}
+                    },
+                    "bandwidth": {
+                        "all": 0,
+                        "cached": 0,
+                        "uncached": 0
+                    },
+                    "threats": {
+                        "all": 0,
+                        "type": {},
+                        "country": {}
+                    }
+                }
+            ],
+            "totals": {
+                "since": "2019-01-23T15:00:00Z",
+                "until": "2019-01-23T15:05:00Z",
+                "requests": {
+                    "all": 20,
+                    "cached": 4,
+                    "uncached": 16,
+                    "http_status": {
+                        "200": 15,
+                        "201": 1,
+                        "401": 4
+                    },
+                    "country": {
+                        "AO": 20
+                    }
+                },
+                "bandwidth": {
+                    "all": 103794,
+                    "cached": 56261,
+                    "uncached": 47533
+                },
+                "threats": {
+                    "all": 0,
+                    "type": {},
+                    "country": {}
+                }
+            }
+        },
+        {
+            "colo_id": "LHR",
+            "timeseries": [
+                {
+                    "since": "2019-01-23T15:00:00Z",
+                    "until": "2019-01-23T15:01:00Z",
+                    "requests": {
+                        "all": 0,
+                        "cached": 0,
+                        "uncached": 0,
+                        "http_status": {},
+                        "country": {}
+                    },
+                    "bandwidth": {
+                        "all": 0,
+                        "cached": 0,
+                        "uncached": 0
+                    },
+                    "threats": {
+                        "all": 0,
+                        "type": {},
+                        "country": {}
+                    }
+                },
+                {
+                    "since": "2019-01-23T15:01:00Z",
+                    "until": "2019-01-23T15:02:00Z",
+                    "requests": {
+                        "all": 0,
+                        "cached": 0,
+                        "uncached": 0,
+                        "http_status": {},
+                        "country": {}
+                    },
+                    "bandwidth": {
+                        "all": 0,
+                        "cached": 0,
+                        "uncached": 0
+                    },
+                    "threats": {
+                        "all": 0,
+                        "type": {},
+                        "country": {}
+                    }
+                },
+                {
+                    "since": "2019-01-23T15:02:00Z",
+                    "until": "2019-01-23T15:03:00Z",
+                    "requests": {
+                        "all": 0,
+                        "cached": 0,
+                        "uncached": 0,
+                        "http_status": {},
+                        "country": {}
+                    },
+                    "bandwidth": {
+                        "all": 0,
+                        "cached": 0,
+                        "uncached": 0
+                    },
+                    "threats": {
+                        "all": 0,
+                        "type": {},
+                        "country": {}
+                    }
+                },
+                {
+                    "since": "2019-01-23T15:03:00Z",
+                    "until": "2019-01-23T15:04:00Z",
+                    "requests": {
+                        "all": 1,
+                        "cached": 0,
+                        "uncached": 1,
+                        "http_status": {
+                            "202": 1
+                        },
+                        "country": {
+                            "GB": 1
+                        }
+                    },
+                    "bandwidth": {
+                        "all": 909,
+                        "cached": 0,
+                        "uncached": 909
+                    },
+                    "threats": {
+                        "all": 0,
+                        "type": {},
+                        "country": {}
+                    }
+                },
+                {
+                    "since": "2019-01-23T15:04:00Z",
+                    "until": "2019-01-23T15:05:00Z",
+                    "requests": {
+                        "all": 0,
+                        "cached": 0,
+                        "uncached": 0,
+                        "http_status": {},
+                        "country": {}
+                    },
+                    "bandwidth": {
+                        "all": 0,
+                        "cached": 0,
+                        "uncached": 0
+                    },
+                    "threats": {
+                        "all": 0,
+                        "type": {},
+                        "country": {}
+                    }
+                }
+            ],
+            "totals": {
+                "since": "2019-01-23T15:00:00Z",
+                "until": "2019-01-23T15:05:00Z",
+                "requests": {
+                    "all": 1,
+                    "cached": 0,
+                    "uncached": 1,
+                    "http_status": {
+                        "202": 1
+                    },
+                    "country": {
+                        "GB": 1
+                    }
+                },
+                "bandwidth": {
+                    "all": 909,
+                    "cached": 0,
+                    "uncached": 909
+                },
+                "threats": {
+                    "all": 0,
+                    "type": {},
+                    "country": {}
+                }
+            }
+        },
+        {
+            "colo_id": "LIS",
+            "timeseries": [
+                {
+                    "since": "2019-01-23T15:00:00Z",
+                    "until": "2019-01-23T15:01:00Z",
+                    "requests": {
+                        "all": 617,
+                        "cached": 96,
+                        "uncached": 521,
+                        "http_status": {
+                            "200": 347,
+                            "201": 150,
+                            "202": 46,
+                            "301": 3,
+                            "302": 12,
+                            "304": 5,
+                            "401": 42,
+                            "404": 7,
+                            "499": 5
+                        },
+                        "country": {
+                            "CV": 27,
+                            "PT": 590
+                        }
+                    },
+                    "bandwidth": {
+                        "all": 4622830,
+                        "cached": 2636425,
+                        "uncached": 1986405
+                    },
+                    "threats": {
+                        "all": 0,
+                        "type": {},
+                        "country": {}
+                    }
+                },
+                {
+                    "since": "2019-01-23T15:01:00Z",
+                    "until": "2019-01-23T15:02:00Z",
+                    "requests": {
+                        "all": 529,
+                        "cached": 62,
+                        "uncached": 467,
+                        "http_status": {
+                            "200": 288,
+                            "201": 77,
+                            "202": 104,
+                            "204": 3,
+                            "301": 1,
+                            "302": 7,
+                            "304": 2,
+                            "401": 44,
+                            "404": 2,
+                            "499": 1
+                        },
+                        "country": {
+                            "CV": 14,
+                            "PT": 515
+                        }
+                    },
+                    "bandwidth": {
+                        "all": 2794437,
+                        "cached": 1562300,
+                        "uncached": 1232137
+                    },
+                    "threats": {
+                        "all": 0,
+                        "type": {},
+                        "country": {}
+                    }
+                },
+                {
+                    "since": "2019-01-23T15:02:00Z",
+                    "until": "2019-01-23T15:03:00Z",
+                    "requests": {
+                        "all": 663,
+                        "cached": 86,
+                        "uncached": 577,
+                        "http_status": {
+                            "200": 326,
+                            "201": 49,
+                            "202": 176,
+                            "204": 11,
+                            "301": 6,
+                            "302": 2,
+                            "304": 3,
+                            "400": 1,
+                            "401": 72,
+                            "404": 14,
+                            "406": 1,
+                            "499": 2
+                        },
+                        "country": {
+                            "CV": 28,
+                            "PT": 635
+                        }
+                    },
+                    "bandwidth": {
+                        "all": 3567324,
+                        "cached": 2247371,
+                        "uncached": 1319953
+                    },
+                    "threats": {
+                        "all": 0,
+                        "type": {},
+                        "country": {}
+                    }
+                },
+                {
+                    "since": "2019-01-23T15:03:00Z",
+                    "until": "2019-01-23T15:04:00Z",
+                    "requests": {
+                        "all": 375,
+                        "cached": 34,
+                        "uncached": 341,
+                        "http_status": {
+                            "200": 200,
+                            "201": 72,
+                            "202": 37,
+                            "204": 1,
+                            "301": 2,
+                            "302": 6,
+                            "304": 14,
+                            "400": 2,
+                            "401": 36,
+                            "404": 4,
+                            "499": 1
+                        },
+                        "country": {
+                            "CV": 19,
+                            "PT": 356
+                        }
+                    },
+                    "bandwidth": {
+                        "all": 1473349,
+                        "cached": 506330,
+                        "uncached": 967019
+                    },
+                    "threats": {
+                        "all": 0,
+                        "type": {},
+                        "country": {}
+                    }
+                },
+                {
+                    "since": "2019-01-23T15:04:00Z",
+                    "until": "2019-01-23T15:05:00Z",
+                    "requests": {
+                        "all": 611,
+                        "cached": 56,
+                        "uncached": 555,
+                        "http_status": {
+                            "200": 329,
+                            "201": 112,
+                            "202": 93,
+                            "204": 5,
+                            "301": 3,
+                            "302": 11,
+                            "304": 7,
+                            "400": 1,
+                            "401": 41,
+                            "404": 8,
+                            "499": 1
+                        },
+                        "country": {
+                            "CV": 3,
+                            "PT": 608
+                        }
+                    },
+                    "bandwidth": {
+                        "all": 2699594,
+                        "cached": 1327589,
+                        "uncached": 1372005
+                    },
+                    "threats": {
+                        "all": 0,
+                        "type": {},
+                        "country": {}
+                    }
+                }
+            ],
+            "totals": {
+                "since": "2019-01-23T15:00:00Z",
+                "until": "2019-01-23T15:05:00Z",
+                "requests": {
+                    "all": 2795,
+                    "cached": 334,
+                    "uncached": 2461,
+                    "http_status": {
+                        "200": 1490,
+                        "201": 460,
+                        "202": 456,
+                        "204": 20,
+                        "301": 15,
+                        "302": 38,
+                        "304": 31,
+                        "400": 4,
+                        "401": 235,
+                        "404": 35,
+                        "406": 1,
+                        "499": 10
+                    },
+                    "country": {
+                        "CV": 91,
+                        "PT": 2704
+                    }
+                },
+                "bandwidth": {
+                    "all": 15157534,
+                    "cached": 8280015,
+                    "uncached": 6877519
+                },
+                "threats": {
+                    "all": 0,
+                    "type": {},
+                    "country": {}
+                }
+            }
+        },
+        {
+            "colo_id": "MAD",
+            "timeseries": [
+                {
+                    "since": "2019-01-23T15:00:00Z",
+                    "until": "2019-01-23T15:01:00Z",
+                    "requests": {
+                        "all": 0,
+                        "cached": 0,
+                        "uncached": 0,
+                        "http_status": {},
+                        "country": {}
+                    },
+                    "bandwidth": {
+                        "all": 0,
+                        "cached": 0,
+                        "uncached": 0
+                    },
+                    "threats": {
+                        "all": 0,
+                        "type": {},
+                        "country": {}
+                    }
+                },
+                {
+                    "since": "2019-01-23T15:01:00Z",
+                    "until": "2019-01-23T15:02:00Z",
+                    "requests": {
+                        "all": 25,
+                        "cached": 0,
+                        "uncached": 25,
+                        "http_status": {
+                            "200": 5,
+                            "202": 19,
+                            "401": 1
+                        },
+                        "country": {
+                            "ES": 25
+                        }
+                    },
+                    "bandwidth": {
+                        "all": 64739,
+                        "cached": 0,
+                        "uncached": 64739
+                    },
+                    "threats": {
+                        "all": 0,
+                        "type": {},
+                        "country": {}
+                    }
+                },
+                {
+                    "since": "2019-01-23T15:02:00Z",
+                    "until": "2019-01-23T15:03:00Z",
+                    "requests": {
+                        "all": 2,
+                        "cached": 0,
+                        "uncached": 2,
+                        "http_status": {
+                            "200": 1,
+                            "301": 1
+                        },
+                        "country": {
+                            "ES": 2
+                        }
+                    },
+                    "bandwidth": {
+                        "all": 91160,
+                        "cached": 0,
+                        "uncached": 91160
+                    },
+                    "threats": {
+                        "all": 0,
+                        "type": {},
+                        "country": {}
+                    }
+                },
+                {
+                    "since": "2019-01-23T15:03:00Z",
+                    "until": "2019-01-23T15:04:00Z",
+                    "requests": {
+                        "all": 0,
+                        "cached": 0,
+                        "uncached": 0,
+                        "http_status": {},
+                        "country": {}
+                    },
+                    "bandwidth": {
+                        "all": 0,
+                        "cached": 0,
+                        "uncached": 0
+                    },
+                    "threats": {
+                        "all": 0,
+                        "type": {},
+                        "country": {}
+                    }
+                },
+                {
+                    "since": "2019-01-23T15:04:00Z",
+                    "until": "2019-01-23T15:05:00Z",
+                    "requests": {
+                        "all": 0,
+                        "cached": 0,
+                        "uncached": 0,
+                        "http_status": {},
+                        "country": {}
+                    },
+                    "bandwidth": {
+                        "all": 0,
+                        "cached": 0,
+                        "uncached": 0
+                    },
+                    "threats": {
+                        "all": 0,
+                        "type": {},
+                        "country": {}
+                    }
+                }
+            ],
+            "totals": {
+                "since": "2019-01-23T15:00:00Z",
+                "until": "2019-01-23T15:05:00Z",
+                "requests": {
+                    "all": 27,
+                    "cached": 0,
+                    "uncached": 27,
+                    "http_status": {
+                        "200": 6,
+                        "202": 19,
+                        "301": 1,
+                        "401": 1
+                    },
+                    "country": {
+                        "ES": 27
+                    }
+                },
+                "bandwidth": {
+                    "all": 155899,
+                    "cached": 0,
+                    "uncached": 155899
+                },
+                "threats": {
+                    "all": 0,
+                    "type": {},
+                    "country": {}
+                }
+            }
+        },
+        {
+            "colo_id": "MDE",
+            "timeseries": [
+                {
+                    "since": "2019-01-23T15:00:00Z",
+                    "until": "2019-01-23T15:01:00Z",
+                    "requests": {
+                        "all": 21,
+                        "cached": 5,
+                        "uncached": 16,
+                        "http_status": {
+                            "200": 13,
+                            "201": 5,
+                            "302": 1,
+                            "499": 2
+                        },
+                        "country": {
+                            "CO": 21
+                        }
+                    },
+                    "bandwidth": {
+                        "all": 140724,
+                        "cached": 55018,
+                        "uncached": 85706
+                    },
+                    "threats": {
+                        "all": 0,
+                        "type": {},
+                        "country": {}
+                    }
+                },
+                {
+                    "since": "2019-01-23T15:01:00Z",
+                    "until": "2019-01-23T15:02:00Z",
+                    "requests": {
+                        "all": 44,
+                        "cached": 0,
+                        "uncached": 44,
+                        "http_status": {
+                            "200": 12,
+                            "202": 31,
+                            "204": 1
+                        },
+                        "country": {
+                            "CO": 44
+                        }
+                    },
+                    "bandwidth": {
+                        "all": 52477,
+                        "cached": 0,
+                        "uncached": 52477
+                    },
+                    "threats": {
+                        "all": 0,
+                        "type": {},
+                        "country": {}
+                    }
+                },
+                {
+                    "since": "2019-01-23T15:02:00Z",
+                    "until": "2019-01-23T15:03:00Z",
+                    "requests": {
+                        "all": 3,
+                        "cached": 0,
+                        "uncached": 3,
+                        "http_status": {
+                            "202": 2,
+                            "204": 1
+                        },
+                        "country": {
+                            "CO": 3
+                        }
+                    },
+                    "bandwidth": {
+                        "all": 2708,
+                        "cached": 0,
+                        "uncached": 2708
+                    },
+                    "threats": {
+                        "all": 0,
+                        "type": {},
+                        "country": {}
+                    }
+                },
+                {
+                    "since": "2019-01-23T15:03:00Z",
+                    "until": "2019-01-23T15:04:00Z",
+                    "requests": {
+                        "all": 12,
+                        "cached": 0,
+                        "uncached": 12,
+                        "http_status": {
+                            "202": 7,
+                            "204": 4,
+                            "400": 1
+                        },
+                        "country": {
+                            "CO": 12
+                        }
+                    },
+                    "bandwidth": {
+                        "all": 11003,
+                        "cached": 0,
+                        "uncached": 11003
+                    },
+                    "threats": {
+                        "all": 0,
+                        "type": {},
+                        "country": {}
+                    }
+                },
+                {
+                    "since": "2019-01-23T15:04:00Z",
+                    "until": "2019-01-23T15:05:00Z",
+                    "requests": {
+                        "all": 15,
+                        "cached": 0,
+                        "uncached": 15,
+                        "http_status": {
+                            "200": 11,
+                            "202": 4
+                        },
+                        "country": {
+                            "CO": 15
+                        }
+                    },
+                    "bandwidth": {
+                        "all": 58842,
+                        "cached": 7825,
+                        "uncached": 51017
+                    },
+                    "threats": {
+                        "all": 0,
+                        "type": {},
+                        "country": {}
+                    }
+                }
+            ],
+            "totals": {
+                "since": "2019-01-23T15:00:00Z",
+                "until": "2019-01-23T15:05:00Z",
+                "requests": {
+                    "all": 95,
+                    "cached": 5,
+                    "uncached": 90,
+                    "http_status": {
+                        "200": 36,
+                        "201": 5,
+                        "202": 44,
+                        "204": 6,
+                        "302": 1,
+                        "400": 1,
+                        "499": 2
+                    },
+                    "country": {
+                        "CO": 95
+                    }
+                },
+                "bandwidth": {
+                    "all": 265754,
+                    "cached": 62843,
+                    "uncached": 202911
+                },
+                "threats": {
+                    "all": 0,
+                    "type": {},
+                    "country": {}
+                }
+            }
+        },
+        {
+            "colo_id": "MXP",
+            "timeseries": [
+                {
+                    "since": "2019-01-23T15:00:00Z",
+                    "until": "2019-01-23T15:01:00Z",
+                    "requests": {
+                        "all": 0,
+                        "cached": 0,
+                        "uncached": 0,
+                        "http_status": {},
+                        "country": {}
+                    },
+                    "bandwidth": {
+                        "all": 0,
+                        "cached": 0,
+                        "uncached": 0
+                    },
+                    "threats": {
+                        "all": 0,
+                        "type": {},
+                        "country": {}
+                    }
+                },
+                {
+                    "since": "2019-01-23T15:01:00Z",
+                    "until": "2019-01-23T15:02:00Z",
+                    "requests": {
+                        "all": 0,
+                        "cached": 0,
+                        "uncached": 0,
+                        "http_status": {},
+                        "country": {}
+                    },
+                    "bandwidth": {
+                        "all": 0,
+                        "cached": 0,
+                        "uncached": 0
+                    },
+                    "threats": {
+                        "all": 0,
+                        "type": {},
+                        "country": {}
+                    }
+                },
+                {
+                    "since": "2019-01-23T15:02:00Z",
+                    "until": "2019-01-23T15:03:00Z",
+                    "requests": {
+                        "all": 0,
+                        "cached": 0,
+                        "uncached": 0,
+                        "http_status": {},
+                        "country": {}
+                    },
+                    "bandwidth": {
+                        "all": 0,
+                        "cached": 0,
+                        "uncached": 0
+                    },
+                    "threats": {
+                        "all": 0,
+                        "type": {},
+                        "country": {}
+                    }
+                },
+                {
+                    "since": "2019-01-23T15:03:00Z",
+                    "until": "2019-01-23T15:04:00Z",
+                    "requests": {
+                        "all": 2,
+                        "cached": 0,
+                        "uncached": 2,
+                        "http_status": {
+                            "200": 1,
+                            "301": 1
+                        },
+                        "country": {
+                            "IT": 2
+                        }
+                    },
+                    "bandwidth": {
+                        "all": 25811,
+                        "cached": 0,
+                        "uncached": 25811
+                    },
+                    "threats": {
+                        "all": 0,
+                        "type": {},
+                        "country": {}
+                    }
+                },
+                {
+                    "since": "2019-01-23T15:04:00Z",
+                    "until": "2019-01-23T15:05:00Z",
+                    "requests": {
+                        "all": 0,
+                        "cached": 0,
+                        "uncached": 0,
+                        "http_status": {},
+                        "country": {}
+                    },
+                    "bandwidth": {
+                        "all": 0,
+                        "cached": 0,
+                        "uncached": 0
+                    },
+                    "threats": {
+                        "all": 0,
+                        "type": {},
+                        "country": {}
+                    }
+                }
+            ],
+            "totals": {
+                "since": "2019-01-23T15:00:00Z",
+                "until": "2019-01-23T15:05:00Z",
+                "requests": {
+                    "all": 2,
+                    "cached": 0,
+                    "uncached": 2,
+                    "http_status": {
+                        "200": 1,
+                        "301": 1
+                    },
+                    "country": {
+                        "IT": 2
+                    }
+                },
+                "bandwidth": {
+                    "all": 25811,
+                    "cached": 0,
+                    "uncached": 25811
+                },
+                "threats": {
+                    "all": 0,
+                    "type": {},
+                    "country": {}
+                }
+            }
+        },
+        {
+            "colo_id": "ORD",
+            "timeseries": [
+                {
+                    "since": "2019-01-23T15:00:00Z",
+                    "until": "2019-01-23T15:01:00Z",
+                    "requests": {
+                        "all": 7,
+                        "cached": 0,
+                        "uncached": 7,
+                        "http_status": {
+                            "405": 7
+                        },
+                        "country": {
+                            "US": 7
+                        }
+                    },
+                    "bandwidth": {
+                        "all": 9303,
+                        "cached": 0,
+                        "uncached": 9303
+                    },
+                    "threats": {
+                        "all": 0,
+                        "type": {},
+                        "country": {}
+                    }
+                },
+                {
+                    "since": "2019-01-23T15:01:00Z",
+                    "until": "2019-01-23T15:02:00Z",
+                    "requests": {
+                        "all": 9,
+                        "cached": 0,
+                        "uncached": 9,
+                        "http_status": {
+                            "200": 4,
+                            "201": 2,
+                            "405": 3
+                        },
+                        "country": {
+                            "US": 9
+                        }
+                    },
+                    "bandwidth": {
+                        "all": 12535,
+                        "cached": 0,
+                        "uncached": 12535
+                    },
+                    "threats": {
+                        "all": 0,
+                        "type": {},
+                        "country": {}
+                    }
+                },
+                {
+                    "since": "2019-01-23T15:02:00Z",
+                    "until": "2019-01-23T15:03:00Z",
+                    "requests": {
+                        "all": 5,
+                        "cached": 0,
+                        "uncached": 5,
+                        "http_status": {
+                            "200": 2,
+                            "201": 1,
+                            "405": 2
+                        },
+                        "country": {
+                            "US": 5
+                        }
+                    },
+                    "bandwidth": {
+                        "all": 6597,
+                        "cached": 0,
+                        "uncached": 6597
+                    },
+                    "threats": {
+                        "all": 0,
+                        "type": {},
+                        "country": {}
+                    }
+                },
+                {
+                    "since": "2019-01-23T15:03:00Z",
+                    "until": "2019-01-23T15:04:00Z",
+                    "requests": {
+                        "all": 3,
+                        "cached": 0,
+                        "uncached": 3,
+                        "http_status": {
+                            "405": 3
+                        },
+                        "country": {
+                            "US": 3
+                        }
+                    },
+                    "bandwidth": {
+                        "all": 3987,
+                        "cached": 0,
+                        "uncached": 3987
+                    },
+                    "threats": {
+                        "all": 0,
+                        "type": {},
+                        "country": {}
+                    }
+                },
+                {
+                    "since": "2019-01-23T15:04:00Z",
+                    "until": "2019-01-23T15:05:00Z",
+                    "requests": {
+                        "all": 4,
+                        "cached": 0,
+                        "uncached": 4,
+                        "http_status": {
+                            "405": 4
+                        },
+                        "country": {
+                            "US": 4
+                        }
+                    },
+                    "bandwidth": {
+                        "all": 5316,
+                        "cached": 0,
+                        "uncached": 5316
+                    },
+                    "threats": {
+                        "all": 0,
+                        "type": {},
+                        "country": {}
+                    }
+                }
+            ],
+            "totals": {
+                "since": "2019-01-23T15:00:00Z",
+                "until": "2019-01-23T15:05:00Z",
+                "requests": {
+                    "all": 28,
+                    "cached": 0,
+                    "uncached": 28,
+                    "http_status": {
+                        "200": 6,
+                        "201": 3,
+                        "405": 19
+                    },
+                    "country": {
+                        "US": 28
+                    }
+                },
+                "bandwidth": {
+                    "all": 37738,
+                    "cached": 0,
+                    "uncached": 37738
+                },
+                "threats": {
+                    "all": 0,
+                    "type": {},
+                    "country": {}
+                }
+            }
+        },
+        {
+            "colo_id": "SEA",
+            "timeseries": [
+                {
+                    "since": "2019-01-23T15:00:00Z",
+                    "until": "2019-01-23T15:01:00Z",
+                    "requests": {
+                        "all": 77,
+                        "cached": 0,
+                        "uncached": 77,
+                        "http_status": {
+                            "200": 58,
+                            "301": 5,
+                            "405": 13,
+                            "410": 1
+                        },
+                        "country": {
+                            "US": 77
+                        }
+                    },
+                    "bandwidth": {
+                        "all": 1394659,
+                        "cached": 0,
+                        "uncached": 1394659
+                    },
+                    "threats": {
+                        "all": 0,
+                        "type": {},
+                        "country": {}
+                    }
+                },
+                {
+                    "since": "2019-01-23T15:01:00Z",
+                    "until": "2019-01-23T15:02:00Z",
+                    "requests": {
+                        "all": 83,
+                        "cached": 2,
+                        "uncached": 81,
+                        "http_status": {
+                            "200": 66,
+                            "301": 3,
+                            "404": 3,
+                            "405": 11
+                        },
+                        "country": {
+                            "US": 83
+                        }
+                    },
+                    "bandwidth": {
+                        "all": 1327357,
+                        "cached": 2092,
+                        "uncached": 1325265
+                    },
+                    "threats": {
+                        "all": 0,
+                        "type": {},
+                        "country": {}
+                    }
+                },
+                {
+                    "since": "2019-01-23T15:02:00Z",
+                    "until": "2019-01-23T15:03:00Z",
+                    "requests": {
+                        "all": 73,
+                        "cached": 2,
+                        "uncached": 71,
+                        "http_status": {
+                            "200": 58,
+                            "301": 3,
+                            "307": 1,
+                            "404": 2,
+                            "405": 9
+                        },
+                        "country": {
+                            "US": 73
+                        }
+                    },
+                    "bandwidth": {
+                        "all": 766180,
+                        "cached": 2092,
+                        "uncached": 764088
+                    },
+                    "threats": {
+                        "all": 0,
+                        "type": {},
+                        "country": {}
+                    }
+                },
+                {
+                    "since": "2019-01-23T15:03:00Z",
+                    "until": "2019-01-23T15:04:00Z",
+                    "requests": {
+                        "all": 79,
+                        "cached": 2,
+                        "uncached": 77,
+                        "http_status": {
+                            "200": 54,
+                            "301": 9,
+                            "404": 2,
+                            "405": 14
+                        },
+                        "country": {
+                            "US": 79
+                        }
+                    },
+                    "bandwidth": {
+                        "all": 579640,
+                        "cached": 2092,
+                        "uncached": 577548
+                    },
+                    "threats": {
+                        "all": 0,
+                        "type": {},
+                        "country": {}
+                    }
+                },
+                {
+                    "since": "2019-01-23T15:04:00Z",
+                    "until": "2019-01-23T15:05:00Z",
+                    "requests": {
+                        "all": 78,
+                        "cached": 3,
+                        "uncached": 75,
+                        "http_status": {
+                            "200": 56,
+                            "301": 7,
+                            "404": 3,
+                            "405": 12
+                        },
+                        "country": {
+                            "US": 78
+                        }
+                    },
+                    "bandwidth": {
+                        "all": 648566,
+                        "cached": 3138,
+                        "uncached": 645428
+                    },
+                    "threats": {
+                        "all": 0,
+                        "type": {},
+                        "country": {}
+                    }
+                }
+            ],
+            "totals": {
+                "since": "2019-01-23T15:00:00Z",
+                "until": "2019-01-23T15:05:00Z",
+                "requests": {
+                    "all": 390,
+                    "cached": 9,
+                    "uncached": 381,
+                    "http_status": {
+                        "200": 292,
+                        "301": 27,
+                        "307": 1,
+                        "404": 10,
+                        "405": 59,
+                        "410": 1
+                    },
+                    "country": {
+                        "US": 390
+                    }
+                },
+                "bandwidth": {
+                    "all": 4716402,
+                    "cached": 9414,
+                    "uncached": 4706988
+                },
+                "threats": {
+                    "all": 0,
+                    "type": {},
+                    "country": {}
+                }
+            }
+        },
+        {
+            "colo_id": "SIN",
+            "timeseries": [
+                {
+                    "since": "2019-01-23T15:00:00Z",
+                    "until": "2019-01-23T15:01:00Z",
+                    "requests": {
+                        "all": 24,
+                        "cached": 0,
+                        "uncached": 24,
+                        "http_status": {
+                            "200": 6,
+                            "301": 9,
+                            "302": 3,
+                            "303": 4,
+                            "404": 2
+                        },
+                        "country": {
+                            "SG": 24
+                        }
+                    },
+                    "bandwidth": {
+                        "all": 171936,
+                        "cached": 0,
+                        "uncached": 171936
+                    },
+                    "threats": {
+                        "all": 0,
+                        "type": {},
+                        "country": {}
+                    }
+                },
+                {
+                    "since": "2019-01-23T15:01:00Z",
+                    "until": "2019-01-23T15:02:00Z",
+                    "requests": {
+                        "all": 30,
+                        "cached": 0,
+                        "uncached": 30,
+                        "http_status": {
+                            "200": 9,
+                            "301": 11,
+                            "303": 8,
+                            "404": 2
+                        },
+                        "country": {
+                            "SG": 30
+                        }
+                    },
+                    "bandwidth": {
+                        "all": 262624,
+                        "cached": 0,
+                        "uncached": 262624
+                    },
+                    "threats": {
+                        "all": 0,
+                        "type": {},
+                        "country": {}
+                    }
+                },
+                {
+                    "since": "2019-01-23T15:02:00Z",
+                    "until": "2019-01-23T15:03:00Z",
+                    "requests": {
+                        "all": 29,
+                        "cached": 0,
+                        "uncached": 29,
+                        "http_status": {
+                            "200": 7,
+                            "301": 11,
+                            "303": 7,
+                            "404": 3,
+                            "503": 1
+                        },
+                        "country": {
+                            "SG": 29
+                        }
+                    },
+                    "bandwidth": {
+                        "all": 202622,
+                        "cached": 0,
+                        "uncached": 202622
+                    },
+                    "threats": {
+                        "all": 0,
+                        "type": {},
+                        "country": {}
+                    }
+                },
+                {
+                    "since": "2019-01-23T15:03:00Z",
+                    "until": "2019-01-23T15:04:00Z",
+                    "requests": {
+                        "all": 15,
+                        "cached": 0,
+                        "uncached": 15,
+                        "http_status": {
+                            "200": 4,
+                            "301": 7,
+                            "303": 2,
+                            "404": 2
+                        },
+                        "country": {
+                            "SG": 15
+                        }
+                    },
+                    "bandwidth": {
+                        "all": 107359,
+                        "cached": 0,
+                        "uncached": 107359
+                    },
+                    "threats": {
+                        "all": 0,
+                        "type": {},
+                        "country": {}
+                    }
+                },
+                {
+                    "since": "2019-01-23T15:04:00Z",
+                    "until": "2019-01-23T15:05:00Z",
+                    "requests": {
+                        "all": 39,
+                        "cached": 0,
+                        "uncached": 39,
+                        "http_status": {
+                            "200": 14,
+                            "301": 13,
+                            "303": 12
+                        },
+                        "country": {
+                            "SG": 39
+                        }
+                    },
+                    "bandwidth": {
+                        "all": 403347,
+                        "cached": 0,
+                        "uncached": 403347
+                    },
+                    "threats": {
+                        "all": 0,
+                        "type": {},
+                        "country": {}
+                    }
+                }
+            ],
+            "totals": {
+                "since": "2019-01-23T15:00:00Z",
+                "until": "2019-01-23T15:05:00Z",
+                "requests": {
+                    "all": 137,
+                    "cached": 0,
+                    "uncached": 137,
+                    "http_status": {
+                        "200": 40,
+                        "301": 51,
+                        "302": 3,
+                        "303": 33,
+                        "404": 9,
+                        "503": 1
+                    },
+                    "country": {
+                        "SG": 137
+                    }
+                },
+                "bandwidth": {
+                    "all": 1147888,
+                    "cached": 0,
+                    "uncached": 1147888
+                },
+                "threats": {
+                    "all": 0,
+                    "type": {},
+                    "country": {}
+                }
+            }
+        },
+        {
+            "colo_id": "VNO",
+            "timeseries": [
+                {
+                    "since": "2019-01-23T15:00:00Z",
+                    "until": "2019-01-23T15:01:00Z",
+                    "requests": {
+                        "all": 0,
+                        "cached": 0,
+                        "uncached": 0,
+                        "http_status": {},
+                        "country": {}
+                    },
+                    "bandwidth": {
+                        "all": 0,
+                        "cached": 0,
+                        "uncached": 0
+                    },
+                    "threats": {
+                        "all": 0,
+                        "type": {},
+                        "country": {}
+                    }
+                },
+                {
+                    "since": "2019-01-23T15:01:00Z",
+                    "until": "2019-01-23T15:02:00Z",
+                    "requests": {
+                        "all": 0,
+                        "cached": 0,
+                        "uncached": 0,
+                        "http_status": {},
+                        "country": {}
+                    },
+                    "bandwidth": {
+                        "all": 0,
+                        "cached": 0,
+                        "uncached": 0
+                    },
+                    "threats": {
+                        "all": 0,
+                        "type": {},
+                        "country": {}
+                    }
+                },
+                {
+                    "since": "2019-01-23T15:02:00Z",
+                    "until": "2019-01-23T15:03:00Z",
+                    "requests": {
+                        "all": 22,
+                        "cached": 0,
+                        "uncached": 22,
+                        "http_status": {
+                            "200": 13,
+                            "201": 7,
+                            "302": 1,
+                            "404": 1
+                        },
+                        "country": {
+                            "LT": 22
+                        }
+                    },
+                    "bandwidth": {
+                        "all": 44384,
+                        "cached": 0,
+                        "uncached": 44384
+                    },
+                    "threats": {
+                        "all": 0,
+                        "type": {},
+                        "country": {}
+                    }
+                },
+                {
+                    "since": "2019-01-23T15:03:00Z",
+                    "until": "2019-01-23T15:04:00Z",
+                    "requests": {
+                        "all": 22,
+                        "cached": 0,
+                        "uncached": 22,
+                        "http_status": {
+                            "200": 8,
+                            "201": 12,
+                            "301": 2
+                        },
+                        "country": {
+                            "LT": 22
+                        }
+                    },
+                    "bandwidth": {
+                        "all": 87670,
+                        "cached": 0,
+                        "uncached": 87670
+                    },
+                    "threats": {
+                        "all": 0,
+                        "type": {},
+                        "country": {}
+                    }
+                },
+                {
+                    "since": "2019-01-23T15:04:00Z",
+                    "until": "2019-01-23T15:05:00Z",
+                    "requests": {
+                        "all": 67,
+                        "cached": 4,
+                        "uncached": 63,
+                        "http_status": {
+                            "200": 30,
+                            "201": 3,
+                            "202": 26,
+                            "204": 3,
+                            "302": 1,
+                            "401": 4
+                        },
+                        "country": {
+                            "LT": 67
+                        }
+                    },
+                    "bandwidth": {
+                        "all": 165399,
+                        "cached": 56261,
+                        "uncached": 109138
+                    },
+                    "threats": {
+                        "all": 0,
+                        "type": {},
+                        "country": {}
+                    }
+                }
+            ],
+            "totals": {
+                "since": "2019-01-23T15:00:00Z",
+                "until": "2019-01-23T15:05:00Z",
+                "requests": {
+                    "all": 111,
+                    "cached": 4,
+                    "uncached": 107,
+                    "http_status": {
+                        "200": 51,
+                        "201": 22,
+                        "202": 26,
+                        "204": 3,
+                        "301": 2,
+                        "302": 2,
+                        "401": 4,
+                        "404": 1
+                    },
+                    "country": {
+                        "LT": 111
+                    }
+                },
+                "bandwidth": {
+                    "all": 297453,
+                    "cached": 56261,
+                    "uncached": 241192
+                },
+                "threats": {
+                    "all": 0,
+                    "type": {},
+                    "country": {}
+                }
+            }
+        },
+        {
+            "colo_id": "ZRH",
+            "timeseries": [
+                {
+                    "since": "2019-01-23T15:00:00Z",
+                    "until": "2019-01-23T15:01:00Z",
+                    "requests": {
+                        "all": 2,
+                        "cached": 0,
+                        "uncached": 2,
+                        "http_status": {
+                            "202": 1,
+                            "204": 1
+                        },
+                        "country": {
+                            "CH": 2
+                        }
+                    },
+                    "bandwidth": {
+                        "all": 1799,
+                        "cached": 0,
+                        "uncached": 1799
+                    },
+                    "threats": {
+                        "all": 0,
+                        "type": {},
+                        "country": {}
+                    }
+                },
+                {
+                    "since": "2019-01-23T15:01:00Z",
+                    "until": "2019-01-23T15:02:00Z",
+                    "requests": {
+                        "all": 9,
+                        "cached": 0,
+                        "uncached": 9,
+                        "http_status": {
+                            "202": 7,
+                            "204": 1,
+                            "406": 1
+                        },
+                        "country": {
+                            "CH": 9
+                        }
+                    },
+                    "bandwidth": {
+                        "all": 8408,
+                        "cached": 0,
+                        "uncached": 8408
+                    },
+                    "threats": {
+                        "all": 0,
+                        "type": {},
+                        "country": {}
+                    }
+                },
+                {
+                    "since": "2019-01-23T15:02:00Z",
+                    "until": "2019-01-23T15:03:00Z",
+                    "requests": {
+                        "all": 12,
+                        "cached": 0,
+                        "uncached": 12,
+                        "http_status": {
+                            "202": 9,
+                            "204": 1,
+                            "400": 2
+                        },
+                        "country": {
+                            "CH": 12
+                        }
+                    },
+                    "bandwidth": {
+                        "all": 11231,
+                        "cached": 0,
+                        "uncached": 11231
+                    },
+                    "threats": {
+                        "all": 0,
+                        "type": {},
+                        "country": {}
+                    }
+                },
+                {
+                    "since": "2019-01-23T15:03:00Z",
+                    "until": "2019-01-23T15:04:00Z",
+                    "requests": {
+                        "all": 16,
+                        "cached": 0,
+                        "uncached": 16,
+                        "http_status": {
+                            "202": 12,
+                            "204": 1,
+                            "400": 2,
+                            "406": 1
+                        },
+                        "country": {
+                            "CH": 16
+                        }
+                    },
+                    "bandwidth": {
+                        "all": 15113,
+                        "cached": 0,
+                        "uncached": 15113
+                    },
+                    "threats": {
+                        "all": 0,
+                        "type": {},
+                        "country": {}
+                    }
+                },
+                {
+                    "since": "2019-01-23T15:04:00Z",
+                    "until": "2019-01-23T15:05:00Z",
+                    "requests": {
+                        "all": 21,
+                        "cached": 3,
+                        "uncached": 18,
+                        "http_status": {
+                            "200": 13,
+                            "201": 5,
+                            "302": 1,
+                            "401": 2
+                        },
+                        "country": {
+                            "CH": 21
+                        }
+                    },
+                    "bandwidth": {
+                        "all": 143860,
+                        "cached": 55018,
+                        "uncached": 88842
+                    },
+                    "threats": {
+                        "all": 0,
+                        "type": {},
+                        "country": {}
+                    }
+                }
+            ],
+            "totals": {
+                "since": "2019-01-23T15:00:00Z",
+                "until": "2019-01-23T15:05:00Z",
+                "requests": {
+                    "all": 60,
+                    "cached": 3,
+                    "uncached": 57,
+                    "http_status": {
+                        "200": 13,
+                        "201": 5,
+                        "202": 29,
+                        "204": 4,
+                        "302": 1,
+                        "400": 4,
+                        "401": 2,
+                        "406": 2
+                    },
+                    "country": {
+                        "CH": 60
+                    }
+                },
+                "bandwidth": {
+                    "all": 180411,
+                    "cached": 55018,
+                    "uncached": 125393
+                },
+                "threats": {
+                    "all": 0,
+                    "type": {},
+                    "country": {}
+                }
+            }
+        }
+    ]
+}

@@ -3,6 +3,7 @@ package data_collector
 import (
 	"git01.bravofly.com/n7/heimdall/cmd/client"
 	"git01.bravofly.com/n7/heimdall/cmd/model"
+	"github.com/cloudflare/cloudflare-go"
 	"log"
 	"os"
 	"strings"
@@ -20,27 +21,31 @@ func GetColocationTotals(aggregates []*model.Aggregate, config *model.Config) ([
 			continue
 		}
 
-		for _, zoneAnalyticsData := range zoneAnalyticsDataArray {
-			for _, timeSeries := range zoneAnalyticsData.Timeseries {
-
-				counters, present := aggregate.Totals[timeSeries.Until]
-				if !present {
-					counters = model.NewCounters()
-					aggregate.Totals[timeSeries.Until] = counters
-				}
-
-				counters.RequestAll.Value += timeSeries.Requests.All
-				counters.RequestCached.Value += timeSeries.Requests.Cached
-				counters.RequestUncached.Value += timeSeries.Requests.Uncached
-				counters.BandwidthAll.Value += timeSeries.Bandwidth.All
-				counters.BandwidthCached.Value += timeSeries.Bandwidth.Cached
-				counters.BandwidthUncached.Value += timeSeries.Bandwidth.Uncached
-				counters.HTTPStatus = totals(timeSeries.Requests.HTTPStatus, counters.HTTPStatus)
-
-			}
-		}
+		collectColocation(zoneAnalyticsDataArray, aggregate)
 	}
 	return aggregates, nil
+}
+
+func collectColocation(zoneAnalyticsDataArray []cloudflare.ZoneAnalyticsColocation, aggregate *model.Aggregate) {
+	for _, zoneAnalyticsData := range zoneAnalyticsDataArray {
+		for _, timeSeries := range zoneAnalyticsData.Timeseries {
+
+			counters, present := aggregate.Totals[timeSeries.Until]
+			if !present {
+				counters = model.NewCounters()
+				aggregate.Totals[timeSeries.Until] = counters
+			}
+
+			counters.RequestAll.Value += timeSeries.Requests.All
+			counters.RequestCached.Value += timeSeries.Requests.Cached
+			counters.RequestUncached.Value += timeSeries.Requests.Uncached
+			counters.BandwidthAll.Value += timeSeries.Bandwidth.All
+			counters.BandwidthCached.Value += timeSeries.Bandwidth.Cached
+			counters.BandwidthUncached.Value += timeSeries.Bandwidth.Uncached
+			counters.HTTPStatus = totals(timeSeries.Requests.HTTPStatus, counters.HTTPStatus)
+
+		}
+	}
 }
 
 func totals(source map[string]int, target map[string]model.Counter) map[string]model.Counter {
