@@ -1,6 +1,7 @@
 package metric
 
 import (
+	"fmt"
 	"git01.bravofly.com/n7/heimdall/cmd/model"
 	"github.com/marpaia/graphite-golang"
 	"log"
@@ -12,7 +13,10 @@ import (
 
 var logger = log.New(os.Stdout, "[HEIMDALL] ", log.LstdFlags)
 
-const METRICS_PREFIX = "cloudflare."
+const (
+	wafMetricsPattern     = "cloudflare.%s.%s.%s"
+	defaultMetricsPattern = "cloudflare.%s.%s"
+)
 
 func adaptDataToMetrics(aggregates []*model.Aggregate) []graphite.Metric {
 	metrics := make([]graphite.Metric, 0)
@@ -28,13 +32,28 @@ func adaptDataToMetrics(aggregates []*model.Aggregate) []graphite.Metric {
 			for _, entry := range counters.HTTPStatus {
 				metrics = append(metrics, metric(aggregate.ZoneName, entry.Key, strconv.Itoa(entry.Value), date))
 			}
+
+			for host, entry := range counters.WafTrigger {
+				metrics = append(metrics, wafMetric(aggregate.ZoneName, host, entry.Challenge.Key, strconv.Itoa(entry.Challenge.Value), date))
+				metrics = append(metrics, wafMetric(aggregate.ZoneName, host, entry.JSChallenge.Key, strconv.Itoa(entry.JSChallenge.Value), date))
+				metrics = append(metrics, wafMetric(aggregate.ZoneName, host, entry.Drop.Key, strconv.Itoa(entry.Drop.Value), date))
+				metrics = append(metrics, wafMetric(aggregate.ZoneName, host, entry.Simulate.Key, strconv.Itoa(entry.Simulate.Value), date))
+			}
 		}
 	}
 	return metrics
 }
 
+func wafMetric(zone, host, key, value string, date time.Time) graphite.Metric {
+	metricKey := strings.ToLower(fmt.Sprintf(wafMetricsPattern, normalize(zone), normalize(host), key))
+
+	logger.Printf("added metric %s, value %s, %v", metricKey, value, date.Unix())
+
+	return graphite.NewMetric(metricKey, value, date.Unix())
+}
+
 func metric(zone, key, value string, date time.Time) graphite.Metric {
-	metricKey := strings.ToLower(METRICS_PREFIX + normalize(zone) + "." + key)
+	metricKey := strings.ToLower(fmt.Sprintf(defaultMetricsPattern, normalize(zone), key))
 
 	logger.Printf("added metric %s, value %s, %v", metricKey, value, date.Unix())
 

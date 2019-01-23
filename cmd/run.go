@@ -3,15 +3,14 @@ package cmd
 import (
 	"encoding/json"
 	"fmt"
-	"git01.bravofly.com/golang/appfw/pkg/http/mgmt"
 	"git01.bravofly.com/n7/heimdall/cmd/client"
 	"git01.bravofly.com/n7/heimdall/cmd/data_collector"
+	"git01.bravofly.com/n7/heimdall/cmd/kubernetes"
 	"git01.bravofly.com/n7/heimdall/cmd/metric"
 	"git01.bravofly.com/n7/heimdall/cmd/model"
 	"gopkg.in/robfig/cron.v2"
 	"io/ioutil"
 	"log"
-	"net/http"
 	"os"
 	"os/signal"
 )
@@ -19,14 +18,8 @@ import (
 var logger = log.New(os.Stdout, "[HEIMDALL] ", log.LstdFlags)
 
 func Run() {
-	mgmt.ConfigureLiveness(func(w http.ResponseWriter, r *http.Request) {
-		w.WriteHeader(http.StatusOK)
-		return
-	})
-	mgmt.ConfigureReadiness(func(w http.ResponseWriter, r *http.Request) {
-		w.WriteHeader(http.StatusOK)
-		return
-	})
+	kubernetes.Liveness()
+	kubernetes.Readiness()
 
 	config := readConfig(os.Getenv("CONFIG_PATH"))
 	cronExpression := fmt.Sprintf("*/%s * * * *", config.CollectEveryMinutes)
@@ -68,7 +61,7 @@ func orchestrator(config *model.Config) func() {
 func dataCollector(config *model.Config) []*model.Aggregate {
 	aggregate, _ := client.GetZonesId()
 	aggregate, _ = data_collector.GetColocationTotals(aggregate, config)
-	//aggregate, _ = data_collector.GetWafTotals(aggregate)
+	aggregate, _ = data_collector.GetWafTotals(aggregate, config)
 
 	return aggregate
 }

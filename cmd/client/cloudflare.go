@@ -1,13 +1,9 @@
 package client
 
 import (
-	"encoding/json"
-	"fmt"
-	"git01.bravofly.com/n7/heimdall/cmd/model"
 	"github.com/cloudflare/cloudflare-go"
 	"golang.org/x/net/context"
 	"golang.org/x/time/rate"
-	"io/ioutil"
 	"log"
 	"net/http"
 	"os"
@@ -53,118 +49,4 @@ func createHeaders() map[string]string {
 		"X-Auth-Key":   os.Getenv("CLOUDFLARE_TOKEN"),
 		"Content-Type": "application/json",
 	}
-}
-
-func GetColosAPI(zoneID string, config *model.Config) ([]cloudflare.ZoneAnalyticsColocation, error) {
-	url := fmt.Sprintf(CloudFlareAPIRoot+"zones/%s/analytics/colos?since=-%s&until=-%s&continuous=%s", zoneID, config.CollectEveryMinutes, "1", "false")
-	request, _ := http.NewRequest(http.MethodGet, url, nil)
-
-	resp, err := doHttpCall(request)
-	if err != nil {
-		return nil, fmt.Errorf("get colocation analytics HTTP call error: %v", err)
-	}
-	response := model.ZoneAnalyticsColocationResponse{}
-	b, _ := ioutil.ReadAll(resp.Body)
-	if err := json.Unmarshal(b, &response); err != nil {
-		return nil, fmt.Errorf("HTTP body marshal to JSON error: %v", err)
-	}
-	if resp.StatusCode == http.StatusOK {
-		return response.Result, nil
-	}
-	return nil, fmt.Errorf("get colocation analytics HTTP error %d", resp.StatusCode)
-}
-
-func GetWafTriggersBy(zoneID string, since, until time.Time) ([]*model.WafTrigger, error) {
-	url := fmt.Sprintf(CloudFlareAPIRoot+"zones/%s/firewall/events?per_page=50", zoneID)
-	request, _ := http.NewRequest(http.MethodGet, url, nil)
-
-	resp, err := doHttpCall(request)
-	if err != nil {
-		return nil, fmt.Errorf("get WAF HTTP call error: %v", err)
-	}
-
-	response := model.WAFResponse{}
-	b, _ := ioutil.ReadAll(resp.Body)
-	if err := json.Unmarshal(b, &response); err != nil {
-		return nil, fmt.Errorf("HTTP body marshal to JSON error: %v", err)
-	}
-
-	triggers := make([]*model.WafTrigger, 0)
-
-	if resp.StatusCode == http.StatusOK {
-
-		nextWafTriggersBy(response.WafTriggers, triggers, zoneID, response.ResultInfo.NextPageId, since, until)
-
-		return triggers, nil
-	}
-
-	return nil, fmt.Errorf("get WAF HTTP error %d", resp.StatusCode)
-}
-
-func nextWafTriggersBy(triggers []model.WafTrigger, result []*model.WafTrigger, zoneID, nextPageId string, since, until time.Time) {
-	for _, wafTrigger := range triggers {
-		if beforeRange(since, wafTrigger.OccurredAt) {
-			continue
-		}
-
-		if afterRange(until, wafTrigger.OccurredAt) {
-			return
-		}
-
-		if inTimeRange(since, until, wafTrigger.OccurredAt) {
-			result = append(result, &wafTrigger)
-		}
-	}
-
-	if nextPageId != "" {
-		nextWafTriggers, _ := getWafTrigger(zoneID, nextPageId)
-		nextWafTriggersBy(nextWafTriggers, result, zoneID, nextPageId, since, until)
-	}
-}
-
-func afterRange(until, check time.Time) bool {
-	return check.Equal(until) || check.After(until)
-}
-func beforeRange(since, check time.Time) bool {
-	return check.Before(since)
-}
-
-func inTimeRange(since, until, check time.Time) bool {
-	return (check.After(since) || check.Equal(since)) && check.Before(until)
-}
-
-func getWafTrigger(zoneID, nextPageId string) ([]model.WafTrigger, error) {
-	url := fmt.Sprintf(CloudFlareAPIRoot+"zones/%s/firewall/events?per_page=50&next_page_id=%s", zoneID, nextPageId)
-	request, _ := http.NewRequest(http.MethodGet, url, nil)
-
-	resp, err := doHttpCall(request)
-	if err != nil {
-		return nil, fmt.Errorf("get WAF HTTP call error: %v", err)
-	}
-
-	response := model.WAFResponse{}
-	b, _ := ioutil.ReadAll(resp.Body)
-	if err := json.Unmarshal(b, &response); err != nil {
-		return nil, fmt.Errorf("HTTP body marshal to JSON error: %v", err)
-	}
-	if resp.StatusCode == http.StatusOK {
-		return response.WafTriggers, nil
-	}
-
-	return nil, fmt.Errorf("get WAF HTTP error %d", resp.StatusCode)
-}
-
-func GetZonesId() ([]*model.Aggregate, error) {
-	zones, err := cloudflareClient().ListZones()
-	if err != nil {
-		logger.Printf("ERROR ZoneName from CF Client %v", zones)
-		return nil, err
-	}
-
-	result := make([]*model.Aggregate, 0)
-	for _, zone := range zones {
-		result = append(result, model.NewAggregate(zone))
-	}
-
-	return result, nil
 }

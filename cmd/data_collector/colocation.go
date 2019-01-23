@@ -16,8 +16,8 @@ func GetColocationTotals(aggregates []*model.Aggregate, config *model.Config) ([
 
 		zoneAnalyticsDataArray, err := client.GetColosAPI(aggregate.ZoneID, config)
 		if err != nil {
-			logger.Printf("ERROR Getting ZoneName Analytics for zone %v, %v", aggregate.ZoneName, err)
-			return nil, err
+			logger.Printf("ERROR Getting Analytics for zone %v, %v", aggregate.ZoneName, err)
+			continue
 		}
 
 		for _, zoneAnalyticsData := range zoneAnalyticsDataArray {
