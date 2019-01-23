@@ -18,7 +18,7 @@ var logger = log.New(os.Stdout, "[HEIMDALL] ", log.LstdFlags)
 var rateLimiter = rate.NewLimiter(rate.Limit(4), 1)
 
 var client = &http.Client{
-	Timeout: time.Duration(5 * time.Second),
+	Timeout: time.Duration(10 * time.Second),
 }
 
 func cloudflareClient() *cloudflare.API {
