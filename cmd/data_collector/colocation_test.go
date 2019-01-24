@@ -1,25 +1,17 @@
 package data_collector
 
 import (
-	"encoding/json"
+	"git01.bravofly.com/n7/heimdall/cmd/client"
 	"git01.bravofly.com/n7/heimdall/cmd/model"
 	"github.com/cloudflare/cloudflare-go"
 	"github.com/magiconair/properties/assert"
-	"io/ioutil"
-	"os"
-	"path/filepath"
 	"testing"
 	"time"
 )
 
-func readAnalyticsColocationResponse() model.ZoneAnalyticsColocationResponse {
-	file, _ := os.Open(filepath.Join("..", "..", "test", "cloudflare_colocation.json"))
-
-	defer file.Close()
-	byteValue, _ := ioutil.ReadAll(file)
-	analyticsColocationResponse := model.ZoneAnalyticsColocationResponse{}
-	json.Unmarshal([]byte(byteValue), &analyticsColocationResponse)
-	return analyticsColocationResponse
+func readAnalyticsColocationResponse() []cloudflare.ZoneAnalyticsColocation {
+	colocations, _ := client.MockColocations{}.GetColosAPI("123")
+	return colocations
 }
 
 func Test_colocationDataCollection(t *testing.T) {
@@ -28,7 +20,7 @@ func Test_colocationDataCollection(t *testing.T) {
 		Name: "zone",
 	})
 
-	collectColocation(readAnalyticsColocationResponse().Result, aggregate)
+	collectColocation(readAnalyticsColocationResponse(), aggregate)
 
 	assert.Equal(t, len(aggregate.Totals), 5)
 	key, _ := time.Parse(time.RFC3339, "2019-01-23T15:01:00Z")
