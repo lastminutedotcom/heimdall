@@ -1,7 +1,7 @@
 package data_collector
 
 import (
-	"git01.bravofly.com/n7/heimdall/cmd/client"
+	"git01.bravofly.com/n7/heimdall/cmd/client/colocation"
 	"git01.bravofly.com/n7/heimdall/cmd/model"
 	"github.com/cloudflare/cloudflare-go"
 	"log"
@@ -11,7 +11,7 @@ import (
 
 var logger = log.New(os.Stdout, "[HEIMDALL] ", log.LstdFlags)
 
-func GetColocationTotals(aggregates []*model.Aggregate, colocationsClient client.ColocationsClient) ([]*model.Aggregate, error) {
+func GetColocationTotals(aggregates []*model.Aggregate, colocationsClient colocation.ColocationsClient) ([]*model.Aggregate, error) {
 	for _, aggregate := range aggregates {
 		logger.Printf("collecting co-location metrics for %s", aggregate.ZoneName)
 

@@ -1,8 +1,9 @@
-package client
+package colocation
 
 import (
 	"encoding/json"
 	"fmt"
+	"git01.bravofly.com/n7/heimdall/cmd/client"
 	"git01.bravofly.com/n7/heimdall/cmd/model"
 	"github.com/cloudflare/cloudflare-go"
 	"io/ioutil"
@@ -14,10 +15,10 @@ type HttpColocations struct {
 }
 
 func (h HttpColocations) GetColosAPI(zoneID string) ([]cloudflare.ZoneAnalyticsColocation, error) {
-	url := fmt.Sprintf(CloudFlareAPIRoot+"zones/%s/analytics/colos?since=-%s&until=-%s&continuous=%s", zoneID, h.Config.CollectEveryMinutes, "1", "false")
+	url := fmt.Sprintf(client.CloudFlareAPIRoot+"zones/%s/analytics/colos?since=-%s&until=-%s&continuous=%s", zoneID, h.Config.CollectEveryMinutes, "1", "false")
 	request, _ := http.NewRequest(http.MethodGet, url, nil)
 
-	resp, err := doHttpCall(request)
+	resp, err := client.DoHttpCall(request)
 	if err != nil {
 		return nil, fmt.Errorf("get colocation analytics HTTP call error: %v", err)
 	}

@@ -1,4 +1,4 @@
-package client
+package colocation
 
 import (
 	"encoding/json"

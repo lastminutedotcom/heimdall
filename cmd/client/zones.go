@@ -6,7 +6,7 @@ import (
 )
 
 func GetZonesId() ([]*model.Aggregate, error) {
-	zones, err := cloudflareClient().ListZones()
+	zones, err := CloudflareClient().ListZones()
 	if err != nil {
 		return nil, fmt.Errorf("ERROR ZoneName from CF Client %v", zones)
 	}

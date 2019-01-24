@@ -21,7 +21,7 @@ var client = &http.Client{
 	Timeout: time.Duration(10 * time.Second),
 }
 
-func cloudflareClient() *cloudflare.API {
+func CloudflareClient() *cloudflare.API {
 	c, err := cloudflare.New(os.Getenv("CLOUDFLARE_TOKEN"), os.Getenv("CLOUDFLARE_EMAIL"),
 		cloudflare.UsingOrganization(os.Getenv("CLOUDFLARE_ORG_ID")), cloudflare.HTTPClient(client))
 	if err != nil {
@@ -30,7 +30,7 @@ func cloudflareClient() *cloudflare.API {
 	return c
 }
 
-func doHttpCall(request *http.Request) (*http.Response, error) {
+func DoHttpCall(request *http.Request) (*http.Response, error) {
 	rateLimiter.Wait(context.TODO())
 	request = setHeaders(request)
 	return client.Do(request)

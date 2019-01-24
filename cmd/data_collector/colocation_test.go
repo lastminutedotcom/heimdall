@@ -1,7 +1,7 @@
 package data_collector
 
 import (
-	"git01.bravofly.com/n7/heimdall/cmd/client"
+	"git01.bravofly.com/n7/heimdall/cmd/client/colocation"
 	"git01.bravofly.com/n7/heimdall/cmd/model"
 	"github.com/cloudflare/cloudflare-go"
 	"github.com/magiconair/properties/assert"
@@ -10,7 +10,7 @@ import (
 )
 
 func readAnalyticsColocationResponse() []cloudflare.ZoneAnalyticsColocation {
-	colocations, _ := client.MockColocations{}.GetColosAPI("123")
+	colocations, _ := colocation.MockColocations{}.GetColosAPI("123")
 	return colocations
 }
 

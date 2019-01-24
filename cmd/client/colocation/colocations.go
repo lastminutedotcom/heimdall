@@ -1,4 +1,4 @@
-package client
+package colocation
 
 import (
 	"github.com/cloudflare/cloudflare-go"

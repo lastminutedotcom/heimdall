@@ -12,7 +12,7 @@ func PushMetrics(aggregate []*model.Aggregate, config *model.Config) {
 	newGraphite, err := graphite.NewGraphite(config.GraphiteConfig.Host, config.GraphiteConfig.Port)
 
 	if err != nil {
-		logger.Fatalf("error creating graphite connection. %v", err)
+		logger.Printf("error creating graphite connection. %v", err)
 	}
 
 	newGraphite.SendMetrics(metrics)

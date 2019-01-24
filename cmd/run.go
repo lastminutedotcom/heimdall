@@ -4,6 +4,8 @@ import (
 	"encoding/json"
 	"fmt"
 	"git01.bravofly.com/n7/heimdall/cmd/client"
+	"git01.bravofly.com/n7/heimdall/cmd/client/colocation"
+	"git01.bravofly.com/n7/heimdall/cmd/client/waf"
 	"git01.bravofly.com/n7/heimdall/cmd/data_collector"
 	"git01.bravofly.com/n7/heimdall/cmd/kubernetes"
 	"git01.bravofly.com/n7/heimdall/cmd/metric"
@@ -61,10 +63,10 @@ func orchestrator(config *model.Config) func() {
 func dataCollector(config *model.Config) []*model.Aggregate {
 	aggregate, _ := client.GetZonesId()
 
-	aggregate, _ = data_collector.GetColocationTotals(aggregate, client.HttpColocations{
+	aggregate, _ = data_collector.GetColocationTotals(aggregate, colocation.HttpColocations{
 		Config: config,
 	})
-	aggregate, _ = data_collector.GetWafTotals(aggregate, config)
+	aggregate, _ = data_collector.GetWafTotals(aggregate, config, waf.HttpWafs{})
 
 	return aggregate
 }

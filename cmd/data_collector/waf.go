@@ -1,13 +1,13 @@
 package data_collector
 
 import (
-	"git01.bravofly.com/n7/heimdall/cmd/client"
+	"git01.bravofly.com/n7/heimdall/cmd/client/waf"
 	"git01.bravofly.com/n7/heimdall/cmd/model"
 	"strconv"
 	"time"
 )
 
-func GetWafTotals(aggregates []*model.Aggregate, config *model.Config) ([]*model.Aggregate, error) {
+func GetWafTotals(aggregates []*model.Aggregate, config *model.Config, client waf.WafsClient) ([]*model.Aggregate, error) {
 	for _, aggregate := range aggregates {
 		logger.Printf("collecting waf trigger metrics for %s", aggregate.ZoneName)
 		utc, _ := time.LoadLocation("UTC")
