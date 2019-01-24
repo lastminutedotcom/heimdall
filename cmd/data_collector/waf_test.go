@@ -14,8 +14,8 @@ func Test_correctAdapting(t *testing.T) {
 	now = time.Date(now.Year(), now.Month(), now.Day(), now.Hour(), now.Minute(), 0, 0, now.Location())
 
 	triggers := make([]model.WafTrigger, 0)
-	triggers = append(triggers, newWafTrigger("host.it", "drop", now))
-	triggers = append(triggers, newWafTrigger("host.it", "drop", now))
+	triggers = append(triggers, newWafTrigger("host.it", "block", now))
+	triggers = append(triggers, newWafTrigger("host.it", "block", now))
 	triggers = append(triggers, newWafTrigger("host.it", "challenge", now))
 	triggers = append(triggers, newWafTrigger("host.it", "challenge", now))
 	triggers = append(triggers, newWafTrigger("host.it", "challenge", now))
@@ -39,7 +39,7 @@ func Test_correctAdapting(t *testing.T) {
 
 	collectWaf(triggers, utc, aggregate)
 
-	assert.Equal(t, 2, aggregate.Totals[now].WafTrigger["host.it"].Drop.Value)
+	assert.Equal(t, 2, aggregate.Totals[now].WafTrigger["host.it"].Block.Value)
 	assert.Equal(t, 7, aggregate.Totals[now].WafTrigger["host.com"].Simulate.Value)
 
 }

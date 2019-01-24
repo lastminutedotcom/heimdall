@@ -25,7 +25,7 @@ type Counters struct {
 
 type WafTriggerResults struct {
 	Simulate    Counter
-	Drop        Counter
+	Block       Counter
 	Challenge   Counter
 	JSChallenge Counter
 }
@@ -55,7 +55,7 @@ func NewCounters() *Counters {
 func NewWafTriggerResult() *WafTriggerResults {
 	return &WafTriggerResults{
 		Simulate:    Counter{Key: "total.waf.trigger.simulate", Value: 0},
-		Drop:        Counter{Key: "total.waf.trigger.drop", Value: 0},
+		Block:       Counter{Key: "total.waf.trigger.block", Value: 0},
 		Challenge:   Counter{Key: "total.waf.trigger.challenge", Value: 0},
 		JSChallenge: Counter{Key: "total.waf.trigger.jschallenge", Value: 0},
 	}

@@ -36,7 +36,7 @@ func adaptDataToMetrics(aggregates []*model.Aggregate) []graphite.Metric {
 			for host, entry := range counters.WafTrigger {
 				metrics = append(metrics, wafMetric(aggregate.ZoneName, host, entry.Challenge.Key, strconv.Itoa(entry.Challenge.Value), date))
 				metrics = append(metrics, wafMetric(aggregate.ZoneName, host, entry.JSChallenge.Key, strconv.Itoa(entry.JSChallenge.Value), date))
-				metrics = append(metrics, wafMetric(aggregate.ZoneName, host, entry.Drop.Key, strconv.Itoa(entry.Drop.Value), date))
+				metrics = append(metrics, wafMetric(aggregate.ZoneName, host, entry.Block.Key, strconv.Itoa(entry.Block.Value), date))
 				metrics = append(metrics, wafMetric(aggregate.ZoneName, host, entry.Simulate.Key, strconv.Itoa(entry.Simulate.Value), date))
 			}
 		}

@@ -44,8 +44,8 @@ func collectWaf(triggers []model.WafTrigger, utc *time.Location, aggregate *mode
 			counters.WafTrigger[trigger.Host] = counter
 		}
 
-		if trigger.Action == "drop" {
-			counter.Drop.Value++
+		if trigger.Action == "block" {
+			counter.Block.Value++
 		}
 		if trigger.Action == "challenge" {
 			counter.Challenge.Value++
