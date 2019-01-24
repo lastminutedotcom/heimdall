@@ -2,18 +2,16 @@ package cmd
 
 import (
 	"encoding/json"
-	"fmt"
 	"git01.bravofly.com/n7/heimdall/cmd/client/colocation"
 	"git01.bravofly.com/n7/heimdall/cmd/client/waf"
 	"git01.bravofly.com/n7/heimdall/cmd/data_collector"
 	"git01.bravofly.com/n7/heimdall/cmd/kubernetes"
 	"git01.bravofly.com/n7/heimdall/cmd/metric"
 	"git01.bravofly.com/n7/heimdall/cmd/model"
-	"gopkg.in/robfig/cron.v2"
+	"git01.bravofly.com/n7/heimdall/cmd/scheduler"
 	"io/ioutil"
 	"log"
 	"os"
-	"os/signal"
 )
 
 var logger = log.New(os.Stdout, "[HEIMDALL] ", log.LstdFlags)
@@ -23,20 +21,26 @@ func Run() {
 	kubernetes.Readiness()
 
 	config := readConfig(os.Getenv("CONFIG_PATH"))
-	cronExpression := fmt.Sprintf("*/%s * * * *", config.CollectEveryMinutes)
+	sched := scheduler.Scheduler{
+		Config: config,
+	}
 
-	logger.Printf("start collecting data at every %sth minute of the last %s minute ", config.CollectEveryMinutes, config.CollectEveryMinutes)
+	sched.Start(orchestrator(config))
 
-	c := cron.New()
-	c.AddFunc(cronExpression, orchestrator(config))
-
-	go c.Start()
-	sig := make(chan os.Signal)
-	signal.Notify(sig, os.Interrupt, os.Kill)
-	s := <-sig
-	c.Stop()
-
-	fmt.Println("Got signal:", s)
+	//cronExpression := fmt.Sprintf("*/%s * * * *", sched.CollectEveryMinutes)
+	//
+	//logger.Printf("start collecting data at every %sth minute of the last %s minute ", config.CollectEveryMinutes, config.CollectEveryMinutes)
+	//
+	//c := cron.New()
+	//c.AddFunc(cronExpression, orchestrator(config))
+	//
+	//go c.Start()
+	//sig := make(chan os.Signal)
+	//signal.Notify(sig, os.Interrupt, os.Kill)
+	//s := <-sig
+	//c.Stop()
+	//
+	//fmt.Println("Got signal:", s)
 }
 
 func readConfig(filePath string) *model.Config {
