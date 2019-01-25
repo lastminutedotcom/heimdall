@@ -2,7 +2,6 @@ package cmd
 
 import (
 	"encoding/json"
-	"git01.bravofly.com/n7/heimdall/cmd/kubernetes"
 	"git01.bravofly.com/n7/heimdall/cmd/model"
 	"git01.bravofly.com/n7/heimdall/cmd/scheduler"
 	"io/ioutil"
@@ -13,14 +12,11 @@ import (
 var logger = log.New(os.Stdout, "[HEIMDALL] ", log.LstdFlags)
 
 func Run() {
-	kubernetes.Liveness()
-	kubernetes.Readiness()
-
 	config := readConfig(os.Getenv("CONFIG_PATH"))
 
 	scheduler.Scheduler{
 		Config: config,
-	}.Start(Orchestrator(config))
+	}.Start(Orchestrator())
 
 }
 

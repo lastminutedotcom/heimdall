@@ -8,8 +8,8 @@ import (
 	"git01.bravofly.com/n7/heimdall/cmd/model"
 )
 
-func Orchestrator(config *model.Config) func() {
-	return func() {
+func Orchestrator() func(config *model.Config) {
+	return func(config *model.Config) {
 		aggregate := dataCollector(config)
 		metric.PushMetrics(aggregate, config)
 	}
