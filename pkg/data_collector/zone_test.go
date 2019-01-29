@@ -1,7 +1,7 @@
 package data_collector
 
 import (
-	"git01.bravofly.com/n7/heimdall/cmd/client/zone"
+	"git01.bravofly.com/n7/heimdall/pkg/client/zone"
 	"github.com/stretchr/testify/assert"
 	"testing"
 )

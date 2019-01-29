@@ -2,9 +2,9 @@ package cmd
 
 import (
 	"encoding/json"
-	"git01.bravofly.com/n7/heimdall/cmd/kubernetes"
-	"git01.bravofly.com/n7/heimdall/cmd/model"
-	"git01.bravofly.com/n7/heimdall/cmd/scheduler"
+	"git01.bravofly.com/n7/heimdall/pkg/kubernetes"
+	"git01.bravofly.com/n7/heimdall/pkg/model"
+	"git01.bravofly.com/n7/heimdall/pkg/scheduler"
 	"io/ioutil"
 	"log"
 	"os"

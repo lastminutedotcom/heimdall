@@ -2,7 +2,7 @@ package waf
 
 import (
 	"encoding/json"
-	"git01.bravofly.com/n7/heimdall/cmd/model"
+	"git01.bravofly.com/n7/heimdall/pkg/model"
 	"io/ioutil"
 	"net/http"
 	"os"

@@ -1,12 +1,12 @@
 package cmd
 
 import (
-	"git01.bravofly.com/n7/heimdall/cmd/client/colocation"
-	"git01.bravofly.com/n7/heimdall/cmd/client/waf"
-	"git01.bravofly.com/n7/heimdall/cmd/client/zone"
-	"git01.bravofly.com/n7/heimdall/cmd/data_collector"
-	"git01.bravofly.com/n7/heimdall/cmd/metric"
-	"git01.bravofly.com/n7/heimdall/cmd/model"
+	"git01.bravofly.com/n7/heimdall/pkg/client/colocation"
+	"git01.bravofly.com/n7/heimdall/pkg/client/waf"
+	"git01.bravofly.com/n7/heimdall/pkg/client/zone"
+	"git01.bravofly.com/n7/heimdall/pkg/data_collector"
+	"git01.bravofly.com/n7/heimdall/pkg/metric"
+	"git01.bravofly.com/n7/heimdall/pkg/model"
 )
 
 func Orchestrator() func(config *model.Config) {

@@ -2,7 +2,7 @@ package metric
 
 import (
 	"fmt"
-	"git01.bravofly.com/n7/heimdall/cmd/model"
+	"git01.bravofly.com/n7/heimdall/pkg/model"
 	"github.com/marpaia/graphite-golang"
 	"log"
 	"os"

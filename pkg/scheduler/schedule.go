@@ -2,7 +2,7 @@ package scheduler
 
 import (
 	"fmt"
-	"git01.bravofly.com/n7/heimdall/cmd/model"
+	"git01.bravofly.com/n7/heimdall/pkg/model"
 	"gopkg.in/robfig/cron.v2"
 	"log"
 	"os"
@@ -25,5 +25,5 @@ func (s Scheduler) Start(function func(config *model.Config)) {
 	signal.Notify(sig, os.Interrupt, os.Kill)
 	sign := <-sig
 	c.Stop()
-	fmt.Println("Got signal:", sign)
+	fmt.Println("got signal:", sign)
 }

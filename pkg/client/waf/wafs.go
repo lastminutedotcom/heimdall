@@ -1,7 +1,7 @@
 package waf
 
 import (
-	"git01.bravofly.com/n7/heimdall/cmd/model"
+	"git01.bravofly.com/n7/heimdall/pkg/model"
 	"net/http"
 	"time"
 )

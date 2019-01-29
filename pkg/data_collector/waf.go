@@ -1,8 +1,8 @@
 package data_collector
 
 import (
-	"git01.bravofly.com/n7/heimdall/cmd/client/waf"
-	"git01.bravofly.com/n7/heimdall/cmd/model"
+	"git01.bravofly.com/n7/heimdall/pkg/client/waf"
+	"git01.bravofly.com/n7/heimdall/pkg/model"
 	"strconv"
 	"time"
 )
