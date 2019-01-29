@@ -34,7 +34,6 @@ func Test_correctAdapting(t *testing.T) {
 		ID:   "123",
 		Name: "zone",
 	})
-
 	aggregate.Totals[now] = model.NewCounters()
 
 	collectWaf(triggers, utc, aggregate)
