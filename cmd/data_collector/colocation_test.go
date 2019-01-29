@@ -9,18 +9,16 @@ import (
 	"time"
 )
 
-func readAnalyticsColocationResponse() []cloudflare.ZoneAnalyticsColocation {
-	colocations, _ := colocation.MockColocations{}.GetColosAPI("123")
-	return colocations
-}
-
 func Test_colocationDataCollection(t *testing.T) {
 	aggregate := model.NewAggregate(cloudflare.Zone{
 		ID:   "123",
 		Name: "zone",
 	})
 
-	collectColocation(readAnalyticsColocationResponse(), aggregate)
+	aggregates := make([]*model.Aggregate, 0)
+	aggregates = append(aggregates, aggregate)
+
+	GetColocationTotals(aggregates, colocation.MockColocations{})
 
 	assert.Equal(t, len(aggregate.Totals), 5)
 	key, _ := time.Parse(time.RFC3339, "2019-01-23T15:01:00Z")
