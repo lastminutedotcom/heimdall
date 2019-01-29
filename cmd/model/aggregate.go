@@ -20,10 +20,10 @@ type Counters struct {
 	BandwidthCached   Counter
 	BandwidthUncached Counter
 	HTTPStatus        map[string]Counter
-	WafTrigger        map[string]*WafTriggerResults
+	WafTrigger        map[string]*WafTriggerCounters
 }
 
-type WafTriggerResults struct {
+type WafTriggerCounters struct {
 	Simulate    Counter
 	Block       Counter
 	Challenge   Counter
@@ -48,12 +48,12 @@ func NewCounters() *Counters {
 			"3xx": {Key: "total.requests.http_status.3xx", Value: 0},
 			"4xx": {Key: "total.requests.http_status.4xx", Value: 0},
 			"5xx": {Key: "total.requests.http_status.5xx", Value: 0}},
-		WafTrigger: map[string]*WafTriggerResults{},
+		WafTrigger: map[string]*WafTriggerCounters{},
 	}
 }
 
-func NewWafTriggerResult() *WafTriggerResults {
-	return &WafTriggerResults{
+func NewWafTriggerResult() *WafTriggerCounters {
+	return &WafTriggerCounters{
 		Simulate:    Counter{Key: "total.waf.trigger.simulate", Value: 0},
 		Block:       Counter{Key: "total.waf.trigger.block", Value: 0},
 		Challenge:   Counter{Key: "total.waf.trigger.challenge", Value: 0},
