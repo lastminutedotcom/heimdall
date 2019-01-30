@@ -10,7 +10,7 @@ import (
 
 func GetWafTotals(aggregates []*model.Aggregate, config *model.Config, client waf.WafsClient) ([]*model.Aggregate, error) {
 	for _, aggregate := range aggregates {
-		logging.Info("collecting waf trigger metrics for %s", aggregate.ZoneName)
+		log.Info("collecting waf trigger metrics for %s", aggregate.ZoneName)
 		utc, _ := time.LoadLocation("UTC")
 		since := time.Now().In(utc)
 		everyMinutes, _ := strconv.Atoi(config.CollectEveryMinutes)
@@ -18,7 +18,7 @@ func GetWafTotals(aggregates []*model.Aggregate, config *model.Config, client wa
 
 		triggers, err := client.GetWafTriggersBy(aggregate.ZoneID, since, until)
 		if err != nil {
-			logging.Error("ERROR Getting WAF trigger for zone %v, %v", aggregate.ZoneName, err)
+			log.Error("ERROR Getting WAF trigger for zone %v, %v", aggregate.ZoneName, err)
 			continue
 		}
 

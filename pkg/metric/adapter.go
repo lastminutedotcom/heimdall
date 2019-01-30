@@ -45,7 +45,7 @@ func adaptDataToMetrics(aggregates []*model.Aggregate) []graphite.Metric {
 func wafMetric(zone, host, key, value string, date time.Time) graphite.Metric {
 	metricKey := strings.ToLower(fmt.Sprintf(wafMetricsPattern, normalize(zone), normalize(host), key))
 
-	logging.Info("added metric %s, value %s, %v", metricKey, value, date.Unix())
+	log.Info("added metric %s, value %s, %v", metricKey, value, date.Unix())
 
 	return graphite.NewMetric(metricKey, value, date.Unix())
 }
@@ -53,7 +53,7 @@ func wafMetric(zone, host, key, value string, date time.Time) graphite.Metric {
 func metric(zone, key, value string, date time.Time) graphite.Metric {
 	metricKey := strings.ToLower(fmt.Sprintf(defaultMetricsPattern, normalize(zone), key))
 
-	logging.Info("added metric %s, value %s, %v", metricKey, value, date.Unix())
+	log.Info("added metric %s, value %s, %v", metricKey, value, date.Unix())
 
 	return graphite.NewMetric(metricKey, value, date.Unix())
 }

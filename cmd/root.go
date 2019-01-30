@@ -38,7 +38,7 @@ var rootCmd = &cobra.Command{
 
 func Execute() {
 	if err := rootCmd.Execute(); err != nil {
-		logging.Error("%v", err)
+		log.Error("%v", err)
 		//logger.Printf("%v",err)
 		os.Exit(1)
 	}
@@ -57,7 +57,7 @@ func initConfig() {
 		// Find home directory.
 		home, err := homedir.Dir()
 		if err != nil {
-			logging.Error("%v", err)
+			log.Error("%v", err)
 			//logger.Printf("%v",err)
 			os.Exit(1)
 		}
@@ -71,7 +71,7 @@ func initConfig() {
 
 	// If a config file is found, read it in.
 	if err := viper.ReadInConfig(); err == nil {
-		logging.Error("Using config file: %s", viper.ConfigFileUsed())
+		log.Error("Using config file: %s", viper.ConfigFileUsed())
 		//logger.Printf("Using config file: %s", viper.ConfigFileUsed())
 	}
 }

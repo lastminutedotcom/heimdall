@@ -15,7 +15,7 @@ import (
 //var logger = log.New(os.Stdout, "[HEIMDALL] ", log.LstdFlags)
 
 func Run() {
-	logging.Init()
+	log.Init()
 	kubernetes.Readiness()
 	kubernetes.Liveness()
 
@@ -30,7 +30,7 @@ func Run() {
 func readConfig(filePath string) *model.Config {
 	file, err := os.Open(filePath)
 	if err != nil {
-		logging.Error(fmt.Sprintf("error reading configuration. %v", err), nil)
+		log.Error(fmt.Sprintf("error reading configuration. %v", err), nil)
 		//logger.Printf("error reading configuration. %v", err)
 		return model.DefautConfig()
 	}

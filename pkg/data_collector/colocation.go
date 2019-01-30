@@ -10,11 +10,11 @@ import (
 
 func GetColocationTotals(aggregates []*model.Aggregate, colocationsClient colocation.ColocationsClient) ([]*model.Aggregate, error) {
 	for _, aggregate := range aggregates {
-		logging.Info("collecting co-location metrics for %s", aggregate.ZoneName)
+		log.Info("collecting co-location metrics for %s", aggregate.ZoneName)
 
 		zoneAnalyticsDataArray, err := colocationsClient.GetColosAPI(aggregate.ZoneID)
 		if err != nil {
-			logging.Error("ERROR Getting Analytics for zone %v, %v", aggregate.ZoneName, err)
+			log.Error("ERROR Getting Analytics for zone %v, %v", aggregate.ZoneName, err)
 			continue
 		}
 

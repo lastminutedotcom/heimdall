@@ -2,7 +2,7 @@ package scheduler
 
 import (
 	"fmt"
-	"git01.bravofly.com/golang/appfw/pkg/logging"
+	"git01.bravofly.com/n7/heimdall/pkg/logging"
 	"git01.bravofly.com/n7/heimdall/pkg/model"
 	"gopkg.in/robfig/cron.v2"
 	"os"
@@ -15,7 +15,7 @@ type Scheduler struct {
 
 func (s Scheduler) Start(function func(config *model.Config)) {
 	cronExpression := fmt.Sprintf("*/%s * * * *", s.Config.CollectEveryMinutes)
-	logging.Info(fmt.Sprintf("start collecting data at every %sth minute of the last %s minute ", s.Config.CollectEveryMinutes, s.Config.CollectEveryMinutes), nil)
+	log.Info(fmt.Sprintf("start collecting data at every %sth minute of the last %s minute ", s.Config.CollectEveryMinutes, s.Config.CollectEveryMinutes), nil)
 	c := cron.New()
 	c.AddFunc(cronExpression, func() { function(s.Config) })
 	go c.Start()
