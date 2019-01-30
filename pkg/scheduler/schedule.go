@@ -15,7 +15,7 @@ type Scheduler struct {
 
 func (s Scheduler) Start(function func(config *model.Config)) {
 	cronExpression := fmt.Sprintf("*/%s * * * *", s.Config.CollectEveryMinutes)
-	log.Info(fmt.Sprintf("start collecting data at every %sth minute of the last %s minute ", s.Config.CollectEveryMinutes, s.Config.CollectEveryMinutes), nil)
+	log.Info("start collecting data at every %sth minute of the last %s minute ", s.Config.CollectEveryMinutes, s.Config.CollectEveryMinutes)
 	c := cron.New()
 	c.AddFunc(cronExpression, func() { function(s.Config) })
 	go c.Start()
