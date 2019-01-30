@@ -2,22 +2,19 @@ package data_collector
 
 import (
 	"git01.bravofly.com/n7/heimdall/pkg/client/colocation"
+	"git01.bravofly.com/n7/heimdall/pkg/logging"
 	"git01.bravofly.com/n7/heimdall/pkg/model"
 	"github.com/cloudflare/cloudflare-go"
-	"log"
-	"os"
 	"strings"
 )
 
-var logger = log.New(os.Stdout, "[HEIMDALL] ", log.LstdFlags)
-
 func GetColocationTotals(aggregates []*model.Aggregate, colocationsClient colocation.ColocationsClient) ([]*model.Aggregate, error) {
 	for _, aggregate := range aggregates {
-		logger.Printf("collecting co-location metrics for %s", aggregate.ZoneName)
+		logging.Info("collecting co-location metrics for %s", aggregate.ZoneName)
 
 		zoneAnalyticsDataArray, err := colocationsClient.GetColosAPI(aggregate.ZoneID)
 		if err != nil {
-			logger.Printf("ERROR Getting Analytics for zone %v, %v", aggregate.ZoneName, err)
+			logging.Error("ERROR Getting Analytics for zone %v, %v", aggregate.ZoneName, err)
 			continue
 		}
 

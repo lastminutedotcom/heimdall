@@ -2,6 +2,7 @@ package data_collector
 
 import (
 	"git01.bravofly.com/n7/heimdall/pkg/client/waf"
+	"git01.bravofly.com/n7/heimdall/pkg/logging"
 	"git01.bravofly.com/n7/heimdall/pkg/model"
 	"strconv"
 	"time"
@@ -9,7 +10,7 @@ import (
 
 func GetWafTotals(aggregates []*model.Aggregate, config *model.Config, client waf.WafsClient) ([]*model.Aggregate, error) {
 	for _, aggregate := range aggregates {
-		logger.Printf("collecting waf trigger metrics for %s", aggregate.ZoneName)
+		logging.Info("collecting waf trigger metrics for %s", aggregate.ZoneName)
 		utc, _ := time.LoadLocation("UTC")
 		since := time.Now().In(utc)
 		everyMinutes, _ := strconv.Atoi(config.CollectEveryMinutes)
@@ -17,7 +18,7 @@ func GetWafTotals(aggregates []*model.Aggregate, config *model.Config, client wa
 
 		triggers, err := client.GetWafTriggersBy(aggregate.ZoneID, since, until)
 		if err != nil {
-			logger.Printf("ERROR Getting WAF trigger for zone %v, %v", aggregate.ZoneName, err)
+			logging.Error("ERROR Getting WAF trigger for zone %v, %v", aggregate.ZoneName, err)
 			continue
 		}
 

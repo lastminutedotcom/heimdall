@@ -2,16 +2,14 @@ package metric
 
 import (
 	"fmt"
+	"git01.bravofly.com/n7/heimdall/pkg/logging"
+
 	"git01.bravofly.com/n7/heimdall/pkg/model"
 	"github.com/marpaia/graphite-golang"
-	"log"
-	"os"
 	"strconv"
 	"strings"
 	"time"
 )
-
-var logger = log.New(os.Stdout, "[HEIMDALL] ", log.LstdFlags)
 
 const (
 	wafMetricsPattern     = "cloudflare.%s.%s.%s"
@@ -47,7 +45,7 @@ func adaptDataToMetrics(aggregates []*model.Aggregate) []graphite.Metric {
 func wafMetric(zone, host, key, value string, date time.Time) graphite.Metric {
 	metricKey := strings.ToLower(fmt.Sprintf(wafMetricsPattern, normalize(zone), normalize(host), key))
 
-	logger.Printf("added metric %s, value %s, %v", metricKey, value, date.Unix())
+	logging.Info("added metric %s, value %s, %v", metricKey, value, date.Unix())
 
 	return graphite.NewMetric(metricKey, value, date.Unix())
 }
@@ -55,7 +53,7 @@ func wafMetric(zone, host, key, value string, date time.Time) graphite.Metric {
 func metric(zone, key, value string, date time.Time) graphite.Metric {
 	metricKey := strings.ToLower(fmt.Sprintf(defaultMetricsPattern, normalize(zone), key))
 
-	logger.Printf("added metric %s, value %s, %v", metricKey, value, date.Unix())
+	logging.Info("added metric %s, value %s, %v", metricKey, value, date.Unix())
 
 	return graphite.NewMetric(metricKey, value, date.Unix())
 }

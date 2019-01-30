@@ -15,12 +15,12 @@
 package cmd
 
 import (
-	"fmt"
-	"os"
+	"git01.bravofly.com/n7/heimdall/pkg/logging"
 
-	homedir "github.com/mitchellh/go-homedir"
+	"github.com/mitchellh/go-homedir"
 	"github.com/spf13/cobra"
 	"github.com/spf13/viper"
+	"os"
 )
 
 var cfgFile string
@@ -38,7 +38,8 @@ var rootCmd = &cobra.Command{
 
 func Execute() {
 	if err := rootCmd.Execute(); err != nil {
-		fmt.Println(err)
+		logging.Error("%v", err)
+		//logger.Printf("%v",err)
 		os.Exit(1)
 	}
 }
@@ -56,7 +57,8 @@ func initConfig() {
 		// Find home directory.
 		home, err := homedir.Dir()
 		if err != nil {
-			fmt.Println(err)
+			logging.Error("%v", err)
+			//logger.Printf("%v",err)
 			os.Exit(1)
 		}
 
@@ -69,6 +71,7 @@ func initConfig() {
 
 	// If a config file is found, read it in.
 	if err := viper.ReadInConfig(); err == nil {
-		fmt.Println("Using config file:", viper.ConfigFileUsed())
+		logging.Error("Using config file: %s", viper.ConfigFileUsed())
+		//logger.Printf("Using config file: %s", viper.ConfigFileUsed())
 	}
 }
