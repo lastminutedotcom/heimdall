@@ -30,3 +30,21 @@ type WafTrigger struct {
 	Action     string    `json:"action"`
 	OccurredAt time.Time `json:"occurred_at"`
 }
+
+type RateLimitResponse struct {
+	cloudflare.Response
+	ResultInfo struct {
+		Cursors struct {
+			After  string `json:"after"`
+			Before string `json:"before"`
+		}
+	}
+	Result []RateLimit `json:"result"`
+}
+
+type RateLimit struct {
+	Host       string    `json:"host"`
+	Action     string    `json:"action"`
+	Method     string    `json:"method"`
+	OccurredAt time.Time `json:"occurred_at"`
+}

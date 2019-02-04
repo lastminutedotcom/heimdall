@@ -11,9 +11,6 @@ import (
 	"os"
 )
 
-//var _logger = logging.NewAppLog(os.Stdout)
-//var logger = log.New(os.Stdout, "[HEIMDALL] ", log.LstdFlags)
-
 func Run() {
 	log.Init()
 	kubernetes.Readiness()

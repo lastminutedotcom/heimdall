@@ -2,19 +2,23 @@ package waf
 
 import (
 	"encoding/json"
+	"git01.bravofly.com/n7/heimdall/pkg/logging"
 	"git01.bravofly.com/n7/heimdall/pkg/model"
 	"io/ioutil"
 	"net/http"
 	"os"
-	"path/filepath"
 	"time"
 )
 
 type MockWafs struct {
+	Path string
 }
 
-func (MockWafs) GetWafTriggersBy(zoneID string, since, until time.Time) ([]model.WafTrigger, error) {
-	file, _ := os.Open(filepath.Join("..", "..", "test", "cloudflare_waf.json"))
+func (m MockWafs) GetWafTriggersBy(zoneID string, since, until time.Time) ([]model.WafTrigger, error) {
+	file, err := os.Open(m.Path)
+	if err != nil {
+		log.Info("%v", err)
+	}
 	defer file.Close()
 	byteValue, _ := ioutil.ReadAll(file)
 	wafResponse := model.WAFResponse{}

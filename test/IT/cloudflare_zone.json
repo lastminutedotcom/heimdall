@@ -1,0 +1,97 @@
+{
+    "result": [
+        {
+            "id": "d746c5cf71899095e42c691788c3ccb9",
+            "name": "bravofly.at",
+            "status": "active",
+            "paused": false,
+            "type": "partial",
+            "development_mode": 0,
+            "verification_key": "437377414-60409498",
+            "original_name_servers": [
+                "ns-128.awsdns-16.com",
+                "ns-1408.awsdns-48.org",
+                "ns-1910.awsdns-46.co.uk",
+                "ns-539.awsdns-03.net"
+            ],
+            "original_registrar": null,
+            "original_dnshost": null,
+            "modified_on": "2018-12-23T16:52:02.741248Z",
+            "created_on": "2018-12-06T14:33:30.412588Z",
+            "activated_on": "2018-12-06T14:34:31.453908Z",
+            "meta": {
+                "step": 4,
+                "wildcard_proxiable": false,
+                "custom_certificate_quota": 1,
+                "page_rule_quota": 100,
+                "phishing_detected": false,
+                "multiple_railguns_allowed": false
+            },
+            "owner": {
+                "id": "f5fd3b3741817e2080883b52b5995643",
+                "type": "organization",
+                "name": "Lastminute"
+            },
+            "account": {
+                "id": "f5fd3b3741817e2080883b52b5995643",
+                "name": "Lastminute"
+            },
+            "permissions": [
+                "#access:edit",
+                "#access:read",
+                "#analytics:read",
+                "#app:edit",
+                "#billing:read",
+                "#cache_purge:edit",
+                "#dns_records:edit",
+                "#dns_records:read",
+                "#lb:edit",
+                "#lb:read",
+                "#legal:read",
+                "#logs:edit",
+                "#logs:read",
+                "#member:read",
+                "#organization:edit",
+                "#organization:read",
+                "#ssl:edit",
+                "#ssl:read",
+                "#stream:edit",
+                "#stream:read",
+                "#subscription:edit",
+                "#subscription:read",
+                "#waf:edit",
+                "#waf:read",
+                "#webhooks:edit",
+                "#webhooks:read",
+                "#worker:edit",
+                "#worker:read",
+                "#zone:edit",
+                "#zone:read",
+                "#zone_settings:edit",
+                "#zone_settings:read"
+            ],
+            "plan": {
+                "id": "94f3b7b768b0458b56d2cac4fe5ec0f9",
+                "name": "Enterprise Website",
+                "price": 0,
+                "currency": "USD",
+                "frequency": "monthly",
+                "is_subscribed": true,
+                "can_subscribe": true,
+                "legacy_id": "enterprise",
+                "legacy_discount": false,
+                "externally_managed": true
+            }
+        }
+    ],
+    "result_info": {
+        "page": 1,
+        "per_page": 20,
+        "total_pages": 1,
+        "count": 18,
+        "total_count": 18
+    },
+    "success": true,
+    "errors": [],
+    "messages": []
+}

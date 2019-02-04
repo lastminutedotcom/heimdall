@@ -5,6 +5,7 @@ import (
 	"git01.bravofly.com/n7/heimdall/pkg/model"
 	"github.com/cloudflare/cloudflare-go"
 	"github.com/magiconair/properties/assert"
+	"path/filepath"
 	"testing"
 	"time"
 )
@@ -18,7 +19,9 @@ func Test_colocationDataCollection(t *testing.T) {
 	aggregates := make([]*model.Aggregate, 0)
 	aggregates = append(aggregates, aggregate)
 
-	GetColocationTotals(aggregates, colocation.MockColocations{})
+	GetColocationTotals(aggregates, colocation.MockColocations{
+		Path: filepath.Join("..", "..", "test", "cloudflare_colocation.json"),
+	})
 
 	assert.Equal(t, len(aggregate.Totals), 5)
 	key, _ := time.Parse(time.RFC3339, "2019-01-23T15:01:00Z")

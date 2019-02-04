@@ -29,3 +29,8 @@ spec:
             secretKeyRef:
               name: heimdall-system-secret
               key:  HEIMDALL-CONFIG_PATH
+        - name: GRAYLOG_URL
+          valueFrom:
+            secretKeyRef:
+              name: heimdall-system-secret
+              key:  HEIMDALL-GRAYLOG_URL

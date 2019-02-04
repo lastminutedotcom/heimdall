@@ -16,6 +16,5 @@ func GetZones(zoneClient zone.ZonesClient) ([]*model.Aggregate, error) {
 	for _, zone := range zones {
 		result = append(result, model.NewAggregate(zone))
 	}
-
 	return result, nil
 }

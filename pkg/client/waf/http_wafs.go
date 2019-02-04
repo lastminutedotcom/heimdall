@@ -4,6 +4,7 @@ import (
 	"encoding/json"
 	"fmt"
 	"git01.bravofly.com/n7/heimdall/pkg/client"
+	"git01.bravofly.com/n7/heimdall/pkg/dates"
 	"git01.bravofly.com/n7/heimdall/pkg/model"
 	"io/ioutil"
 	"net/http"
@@ -59,15 +60,15 @@ func (h HttpWafs) callWafTrigger(url string) (*http.Response, model.WAFResponse,
 
 func (h HttpWafs) nextWafTriggersBy(triggers []model.WafTrigger, result []model.WafTrigger, zoneID, nextPageId string, since, until time.Time) []model.WafTrigger {
 	for _, wafTrigger := range triggers {
-		if after(wafTrigger.OccurredAt, since) {
+		if dates.After(wafTrigger.OccurredAt, since) {
 			continue
 		}
 
-		if before(wafTrigger.OccurredAt, until) {
+		if dates.Before(wafTrigger.OccurredAt, until) {
 			return result
 		}
 
-		if in(wafTrigger.OccurredAt, since, until) {
+		if dates.In(wafTrigger.OccurredAt, since, until) {
 			result = append(result, wafTrigger)
 		}
 	}

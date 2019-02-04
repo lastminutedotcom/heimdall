@@ -6,14 +6,14 @@ import (
 	"github.com/cloudflare/cloudflare-go"
 	"io/ioutil"
 	"os"
-	"path/filepath"
 )
 
 type MockColocations struct {
+	Path string
 }
 
-func (MockColocations) GetColosAPI(zoneID string) ([]cloudflare.ZoneAnalyticsColocation, error) {
-	file, _ := os.Open(filepath.Join("..", "..", "test", "cloudflare_colocation.json"))
+func (m MockColocations) GetColosAPI(zoneID string) ([]cloudflare.ZoneAnalyticsColocation, error) {
+	file, _ := os.Open(m.Path)
 	defer file.Close()
 	byteValue, _ := ioutil.ReadAll(file)
 	analyticsColocationResponse := model.ZoneAnalyticsColocationResponse{}

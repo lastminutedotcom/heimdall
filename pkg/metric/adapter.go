@@ -3,7 +3,6 @@ package metric
 import (
 	"fmt"
 	"git01.bravofly.com/n7/heimdall/pkg/logging"
-
 	"git01.bravofly.com/n7/heimdall/pkg/model"
 	"github.com/marpaia/graphite-golang"
 	"strconv"
@@ -12,11 +11,11 @@ import (
 )
 
 const (
-	wafMetricsPattern     = "cloudflare.%s.%s.%s"
+	hostMetricsPattern    = "cloudflare.%s.%s.%s"
 	defaultMetricsPattern = "cloudflare.%s.%s"
 )
 
-func adaptDataToMetrics(aggregates []*model.Aggregate) []graphite.Metric {
+func AdaptDataToMetrics(aggregates []*model.Aggregate) []graphite.Metric {
 	metrics := make([]graphite.Metric, 0)
 	for _, aggregate := range aggregates {
 		for date, counters := range aggregate.Totals {
@@ -32,20 +31,34 @@ func adaptDataToMetrics(aggregates []*model.Aggregate) []graphite.Metric {
 			}
 
 			for host, entry := range counters.WafTrigger {
-				metrics = append(metrics, wafMetric(aggregate.ZoneName, host, entry.Challenge.Key, strconv.Itoa(entry.Challenge.Value), date))
-				metrics = append(metrics, wafMetric(aggregate.ZoneName, host, entry.JSChallenge.Key, strconv.Itoa(entry.JSChallenge.Value), date))
-				metrics = append(metrics, wafMetric(aggregate.ZoneName, host, entry.Block.Key, strconv.Itoa(entry.Block.Value), date))
-				metrics = append(metrics, wafMetric(aggregate.ZoneName, host, entry.Simulate.Key, strconv.Itoa(entry.Simulate.Value), date))
+				metrics = append(metrics, hostMetric(aggregate.ZoneName, host, entry.Challenge.Key, strconv.Itoa(entry.Challenge.Value), date))
+				metrics = append(metrics, hostMetric(aggregate.ZoneName, host, entry.JSChallenge.Key, strconv.Itoa(entry.JSChallenge.Value), date))
+				metrics = append(metrics, hostMetric(aggregate.ZoneName, host, entry.Block.Key, strconv.Itoa(entry.Block.Value), date))
+				metrics = append(metrics, hostMetric(aggregate.ZoneName, host, entry.Simulate.Key, strconv.Itoa(entry.Simulate.Value), date))
+			}
+
+			for host, rateLimitsCounters := range counters.RateLimit {
+				for _, entry := range rateLimitsCounters {
+
+					metrics = append(metrics, hostMetric(aggregate.ZoneName, host, entry.Challenge.Key, strconv.Itoa(entry.Challenge.Value), date))
+					metrics = append(metrics, hostMetric(aggregate.ZoneName, host, entry.JSChallenge.Key, strconv.Itoa(entry.JSChallenge.Value), date))
+					metrics = append(metrics, hostMetric(aggregate.ZoneName, host, entry.ConnectionClose.Key, strconv.Itoa(entry.ConnectionClose.Value), date))
+					metrics = append(metrics, hostMetric(aggregate.ZoneName, host, entry.Drop.Key, strconv.Itoa(entry.Drop.Value), date))
+					metrics = append(metrics, hostMetric(aggregate.ZoneName, host, entry.Simulate.Key, strconv.Itoa(entry.Simulate.Value), date))
+				}
+
 			}
 		}
 	}
+
+	log.Info("added %d metrics", len(metrics))
 	return metrics
 }
 
-func wafMetric(zone, host, key, value string, date time.Time) graphite.Metric {
-	metricKey := strings.ToLower(fmt.Sprintf(wafMetricsPattern, normalize(zone), normalize(host), key))
+func hostMetric(zone, host, key, value string, date time.Time) graphite.Metric {
+	metricKey := strings.ToLower(fmt.Sprintf(hostMetricsPattern, normalize(zone), normalize(host), key))
 
-	log.Info("added metric %s, value %s, %v", metricKey, value, date.Unix())
+	//log.Info("added metric %s, value %s, %v", metricKey, value, date.Unix())
 
 	return graphite.NewMetric(metricKey, value, date.Unix())
 }
@@ -53,7 +66,7 @@ func wafMetric(zone, host, key, value string, date time.Time) graphite.Metric {
 func metric(zone, key, value string, date time.Time) graphite.Metric {
 	metricKey := strings.ToLower(fmt.Sprintf(defaultMetricsPattern, normalize(zone), key))
 
-	log.Info("added metric %s, value %s, %v", metricKey, value, date.Unix())
+	//log.Info("added metric %s, value %s, %v", metricKey, value, date.Unix())
 
 	return graphite.NewMetric(metricKey, value, date.Unix())
 }

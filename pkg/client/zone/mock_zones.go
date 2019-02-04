@@ -5,14 +5,14 @@ import (
 	"github.com/cloudflare/cloudflare-go"
 	"io/ioutil"
 	"os"
-	"path/filepath"
 )
 
 type MockZones struct {
+	Path string
 }
 
-func (MockZones) GetZonesId() ([]cloudflare.Zone, error) {
-	file, _ := os.Open(filepath.Join("..", "..", "test", "cloudflare_zone.json"))
+func (m MockZones) GetZonesId() ([]cloudflare.Zone, error) {
+	file, _ := os.Open(m.Path)
 	defer file.Close()
 	byteValue, _ := ioutil.ReadAll(file)
 	zoneResponse := cloudflare.ZonesResponse{}
