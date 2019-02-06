@@ -2,8 +2,8 @@ package data_collector
 
 import (
 	"fmt"
-	"git01.bravofly.com/n7/heimdall/pkg/client/zone"
-	"git01.bravofly.com/n7/heimdall/pkg/model"
+	"git01.bravofly.com/N7/heimdall/pkg/client/zone"
+	"git01.bravofly.com/N7/heimdall/pkg/model"
 )
 
 func GetZones(zoneClient zone.ZonesClient) ([]*model.Aggregate, error) {

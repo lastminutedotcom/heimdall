@@ -3,9 +3,9 @@ package waf
 import (
 	"encoding/json"
 	"fmt"
-	"git01.bravofly.com/n7/heimdall/pkg/client"
-	"git01.bravofly.com/n7/heimdall/pkg/dates"
-	"git01.bravofly.com/n7/heimdall/pkg/model"
+	"git01.bravofly.com/N7/heimdall/pkg/client"
+	"git01.bravofly.com/N7/heimdall/pkg/dates"
+	"git01.bravofly.com/N7/heimdall/pkg/model"
 	"io/ioutil"
 	"net/http"
 	"time"

@@ -14,7 +14,7 @@
 
 package main
 
-import "git01.bravofly.com/n7/heimdall/cmd"
+import "git01.bravofly.com/N7/heimdall/cmd"
 
 func main() {
 	cmd.Execute()

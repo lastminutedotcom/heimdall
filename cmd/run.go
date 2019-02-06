@@ -3,10 +3,10 @@ package cmd
 import (
 	"encoding/json"
 	"fmt"
-	"git01.bravofly.com/n7/heimdall/pkg/kubernetes"
-	"git01.bravofly.com/n7/heimdall/pkg/logging"
-	"git01.bravofly.com/n7/heimdall/pkg/model"
-	"git01.bravofly.com/n7/heimdall/pkg/scheduler"
+	"git01.bravofly.com/N7/heimdall/pkg/kubernetes"
+	"git01.bravofly.com/N7/heimdall/pkg/logging"
+	"git01.bravofly.com/N7/heimdall/pkg/model"
+	"git01.bravofly.com/N7/heimdall/pkg/scheduler"
 	"io/ioutil"
 	"os"
 )

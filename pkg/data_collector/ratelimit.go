@@ -1,9 +1,9 @@
 package data_collector
 
 import (
-	"git01.bravofly.com/n7/heimdall/pkg/client/ratelimit"
-	"git01.bravofly.com/n7/heimdall/pkg/logging"
-	"git01.bravofly.com/n7/heimdall/pkg/model"
+	"git01.bravofly.com/N7/heimdall/pkg/client/ratelimit"
+	"git01.bravofly.com/N7/heimdall/pkg/logging"
+	"git01.bravofly.com/N7/heimdall/pkg/model"
 	"strconv"
 	"strings"
 	"time"

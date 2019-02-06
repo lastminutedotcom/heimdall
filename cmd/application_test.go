@@ -1,11 +1,11 @@
 package cmd
 
 import (
-	"git01.bravofly.com/n7/heimdall/pkg/client/colocation"
-	"git01.bravofly.com/n7/heimdall/pkg/client/ratelimit"
-	"git01.bravofly.com/n7/heimdall/pkg/client/waf"
-	"git01.bravofly.com/n7/heimdall/pkg/client/zone"
-	"git01.bravofly.com/n7/heimdall/pkg/model"
+	"git01.bravofly.com/N7/heimdall/pkg/client/colocation"
+	"git01.bravofly.com/N7/heimdall/pkg/client/ratelimit"
+	"git01.bravofly.com/N7/heimdall/pkg/client/waf"
+	"git01.bravofly.com/N7/heimdall/pkg/client/zone"
+	"git01.bravofly.com/N7/heimdall/pkg/model"
 	"github.com/stretchr/testify/assert"
 	"path/filepath"
 	"sort"

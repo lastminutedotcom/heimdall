@@ -15,7 +15,7 @@
 package cmd
 
 import (
-	"git01.bravofly.com/n7/heimdall/pkg/logging"
+	"git01.bravofly.com/N7/heimdall/pkg/logging"
 
 	"github.com/mitchellh/go-homedir"
 	"github.com/spf13/cobra"

@@ -1,7 +1,7 @@
 package zone
 
 import (
-	"git01.bravofly.com/n7/heimdall/pkg/client"
+	"git01.bravofly.com/N7/heimdall/pkg/client"
 	"github.com/cloudflare/cloudflare-go"
 )
 

@@ -6,8 +6,8 @@ import (
 	"net/http"
 	"time"
 
-	"git01.bravofly.com/golang/appfw.git/pkg/logging"
-	"git01.bravofly.com/golang/appfw.git/pkg/properties"
+	"git01.bravofly.com/golang/appfw/pkg/logging"
+	"git01.bravofly.com/golang/appfw/pkg/properties"
 )
 
 var (

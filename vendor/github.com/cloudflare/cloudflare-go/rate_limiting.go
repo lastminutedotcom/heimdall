@@ -18,7 +18,6 @@ type RateLimit struct {
 	Threshold   int                     `json:"threshold"`
 	Period      int                     `json:"period"`
 	Action      RateLimitAction         `json:"action"`
-	Correlate   RateLimitCorrelate      `json:"correlate"`
 }
 
 // RateLimitTrafficMatcher contains the rules that will be used to apply a rate limit to traffic
@@ -57,11 +56,6 @@ type RateLimitAction struct {
 type RateLimitActionResponse struct {
 	ContentType string `json:"content_type"`
 	Body        string `json:"body"`
-}
-
-// RateLimitCorrelate pertainings to NAT support
-type RateLimitCorrelate struct {
-	By string `json:"by"`
 }
 
 type rateLimitResponse struct {

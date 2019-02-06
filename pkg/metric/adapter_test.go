@@ -1,7 +1,7 @@
 package metric
 
 import (
-	"git01.bravofly.com/n7/heimdall/pkg/model"
+	"git01.bravofly.com/N7/heimdall/pkg/model"
 	"github.com/cloudflare/cloudflare-go"
 	"github.com/magiconair/properties/assert"
 	"testing"
