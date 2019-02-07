@@ -2,7 +2,7 @@ module git01.bravofly.com/N7/heimdall
 
 require (
 	git01.bravofly.com/golang/appfw v0.0.0-20190130110939-9c621bf04c3f
-	git01.bravofly.com/golang/appfw.git v0.0.0-20190130110939-9c621bf04c3f
+	git01.bravofly.com/golang/appfw.git v0.0.0-20190130110939-9c621bf04c3f // indirect
 	github.com/cloudflare/cloudflare-go v0.8.5
 	github.com/google/uuid v1.1.0 // indirect
 	github.com/inconshreveable/mousetrap v1.0.0 // indirect

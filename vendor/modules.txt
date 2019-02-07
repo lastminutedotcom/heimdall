@@ -3,8 +3,6 @@ git01.bravofly.com/golang/appfw/pkg/http/mgmt
 git01.bravofly.com/golang/appfw/pkg/logging
 git01.bravofly.com/golang/appfw/pkg/properties
 git01.bravofly.com/golang/appfw/pkg/tracing
-# git01.bravofly.com/golang/appfw.git v0.0.0-20190130110939-9c621bf04c3f
-git01.bravofly.com/golang/appfw.git/pkg/logging
 # github.com/cloudflare/cloudflare-go v0.8.5
 github.com/cloudflare/cloudflare-go
 # github.com/davecgh/go-spew v1.1.1

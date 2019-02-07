@@ -8,7 +8,7 @@ test:
 clean:
 	go clean -i ./cmd
 
-build: clean
+build: clean test
 	GOOS=linux GOARCH=amd64 go build  -a -ldflags '-extldflags "-static"' -o $(APPNAME) .
 
 package: build

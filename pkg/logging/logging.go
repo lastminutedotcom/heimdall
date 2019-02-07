@@ -2,7 +2,7 @@ package log
 
 import (
 	"fmt"
-	"git01.bravofly.com/golang/appfw.git/pkg/logging"
+	"git01.bravofly.com/golang/appfw/pkg/logging"
 	"os"
 )
 
