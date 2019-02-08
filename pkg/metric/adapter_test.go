@@ -21,7 +21,7 @@ func Test_correctAdapting(t *testing.T) {
 
 	data = append(data, aggregate)
 
-	metrics := adaptDataToMetrics(data)
+	metrics := AdaptDataToMetrics(data)
 	assert.Equal(t, 10, len(metrics))
 	assert.Equal(t, metrics[3].String(), "cloudflare.::_name_::.total.bandwidth.all 5 "+now.Format("2006-01-02 15:04:05"))
 }
