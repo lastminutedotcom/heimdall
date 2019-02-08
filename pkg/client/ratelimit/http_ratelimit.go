@@ -50,15 +50,15 @@ func (h HttpRateLimitClient) callSecurityEvent(url string) (*http.Response, mode
 
 func (h HttpRateLimitClient) nextSecurityEventsBy(limits []model.RateLimit, result []model.RateLimit, zoneID string, nextPageId string, since, until time.Time) []model.RateLimit {
 	for _, limit := range limits {
-		if dates.After(limit.OccurredAt, since) {
+		if dates.After(limit.OccurredAt, until) {
 			continue
 		}
 
-		if dates.Before(limit.OccurredAt, until) {
+		if dates.Before(limit.OccurredAt, since) {
 			return result
 		}
 
-		if dates.In(limit.OccurredAt, since, until) {
+		if dates.In(limit.OccurredAt, until, since) {
 			result = append(result, limit)
 		}
 	}

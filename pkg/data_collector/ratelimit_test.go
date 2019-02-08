@@ -31,3 +31,16 @@ func Test_rateLimitDataCollection(t *testing.T) {
 	assert.Equal(t, aggregate.Totals[key].RateLimit["secure.bravofly.at"]["POST"].ConnectionClose.Value, 1)
 	assert.Equal(t, aggregate.Totals[key].RateLimit["secure.bravofly.at"]["POST"].Challenge.Value, 4)
 }
+
+func Test(t *testing.T) {
+
+	aggregate := model.NewAggregate(cloudflare.Zone{
+		ID:   "d746c5cf71899095e42c691788c3ccb9",
+		Name: "bravofly.at",
+	})
+
+	aggregates := make([]*model.Aggregate, 0)
+	aggregates = append(aggregates, aggregate)
+
+	GetRatelimitTotals(aggregates, &model.Config{}, ratelimit.HttpRateLimitClient{})
+}
