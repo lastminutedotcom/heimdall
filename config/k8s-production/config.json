@@ -1,5 +1,5 @@
 {
-  "collect_every_minutes" : "5",
+  "collect_every_minutes" : "10",
   "graphite_config": {
     "host": "graphin.bravofly.intra",
     "port": 2113
