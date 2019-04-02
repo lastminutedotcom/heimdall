@@ -15,12 +15,12 @@ import (
 type HttpWafs struct {
 }
 
-func (h HttpWafs) GetWafTriggersBy(zoneID string, since, until time.Time) ([]model.WafTrigger, error) {
+func (h HttpWafs) GetWafTriggersBy(zoneID string, since, until time.Time, callCount int) ([]model.WafTrigger, error) {
 	httpResponse, wafResponse, err := h.callWafTrigger(fmt.Sprintf(client.CloudFlareAPIRoot+"zones/%s/firewall/events?per_page=50", zoneID))
 	if err != nil {
 		return nil, fmt.Errorf("get WAF: %v", err)
 	}
-	callCount := 1
+
 	triggers := make([]model.WafTrigger, 0)
 	if httpResponse.StatusCode == http.StatusOK {
 		triggers = h.nextWafTriggersBy(wafResponse.WafTriggers, triggers, zoneID, wafResponse.ResultInfo.NextPageId, since, until, callCount)

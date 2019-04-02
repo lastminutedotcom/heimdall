@@ -15,8 +15,8 @@ func GetWafTotals(aggregates []*model.Aggregate, config *model.Config, client wa
 		since := time.Now().In(utc)
 		everyMinutes, _ := strconv.Atoi(config.CollectEveryMinutes)
 		until := since.Add(time.Duration(everyMinutes) * time.Minute * -1)
-
-		triggers, err := client.GetWafTriggersBy(aggregate.ZoneID, since, until)
+		callCount := 1
+		triggers, err := client.GetWafTriggersBy(aggregate.ZoneID, since, until, callCount)
 		if err != nil {
 			log.Error("ERROR Getting WAF trigger for zone %v, %v", aggregate.ZoneName, err)
 			continue

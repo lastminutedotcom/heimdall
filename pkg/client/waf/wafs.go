@@ -7,7 +7,7 @@ import (
 )
 
 type WafsClient interface {
-	GetWafTriggersBy(zoneID string, since, until time.Time) ([]model.WafTrigger, error)
+	GetWafTriggersBy(zoneID string, since, until time.Time, callCount int) ([]model.WafTrigger, error)
 
 	getWafTrigger(zoneID, nextPageId string) ([]model.WafTrigger, string, error)
 
