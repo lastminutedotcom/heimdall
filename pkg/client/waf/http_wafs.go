@@ -5,6 +5,7 @@ import (
 	"fmt"
 	"git01.bravofly.com/N7/heimdall/pkg/client"
 	"git01.bravofly.com/N7/heimdall/pkg/dates"
+	"git01.bravofly.com/N7/heimdall/pkg/logging"
 	"git01.bravofly.com/N7/heimdall/pkg/model"
 	"io/ioutil"
 	"net/http"
@@ -19,10 +20,10 @@ func (h HttpWafs) GetWafTriggersBy(zoneID string, since, until time.Time) ([]mod
 	if err != nil {
 		return nil, fmt.Errorf("get WAF: %v", err)
 	}
-
+	callCount := 1
 	triggers := make([]model.WafTrigger, 0)
 	if httpResponse.StatusCode == http.StatusOK {
-		triggers = h.nextWafTriggersBy(wafResponse.WafTriggers, triggers, zoneID, wafResponse.ResultInfo.NextPageId, since, until)
+		triggers = h.nextWafTriggersBy(wafResponse.WafTriggers, triggers, zoneID, wafResponse.ResultInfo.NextPageId, since, until, callCount)
 		return triggers, nil
 	}
 	return nil, fmt.Errorf("get WAF HTTP error %d", httpResponse.StatusCode)
@@ -42,6 +43,7 @@ func (h HttpWafs) getWafTrigger(zoneID, nextPageId string) ([]model.WafTrigger, 
 }
 
 func (h HttpWafs) callWafTrigger(url string) (*http.Response, model.WAFResponse, error) {
+	log.Info("calling url: %s", url)
 	request, _ := http.NewRequest(http.MethodGet, url, nil)
 
 	resp, err := client.DoHttpCall(request)
@@ -58,7 +60,7 @@ func (h HttpWafs) callWafTrigger(url string) (*http.Response, model.WAFResponse,
 	return resp, response, nil
 }
 
-func (h HttpWafs) nextWafTriggersBy(triggers []model.WafTrigger, result []model.WafTrigger, zoneID, nextPageId string, since, until time.Time) []model.WafTrigger {
+func (h HttpWafs) nextWafTriggersBy(triggers []model.WafTrigger, result []model.WafTrigger, zoneID, nextPageId string, since, until time.Time, callCount int) []model.WafTrigger {
 	for _, wafTrigger := range triggers {
 		if dates.After(wafTrigger.OccurredAt, since) {
 			continue
@@ -73,9 +75,10 @@ func (h HttpWafs) nextWafTriggersBy(triggers []model.WafTrigger, result []model.
 		}
 	}
 
-	if nextPageId != "" {
+	if nextPageId != "" || callCount < 100 {
 		nextWafTriggers, actualNextPageId, _ := h.getWafTrigger(zoneID, nextPageId)
-		return h.nextWafTriggersBy(nextWafTriggers, result, zoneID, actualNextPageId, since, until)
+		callCount++
+		return h.nextWafTriggersBy(nextWafTriggers, result, zoneID, actualNextPageId, since, until, callCount)
 	}
 
 	return result
