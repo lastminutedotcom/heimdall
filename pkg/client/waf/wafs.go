@@ -11,7 +11,7 @@ type WafsClient interface {
 
 	getWafTrigger(zoneID, nextPageId string) ([]model.WafTrigger, string, error)
 
-	nextWafTriggersBy(triggers []model.WafTrigger, result []model.WafTrigger, zoneID, nextPageId string, since, until time.Time) []model.WafTrigger
+	nextWafTriggersBy(triggers []model.WafTrigger, result []model.WafTrigger, zoneID, nextPageId string, since, until time.Time, callCount int) []model.WafTrigger
 
 	callWafTrigger(url string) (*http.Response, model.WAFResponse, error)
 }
