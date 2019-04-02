@@ -75,7 +75,7 @@ func (h HttpWafs) nextWafTriggersBy(triggers []model.WafTrigger, result []model.
 		}
 	}
 
-	if nextPageId != "" || callCount < 100 {
+	if nextPageId != "" {
 		nextWafTriggers, actualNextPageId, _ := h.getWafTrigger(zoneID, nextPageId)
 		callCount++
 		return h.nextWafTriggersBy(nextWafTriggers, result, zoneID, actualNextPageId, since, until, callCount)
