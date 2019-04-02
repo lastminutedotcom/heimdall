@@ -1,7 +1,6 @@
 package client
 
 import (
-	"github.com/cloudflare/cloudflare-go"
 	"golang.org/x/net/context"
 	"golang.org/x/time/rate"
 	"log"
@@ -18,17 +17,17 @@ var logger = log.New(os.Stdout, "[HEIMDALL] ", log.LstdFlags)
 var rateLimiter = rate.NewLimiter(rate.Limit(3), 1) // 3rps (900 req/5 min)
 
 var client = &http.Client{
-	Timeout: time.Duration(50 * time.Second),
+	Timeout: time.Duration(20 * time.Second),
 }
 
-func CloudflareClient() *cloudflare.API {
+/*func CloudflareClient() *cloudflare.API {
 	c, err := cloudflare.New(os.Getenv("CLOUDFLARE_TOKEN"), os.Getenv("CLOUDFLARE_EMAIL"),
 		cloudflare.UsingOrganization(os.Getenv("CLOUDFLARE_ORG_ID")), cloudflare.HTTPClient(client))
 	if err != nil {
 		logger.Fatalf("could not create client for Cloudflare: %v", err)
 	}
 	return c
-}
+}*/
 
 func DoHttpCall(request *http.Request) (*http.Response, error) {
 	rateLimiter.Wait(context.TODO())
