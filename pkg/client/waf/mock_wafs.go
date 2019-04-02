@@ -14,7 +14,7 @@ type MockWafs struct {
 	Path string
 }
 
-func (m MockWafs) GetWafTriggersBy(zoneID string, since, until time.Time) ([]model.WafTrigger, error) {
+func (m MockWafs) GetWafTriggersBy(zoneID string, since, until time.Time, callCount int) ([]model.WafTrigger, error) {
 	file, err := os.Open(m.Path)
 	if err != nil {
 		log.Info("%v", err)
