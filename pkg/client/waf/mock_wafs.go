@@ -35,7 +35,7 @@ func (MockWafs) getWafTrigger(zoneID, nextPageId string) ([]model.WafTrigger, st
 	return nil, "", nil
 }
 
-func (MockWafs) nextWafTriggersBy(triggers []model.WafTrigger, result []model.WafTrigger, zoneID, nextPageId string, since, until time.Time) []model.WafTrigger {
+func (MockWafs) nextWafTriggersBy(triggers []model.WafTrigger, result []model.WafTrigger, zoneID, nextPageId string, since, until time.Time, callCount int) []model.WafTrigger {
 
 	return result
 }
