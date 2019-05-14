@@ -20,7 +20,7 @@ func Run() {
 
 	scheduler.Scheduler{
 		Config: config,
-	}.Start(Orchestrator())
+	}.Start(Orchestration())
 
 }
 
@@ -28,7 +28,6 @@ func readConfig(filePath string) *model.Config {
 	file, err := os.Open(filePath)
 	if err != nil {
 		log.Error(fmt.Sprintf("error reading configuration. %v", err), nil)
-		//logger.Printf("error reading configuration. %v", err)
 		return model.DefautConfig()
 	}
 	defer file.Close()

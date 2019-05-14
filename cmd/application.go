@@ -12,7 +12,7 @@ import (
 	"github.com/marpaia/graphite-golang"
 )
 
-func Orchestrator() func(config *model.Config) {
+func Orchestration() func(config *model.Config) {
 	return func(config *model.Config) {
 		newGraphite, err := graphite.NewGraphite(config.GraphiteConfig.Host, config.GraphiteConfig.Port)
 		if err != nil {
