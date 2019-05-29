@@ -1,5 +1,0 @@
-management-endpoint:
-  timeout: 10s
-#namespaces:
-#  excluded:
-#    - maab-qa

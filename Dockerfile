@@ -1,12 +1,18 @@
-ARG TAG_NAME
-FROM registry.bravofly.intra:5000/application/goappfw:$TAG_NAME
+FROM golang:1.12-stretch as bin
 
 LABEL author="Team SRE <sre@lastminute.com>"
 
-ARG APP_NAME
+ARG APPNAME
+COPY . /work
+WORKDIR /work
 
-COPY $APP_NAME /application
+RUN go build -a -ldflags '-extldflags "-static"' -o /$APPNAME .
 
-ENV APPFW_NAME $APP_NAME
+FROM debian:stretch
 
-ENTRYPOINT ["/run_helper.sh"]
+COPY --from=bin /$APPNAME /heimdall
+
+RUN apt update && update-ca-certificates
+
+ENTRYPOINT ["/heimdall"]
+

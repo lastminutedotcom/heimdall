@@ -9,10 +9,10 @@ clean:
 	go clean -i ./cmd
 
 build: clean test
-	GOOS=linux GOARCH=amd64 go build  -a -ldflags '-extldflags "-static"' -o $(APPNAME) .
+	go build .
 
-package: build
-	docker build -t $(REGISTRY)/$(APPNAME):$(VERSION) .
+docker:
+	docker build --build-arg APPNAME=$(APPNAME) -t $(REGISTRY)/$(APPNAME):$(VERSION) .
 	docker push $(REGISTRY)/$(APPNAME):$(VERSION)
 	rm -f $(APPNAME)
 

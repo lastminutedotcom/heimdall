@@ -1,14 +1,23 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: heimdall
+  labels:
+    app: heimdall
 spec:
-  replicas: 1
-  strategy:
-    rollingUpdate:
-      maxUnavailable: 0%
-      maxSurge: 100%
+  replicas: 3
+  selector:
+    matchLabels:
+      app: heimdall
   template:
+    metadata:
+      labels:
+        app: heimdall
     spec:
       containers:
-      - name: application
-        env:
+        - name: heimdall
+          image: lmnsre/heimdall:0.5.0
+      env:
         - name: CLOUDFLARE_TOKEN
           valueFrom:
             secretKeyRef:
@@ -29,8 +38,3 @@ spec:
             secretKeyRef:
               name: heimdall-system-secret
               key:  HEIMDALL-CONFIG_PATH
-        - name: GRAYLOG_URL
-          valueFrom:
-            secretKeyRef:
-              name: heimdall-system-secret
-              key:  HEIMDALL-GRAYLOG_URL
