@@ -35,7 +35,7 @@ graphite_config: is the configuration required to connect to your graphite host 
 
 ## Setting up in kubernetes
 
-Create the secrets and pass to k8s deployment as specified in [deployment example](./kubernetes/deployment.yaml)
+Create the secrets as specified deployment file [deployment example](./kubernetes/deployment.yaml)
 
 #### Configuration file [configuration example](./example/config_k8s.json)
 ```json
