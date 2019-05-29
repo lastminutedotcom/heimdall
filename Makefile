@@ -6,14 +6,13 @@ test:
 	go test -v ./...
 
 clean:
-	go clean -i ./cmd
+	go clean -i ./...
 
 build: clean test
 	go build .
 
-docker:
+docker: test
 	docker build --build-arg APPNAME=$(APPNAME) -t $(REGISTRY)/$(APPNAME):$(VERSION) .
 	docker push $(REGISTRY)/$(APPNAME):$(VERSION)
-	rm -f $(APPNAME)
 
-.PHONY: test clean build package
+.PHONY: test clean build docker
