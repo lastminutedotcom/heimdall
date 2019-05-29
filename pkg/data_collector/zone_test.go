@@ -12,9 +12,9 @@ func Test_zoneCollection(t *testing.T) {
 		Path: filepath.Join("..", "..", "test", "cloudflare_zone.json"),
 	})
 
-	assert.Equal(t, len(aggregates), 18)
+	assert.Equal(t, len(aggregates), 11)
 	assert.Equal(t, aggregates[0].ZoneName, "play.at")
-	assert.Equal(t, aggregates[12].ZoneName, "jumbo.com")
-	assert.Equal(t, aggregates[0].ZoneID, "aaaaaaaaaaaabbbbbbbbbbbbbbbbbbcc")
-	assert.Equal(t, aggregates[12].ZoneID, "eeeeeeeeeeeeebbbbbbbbbbbbbbbbbbc")
+	assert.Equal(t, aggregates[10].ZoneName, "lastplay.com")
+	assert.Equal(t, aggregates[0].ZoneID, "11111111111111111111111111111111")
+	assert.Equal(t, aggregates[10].ZoneID, "00000000000000000000000000000000")
 }

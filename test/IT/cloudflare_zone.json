@@ -1,13 +1,13 @@
 {
     "result": [
         {
-            "id": "aaaaaaaaaaaabbbbbbbbbbbbbbbbbbcc",
+            "id": "11111111111111111111111111111111",
             "name": "play.at",
             "status": "active",
             "paused": false,
             "type": "partial",
             "development_mode": 0,
-            "verification_key": "111122223-444555678",
+            "verification_key": "111111111-111111111",
             "original_name_servers": [
                 "lucy.com",
                 "mike.org",
@@ -28,12 +28,12 @@
                 "multiple_railguns_allowed": false
             },
             "owner": {
-                "id": "aaaaaaaaaaaabbbbbbbbbbbbbbbbbbcc",
+                "id": "00000000000000000000000000000000",
                 "type": "organization",
                 "name": "Lastminute"
             },
             "account": {
-                "id": "aaaaaaaaaaaabbbbbbbbbbbbbbbbbbcc",
+                "id": "00000000000000000000000000000000",
                 "name": "Lastminute"
             },
             "permissions": [

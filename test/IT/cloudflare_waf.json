@@ -110,7 +110,7 @@
             "ip": "46.119.122.127",
             "protocol": "HTTP/1.1",
             "method": "GET",
-            "host": ".at",
+            "host": "www.play.at",
             "user_agent": "Mozilla/4.0 (compatible; MSIE 6.0; Windows NT 5.1; MyIE2; Deepnet Explorer)",
             "uri": "/",
             "request_duration": 2000128,
