@@ -2,8 +2,8 @@ package metric
 
 import (
 	"fmt"
-	"git01.bravofly.com/N7/heimdall/pkg/logging"
-	"git01.bravofly.com/N7/heimdall/pkg/model"
+	"github.com/lastminutedotcom/heimdall/pkg/logging"
+	"github.com/lastminutedotcom/heimdall/pkg/model"
 	"github.com/marpaia/graphite-golang"
 	"strconv"
 	"strings"

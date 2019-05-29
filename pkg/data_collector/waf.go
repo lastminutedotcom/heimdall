@@ -1,9 +1,9 @@
 package data_collector
 
 import (
-	"git01.bravofly.com/N7/heimdall/pkg/client/waf"
-	"git01.bravofly.com/N7/heimdall/pkg/logging"
-	"git01.bravofly.com/N7/heimdall/pkg/model"
+	"github.com/lastminutedotcom/heimdall/pkg/client/waf"
+	"github.com/lastminutedotcom/heimdall/pkg/logging"
+	"github.com/lastminutedotcom/heimdall/pkg/model"
 	"strconv"
 	"time"
 )

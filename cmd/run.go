@@ -1,10 +1,10 @@
 package cmd
 
 import (
-	"git01.bravofly.com/N7/heimdall/pkg/kubernetes"
-	"git01.bravofly.com/N7/heimdall/pkg/logging"
-	"git01.bravofly.com/N7/heimdall/pkg/model"
-	"git01.bravofly.com/N7/heimdall/pkg/scheduler"
+	"github.com/lastminutedotcom/heimdall/pkg/kubernetes"
+	"github.com/lastminutedotcom/heimdall/pkg/logging"
+	"github.com/lastminutedotcom/heimdall/pkg/model"
+	"github.com/lastminutedotcom/heimdall/pkg/scheduler"
 	"os"
 )
 

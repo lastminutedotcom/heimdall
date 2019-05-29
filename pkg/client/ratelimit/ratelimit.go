@@ -1,7 +1,7 @@
 package ratelimit
 
 import (
-	"git01.bravofly.com/N7/heimdall/pkg/model"
+	"github.com/lastminutedotcom/heimdall/pkg/model"
 	"net/http"
 	"time"
 )

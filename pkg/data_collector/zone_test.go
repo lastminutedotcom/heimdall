@@ -1,7 +1,7 @@
 package data_collector
 
 import (
-	"git01.bravofly.com/N7/heimdall/pkg/client/zone"
+	"github.com/lastminutedotcom/heimdall/pkg/client/zone"
 	"github.com/magiconair/properties/assert"
 	"path/filepath"
 	"testing"

@@ -2,7 +2,7 @@ package model_test
 
 import (
 	"bytes"
-	"git01.bravofly.com/N7/heimdall/pkg/model"
+	"github.com/lastminutedotcom/heimdall/pkg/model"
 	"github.com/magiconair/properties/assert"
 	"testing"
 )

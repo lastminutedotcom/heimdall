@@ -3,7 +3,7 @@ package zone
 import (
 	"encoding/json"
 	"fmt"
-	"git01.bravofly.com/N7/heimdall/pkg/client"
+	"github.com/lastminutedotcom/heimdall/pkg/client"
 	"github.com/cloudflare/cloudflare-go"
 	"io/ioutil"
 	"net/http"

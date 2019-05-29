@@ -2,8 +2,8 @@ package waf
 
 import (
 	"encoding/json"
-	"git01.bravofly.com/N7/heimdall/pkg/logging"
-	"git01.bravofly.com/N7/heimdall/pkg/model"
+	"github.com/lastminutedotcom/heimdall/pkg/logging"
+	"github.com/lastminutedotcom/heimdall/pkg/model"
 	"io/ioutil"
 	"net/http"
 	"os"

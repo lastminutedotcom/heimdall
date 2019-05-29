@@ -1,8 +1,8 @@
 package data_collector
 
 import (
-	"git01.bravofly.com/N7/heimdall/pkg/client/colocation"
-	"git01.bravofly.com/N7/heimdall/pkg/model"
+	"github.com/lastminutedotcom/heimdall/pkg/client/colocation"
+	"github.com/lastminutedotcom/heimdall/pkg/model"
 	"github.com/cloudflare/cloudflare-go"
 	"github.com/magiconair/properties/assert"
 	"path/filepath"

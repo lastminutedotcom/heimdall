@@ -1,4 +1,4 @@
-module git01.bravofly.com/N7/heimdall
+module github.com/lastminutedotcom/heimdall
 
 require (
 	github.com/BurntSushi/toml v0.3.1 // indirect

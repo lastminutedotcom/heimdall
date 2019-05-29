@@ -1,11 +1,11 @@
 package cmd
 
 import (
-	"git01.bravofly.com/N7/heimdall/pkg/client/colocation"
-	"git01.bravofly.com/N7/heimdall/pkg/client/ratelimit"
-	"git01.bravofly.com/N7/heimdall/pkg/client/waf"
-	"git01.bravofly.com/N7/heimdall/pkg/client/zone"
-	"git01.bravofly.com/N7/heimdall/pkg/model"
+	"github.com/lastminutedotcom/heimdall/pkg/client/colocation"
+	"github.com/lastminutedotcom/heimdall/pkg/client/ratelimit"
+	"github.com/lastminutedotcom/heimdall/pkg/client/waf"
+	"github.com/lastminutedotcom/heimdall/pkg/client/zone"
+	"github.com/lastminutedotcom/heimdall/pkg/model"
 	"github.com/magiconair/properties/assert"
 	"path/filepath"
 	"sort"

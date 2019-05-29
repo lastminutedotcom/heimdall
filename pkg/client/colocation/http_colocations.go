@@ -3,8 +3,8 @@ package colocation
 import (
 	"encoding/json"
 	"fmt"
-	"git01.bravofly.com/N7/heimdall/pkg/client"
-	"git01.bravofly.com/N7/heimdall/pkg/model"
+	"github.com/lastminutedotcom/heimdall/pkg/client"
+	"github.com/lastminutedotcom/heimdall/pkg/model"
 	"github.com/cloudflare/cloudflare-go"
 	"io/ioutil"
 	"net/http"

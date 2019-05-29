@@ -3,9 +3,9 @@ package ratelimit
 import (
 	"encoding/json"
 	"fmt"
-	"git01.bravofly.com/N7/heimdall/pkg/client"
-	"git01.bravofly.com/N7/heimdall/pkg/dates"
-	"git01.bravofly.com/N7/heimdall/pkg/model"
+	"github.com/lastminutedotcom/heimdall/pkg/client"
+	"github.com/lastminutedotcom/heimdall/pkg/dates"
+	"github.com/lastminutedotcom/heimdall/pkg/model"
 	"io/ioutil"
 	"net/http"
 	"time"

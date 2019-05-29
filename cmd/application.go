@@ -1,14 +1,14 @@
 package cmd
 
 import (
-	"git01.bravofly.com/N7/heimdall/pkg/client/colocation"
-	"git01.bravofly.com/N7/heimdall/pkg/client/ratelimit"
-	"git01.bravofly.com/N7/heimdall/pkg/client/waf"
-	"git01.bravofly.com/N7/heimdall/pkg/client/zone"
-	"git01.bravofly.com/N7/heimdall/pkg/data_collector"
-	"git01.bravofly.com/N7/heimdall/pkg/logging"
-	"git01.bravofly.com/N7/heimdall/pkg/metric"
-	"git01.bravofly.com/N7/heimdall/pkg/model"
+	"github.com/lastminutedotcom/heimdall/pkg/client/colocation"
+	"github.com/lastminutedotcom/heimdall/pkg/client/ratelimit"
+	"github.com/lastminutedotcom/heimdall/pkg/client/waf"
+	"github.com/lastminutedotcom/heimdall/pkg/client/zone"
+	"github.com/lastminutedotcom/heimdall/pkg/data_collector"
+	"github.com/lastminutedotcom/heimdall/pkg/logging"
+	"github.com/lastminutedotcom/heimdall/pkg/metric"
+	"github.com/lastminutedotcom/heimdall/pkg/model"
 	"github.com/marpaia/graphite-golang"
 )
 
