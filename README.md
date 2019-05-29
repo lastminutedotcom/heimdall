@@ -6,7 +6,6 @@ Heimdall, all-seeing and all-hearing
 
 Setting your organizationId, **_Heimdall_** retrieve all the zones configured in you account and get the metrics to collect.
  
- 
 
 ## Setting up the environment
 
@@ -19,13 +18,16 @@ export CONFIG_PATH=<CONFIGURATION FILE PATH>
 ```
 this variables are required for the correct working of *Heimdall*
 
-#### Configuration file [configuration example](./test/config.json)
+#### Configuration file [configuration example](./config/config.json)
 ```json
 {
-  "collect_every_minutes" : "5", 
+  "collect_every_minutes" : "5",
   "graphite_config": {
-    "host": "<IP ADDRESS>",
+    "host": "graphite.company.com",
     "port": 2113
+  },
+  "kubernetes": {
+    "management_port": "8888"
   }
 }
 ```
