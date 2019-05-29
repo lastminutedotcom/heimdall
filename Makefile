@@ -12,8 +12,8 @@ build: clean test
 	GOOS=linux GOARCH=amd64 go build  -a -ldflags '-extldflags "-static"' -o $(APPNAME) .
 
 package: build
-	docker build -t $(REGISTRY)/heimdall:$(VERSION) .
-	docker push $(REGISTRY)/heimdall:$(VERSION)
+	docker build -t $(REGISTRY)/$(APPNAME):$(VERSION) .
+	docker push $(REGISTRY)/$(APPNAME):$(VERSION)
 	rm -f $(APPNAME)
 
 .PHONY: test clean build package

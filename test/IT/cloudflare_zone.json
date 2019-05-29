@@ -1,18 +1,18 @@
 {
     "result": [
         {
-            "id": "d746c5cf71899095e42c691788c3ccb9",
-            "name": "bravofly.at",
+            "id": "aaaaaaaaaaaabbbbbbbbbbbbbbbbbbcc",
+            "name": "play.at",
             "status": "active",
             "paused": false,
             "type": "partial",
             "development_mode": 0,
-            "verification_key": "437377414-60409498",
+            "verification_key": "111122223-444555678",
             "original_name_servers": [
-                "ns-128.awsdns-16.com",
-                "ns-1408.awsdns-48.org",
-                "ns-1910.awsdns-46.co.uk",
-                "ns-539.awsdns-03.net"
+                "lucy.com",
+                "mike.org",
+                "jen.co.uk",
+                "max.net"
             ],
             "original_registrar": null,
             "original_dnshost": null,
@@ -28,12 +28,12 @@
                 "multiple_railguns_allowed": false
             },
             "owner": {
-                "id": "f5fd3b3741817e2080883b52b5995643",
+                "id": "aaaaaaaaaaaabbbbbbbbbbbbbbbbbbcc",
                 "type": "organization",
                 "name": "Lastminute"
             },
             "account": {
-                "id": "f5fd3b3741817e2080883b52b5995643",
+                "id": "aaaaaaaaaaaabbbbbbbbbbbbbbbbbbcc",
                 "name": "Lastminute"
             },
             "permissions": [

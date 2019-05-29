@@ -2,31 +2,32 @@ package log
 
 import (
 	"fmt"
-	"git01.bravofly.com/golang/appfw/pkg/logging"
+	"github.com/sirupsen/logrus"
 	"os"
 )
 
+var  appLog = logrus.New()
+
 func Init() {
-	AppLog := logging.NewAppLog(os.Stdout)
-	AppLog.UseFileOutput("heimdall")
+	appLog.SetOutput(os.Stdout)
 }
 
 func Info(message string, args ...interface{}) {
-	logging.Info(fmt.Sprintf(message, args...), nil)
+	appLog.Info(fmt.Sprintf(message, args...))
 }
 
 func Debug(message string, args ...interface{}) {
-	logging.Debug(fmt.Sprintf(message, args...), nil)
+	appLog.Debug(fmt.Sprintf(message, args...))
 }
 
 func Warn(message string, args ...interface{}) {
-	logging.Warn(fmt.Sprintf(message, args...), nil)
+	appLog.Warn(fmt.Sprintf(message, args...))
 }
 
 func Error(message string, args ...interface{}) {
-	logging.Error(fmt.Sprintf(message, args...), nil)
+	appLog.Error(fmt.Sprintf(message, args...))
 }
 
 func Fatal(message string, args ...interface{}) {
-	logging.Fatal(fmt.Sprintf(message, args...), nil)
+	appLog.Fatal(fmt.Sprintf(message, args...))
 }

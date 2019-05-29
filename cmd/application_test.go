@@ -38,8 +38,8 @@ func Test_integrationTest(t *testing.T) {
 	})
 
 	assert.Equal(t, len(metrics), 337)
-	assert.Equal(t, metrics[15].Name, "cloudflare.bravofly_at.secure_bravofly_at.total.ratelimit.post.challenge")
-	assert.Equal(t, metrics[24].Name, "cloudflare.bravofly_at.secure_bravofly_at.total.ratelimit.put.simulate")
-	assert.Equal(t, metrics[15].Value, "4")
-	assert.Equal(t, metrics[24].Value, "1")
+	assert.Equal(t, "cloudflare.play_at.secure_play_at.total.ratelimit.post.challenge", metrics[15].Name)
+	assert.Equal(t, "cloudflare.play_at.secure_play_at.total.ratelimit.put.simulate", metrics[24].Name)
+	assert.Equal(t, "4", metrics[15].Value)
+	assert.Equal(t, "1", metrics[24].Value)
 }
