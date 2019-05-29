@@ -51,3 +51,11 @@ Create the secrets as specified deployment file [deployment example](./kubernete
 }
 ```
 kubernetes is used to expose management ports used by liveness and readiness probes.
+
+## Grafana
+
+![Cloudflare dashboard](grafana/Grafana-Cloudflare-Dashboard.jpg "Cloudflare dashboard")
+
+This is an example of dashboard created using the data collected with **Heimdall**.
+ 
+You can find the dashboard configuration at the following link [cloudflare-dashboard.json](./grafana/cloudflare-dashboard.json). 
