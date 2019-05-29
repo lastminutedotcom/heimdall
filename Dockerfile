@@ -12,7 +12,7 @@ FROM debian:stretch
 
 COPY --from=bin /$APPNAME /heimdall
 
-RUN apt update && update-ca-certificates
+RUN apt update && DEBIAN_FRONTEND=noninteractive apt install -y ca-certificates && update-ca-certificates
 
 ENTRYPOINT ["/heimdall"]
 

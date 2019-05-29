@@ -3,7 +3,7 @@ package data_collector
 import (
 	"git01.bravofly.com/N7/heimdall/pkg/model"
 	"github.com/cloudflare/cloudflare-go"
-	"github.com/stretchr/testify/assert"
+	"github.com/magiconair/properties/assert"
 	"testing"
 	"time"
 )
@@ -38,8 +38,8 @@ func Test_correctAdapting(t *testing.T) {
 
 	collectWaf(triggers, utc, aggregate)
 
-	assert.Equal(t, 2, aggregate.Totals[now].WafTrigger["host.it"].Block.Value)
-	assert.Equal(t, 7, aggregate.Totals[now].WafTrigger["host.com"].Simulate.Value)
+	assert.Equal(t, aggregate.Totals[now].WafTrigger["host.it"].Block.Value, 2)
+	assert.Equal(t, aggregate.Totals[now].WafTrigger["host.com"].Simulate.Value,7)
 
 }
 
