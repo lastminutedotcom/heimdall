@@ -1,6 +1,6 @@
-# default for goappfw
 APPNAME?="heimdall"
 VERSION=$(shell cat .version)
+REGISTRY?="lmnsre"
 
 test:
 	go test -v ./...
@@ -12,9 +12,8 @@ build: clean test
 	GOOS=linux GOARCH=amd64 go build  -a -ldflags '-extldflags "-static"' -o $(APPNAME) .
 
 package: build
-	docker build --build-arg APP_NAME=$(APPNAME) --build-arg TAG_NAME=stable \
-	 	-t registry.bravofly.intra:5000/application/heimdall:$(VERSION) .
-	docker push registry.bravofly.intra:5000/application/heimdall:$(VERSION)
-	go clean .
+	docker build -t $(REGISTRY)/heimdall:$(VERSION) .
+	docker push $(REGISTRY)/heimdall:$(VERSION)
+	rm -f $(APPNAME)
 
 .PHONY: test clean build package
