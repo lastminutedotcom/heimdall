@@ -6,7 +6,6 @@ Heimdall, all-seeing and all-hearing
 
 Setting your organizationId, **_Heimdall_** retrieve all the zones configured in you account and get the metrics to collect.
  
-
 ## Setting up the environment
 
 #### Environment variables
@@ -18,7 +17,27 @@ export CONFIG_PATH=<CONFIGURATION FILE PATH>
 ```
 this variables are required for the correct working of *Heimdall*
 
-#### Configuration file [configuration example](./config/config.json)
+#### Configuration file [configuration example](./example/config.json)
+```json
+{
+  "collect_every_minutes" : "5",
+  "graphite_config": {
+    "host": "graphite.company.com",
+    "port": 2113
+  }
+}
+```
+collect_every_minutes: mean that the metrics will be taken every interval defined. 
+
+eg.: 5 meaning: every 5th minute for the last 5 minute
+
+graphite_config: is the configuration required to connect to your graphite host in order to push the metrics.
+
+## Setting up in kubernetes
+
+Create the secrets and pass to k8s deployment as specified in [deployment example](./kubernetes/deployment.yaml)
+
+#### Configuration file [configuration example](./example/config_k8s.json)
 ```json
 {
   "collect_every_minutes" : "5",
@@ -31,10 +50,4 @@ this variables are required for the correct working of *Heimdall*
   }
 }
 ```
-collect_every_minutes: mean that the metrics will be taken every interval defined. 
-
-eg.: 5 meaning: every 5th minute for the last 5 minute
-
-graphite_config: is the configuration required to connect to your graphite host in order to push the metrics.
-
-
+kubernetes is used to expose management ports used by liveness and readiness probes.
