@@ -12,11 +12,12 @@ import (
 	"github.com/marpaia/graphite-golang"
 )
 
-func Orchestration() func(config *model.Config) {
+func Orchestrate() func(config *model.Config) {
 	return func(config *model.Config) {
-		newGraphite, err := graphite.NewGraphite(config.GraphiteConfig.Host, config.GraphiteConfig.Port)
+		graphite, err := graphite.NewGraphite(config.GraphiteConfig.Host, config.GraphiteConfig.Port)
 		if err != nil {
-			log.Error("error creating graphite connection. %v", err)
+			log.Error("error creating Graphite connection: %v", err)
+			return
 		}
 
 		httpZonesClient := zone.HttpZones{}
@@ -24,25 +25,46 @@ func Orchestration() func(config *model.Config) {
 		httpWafsClient := waf.HttpWafs{}
 		httpRateLimitClient := ratelimit.HttpRateLimitClient{}
 
-		aggregate := dataCollector(config, httpZonesClient, colocationsClient, httpWafsClient, httpRateLimitClient)
-
-		metrics := adaptToMetrics(aggregate)
-		metric.PushMetrics(metrics, newGraphite)
+		//TODO use unbuffered channel by sending in chan while collecting
+		aggregate := collect(config, httpZonesClient, colocationsClient, httpWafsClient, httpRateLimitClient)
+		metricStream := make(chan *model.Aggregate, len(aggregate))
+		for _, a := range aggregate {
+			metricStream <- a
+		}
+		close(metricStream)
+		if err := adaptAndSend(metricStream, graphite); err!=nil {
+			log.Error("error converting metrics and sending to Graphite: %v", err)
+			return
+		}
 	}
 }
 
-func adaptToMetrics(aggregate []*model.Aggregate) []graphite.Metric {
-	return metric.AdaptDataToMetrics(aggregate)
-
-}
-
-func dataCollector(config *model.Config, zoneClient zone.ZonesClient,
+//TODO work this function to have it stream the data as soon as they are read
+// we should switch to the official cloudflare-go client to allow
+// concurrent calls to be managed by the client rate-limiter instead of relying on our custom impl
+func collect(config *model.Config, zoneClient zone.ZonesClient,
 	colocationsClient colocation.ColocationsClient, wafClient waf.WafsClient,
 	rateLimitClient ratelimit.RateLimitClient) []*model.Aggregate {
 
-	aggregate, _ := data_collector.GetZones(zoneClient)
+	aggregate, err := data_collector.GetZones(zoneClient)
+	if err!=nil {
+		log.Error("%v", err)
+		return nil
+	}
+	// we don't throw error here because we logged in the methods
 	data_collector.GetColocationTotals(aggregate, colocationsClient)
 	data_collector.GetWafTotals(aggregate, config, wafClient)
 	data_collector.GetRatelimitTotals(aggregate, config, rateLimitClient)
 	return aggregate
+}
+
+// better use a buffered channel
+func adaptAndSend(aggregates chan *model.Aggregate, g *graphite.Graphite) error {
+	for a := range aggregates {
+		metrics := metric.AdaptMetric(a)
+		if err := metric.Push(metrics, g); err!=nil {
+			return err
+		}
+	}
+	return nil
 }
