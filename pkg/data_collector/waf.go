@@ -11,8 +11,7 @@ import (
 func GetWafTotals(aggregates []*model.Aggregate, config *model.Config, client waf.WafsClient) ([]*model.Aggregate, error) {
 	for _, aggregate := range aggregates {
 		log.Info("collecting waf trigger metrics for %s", aggregate.ZoneName)
-		utc, _ := time.LoadLocation("UTC")
-		since := time.Now().In(utc)
+		since := time.Now().In(time.UTC)
 		everyMinutes, _ := strconv.Atoi(config.CollectEveryMinutes)
 		until := since.Add(time.Duration(everyMinutes) * time.Minute * -1)
 		callCount := 1
@@ -22,16 +21,16 @@ func GetWafTotals(aggregates []*model.Aggregate, config *model.Config, client wa
 			continue
 		}
 
-		collectWaf(triggers, utc, aggregate)
+		collectWaf(triggers, aggregate)
 	}
 
 	return aggregates, nil
 
 }
 
-func collectWaf(triggers []model.WafTrigger, utc *time.Location, aggregate *model.Aggregate) {
+func collectWaf(triggers []model.WafTrigger, aggregate *model.Aggregate) {
 	for _, trigger := range triggers {
-		OccurredAt := trigger.OccurredAt.In(utc)
+		OccurredAt := trigger.OccurredAt.In(time.UTC)
 		occurredAt := time.Date(OccurredAt.Year(), OccurredAt.Month(), OccurredAt.Day(), OccurredAt.Hour(), OccurredAt.Minute(), 0, 0, OccurredAt.Location())
 		counters, exist := aggregate.Totals[occurredAt]
 		if !exist {

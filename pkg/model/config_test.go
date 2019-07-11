@@ -3,7 +3,7 @@ package model_test
 import (
 	"bytes"
 	"github.com/lastminutedotcom/heimdall/pkg/model"
-	"github.com/magiconair/properties/assert"
+	"github.com/stretchr/testify/assert"
 	"testing"
 )
 

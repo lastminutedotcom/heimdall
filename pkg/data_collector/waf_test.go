@@ -3,15 +3,14 @@ package data_collector
 import (
 	"github.com/lastminutedotcom/heimdall/pkg/model"
 	"github.com/cloudflare/cloudflare-go"
-	"github.com/magiconair/properties/assert"
+	"github.com/stretchr/testify/assert"
 	"testing"
 	"time"
 )
 
 func Test_correctAdapting(t *testing.T) {
-	utc, _ := time.LoadLocation("UTC")
-	now := time.Now().In(utc)
-	now = time.Date(now.Year(), now.Month(), now.Day(), now.Hour(), now.Minute(), 0, 0, now.Location())
+	now := time.Now()
+	now = time.Date(now.Year(), now.Month(), now.Day(), now.Hour(), now.Minute(), 0, 0, time.UTC)
 
 	triggers := make([]model.WafTrigger, 0)
 	triggers = append(triggers, newWafTrigger("host.it", "block", now))
@@ -36,10 +35,10 @@ func Test_correctAdapting(t *testing.T) {
 	})
 	aggregate.Totals[now] = model.NewCounters()
 
-	collectWaf(triggers, utc, aggregate)
+	collectWaf(triggers, aggregate)
 
+	assert.Equal(t, aggregate.Totals[now].WafTrigger["host.com"].Simulate.Value, 7)
 	assert.Equal(t, aggregate.Totals[now].WafTrigger["host.it"].Block.Value, 2)
-	assert.Equal(t, aggregate.Totals[now].WafTrigger["host.com"].Simulate.Value,7)
 
 }
 
