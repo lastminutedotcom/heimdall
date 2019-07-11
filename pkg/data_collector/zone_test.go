@@ -2,7 +2,7 @@ package data_collector
 
 import (
 	"github.com/lastminutedotcom/heimdall/pkg/client/zone"
-	"github.com/magiconair/properties/assert"
+	"github.com/stretchr/testify/assert"
 	"path/filepath"
 	"testing"
 )

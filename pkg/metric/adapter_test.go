@@ -3,7 +3,7 @@ package metric
 import (
 	"github.com/lastminutedotcom/heimdall/pkg/model"
 	"github.com/cloudflare/cloudflare-go"
-	"github.com/magiconair/properties/assert"
+	"github.com/stretchr/testify/assert"
 	"testing"
 	"time"
 )
