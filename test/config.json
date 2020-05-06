@@ -1,7 +1,7 @@
 {
   "collect_every_minutes" : "5",
   "graphite_config": {
-    "host": "graphite.host",
-    "port": 1234
+    "host": "graphite.host.com",
+    "port": 2113
   }
 }

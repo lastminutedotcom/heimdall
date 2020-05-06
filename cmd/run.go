@@ -19,7 +19,7 @@ func Run() {
 
 	scheduler.Scheduler{
 		Config: config,
-	}.Start(Orchestration())
+	}.Start(Orchestrate())
 }
 
 func readConfig(filePath string) *model.Config {
