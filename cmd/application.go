@@ -32,7 +32,7 @@ func Orchestrate() func(config *model.Config) {
 			metricStream <- a
 		}
 		close(metricStream)
-		if err := adaptAndSend(metricStream, graphite); err!=nil {
+		if err := adaptAndSend(metricStream, graphite); err != nil {
 			log.Error("error converting metrics and sending to Graphite: %v", err)
 			return
 		}
@@ -47,7 +47,7 @@ func collect(config *model.Config, zoneClient zone.ZonesClient,
 	rateLimitClient ratelimit.RateLimitClient) []*model.Aggregate {
 
 	aggregate, err := data_collector.GetZones(zoneClient)
-	if err!=nil {
+	if err != nil {
 		log.Error("%v", err)
 		return nil
 	}
@@ -62,7 +62,7 @@ func collect(config *model.Config, zoneClient zone.ZonesClient,
 func adaptAndSend(aggregates chan *model.Aggregate, g *graphite.Graphite) error {
 	for a := range aggregates {
 		metrics := metric.AdaptMetric(a)
-		if err := metric.Push(metrics, g); err!=nil {
+		if err := metric.PushMetrics(metrics, g); err != nil {
 			return err
 		}
 	}
