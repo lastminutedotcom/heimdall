@@ -1,8 +1,8 @@
 package metric
 
 import (
-	"github.com/lastminutedotcom/heimdall/pkg/model"
 	"github.com/cloudflare/cloudflare-go"
+	"github.com/lastminutedotcom/heimdall/pkg/model"
 	"github.com/magiconair/properties/assert"
 	"testing"
 	"time"
