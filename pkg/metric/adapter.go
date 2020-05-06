@@ -64,7 +64,7 @@ func AdaptMetric(aggregate *model.Aggregate) []graphite.Metric {
 func hostMetric(zone, host, key, value string, date time.Time) graphite.Metric {
 	metricKey := strings.ToLower(fmt.Sprintf(hostMetricsPattern, normalize(zone), normalize(host), key))
 
-	//log.Info("added metric %s, value %s, %v", metricKey, value, date.Unix())
+	log.Info("added metric %s, value %s, %v", metricKey, value, date.Unix())
 
 	return graphite.NewMetric(metricKey, value, date.Unix())
 }
@@ -72,7 +72,7 @@ func hostMetric(zone, host, key, value string, date time.Time) graphite.Metric {
 func metric(zone, key, value string, date time.Time) graphite.Metric {
 	metricKey := strings.ToLower(fmt.Sprintf(defaultMetricsPattern, normalize(zone), key))
 
-	//log.Info("added metric %s, value %s, %v", metricKey, value, date.Unix())
+	log.Info("added metric %s, value %s, %v", metricKey, value, date.Unix())
 
 	return graphite.NewMetric(metricKey, value, date.Unix())
 }
