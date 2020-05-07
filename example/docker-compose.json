@@ -1,0 +1,7 @@
+{
+  "collect_every_minutes" : "2",
+  "graphite_config": {
+    "host": "localhost",
+    "port": 2003
+  }
+}

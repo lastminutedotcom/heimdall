@@ -66,11 +66,11 @@ kubernetes is used to expose management ports used by liveness and readiness pro
 
 #### Do you intend to add a new feature or change an existing one?
 
-* Suggest your change opening an issue on [Heimdall board](https://github.com/lastminutedotcom/heimdall/issues).
+* Suggest your change by opening an issue after reading the [Opening an issue](./CONTRIBUTING.md#opening-an-issue) section in contributing guidelines.
 
 #### Do you have questions about the source code?
 
-* Ask any question about how to use Heimdall on [Heimdall board](https://github.com/lastminutedotcom/heimdall/issues).
+* Ask any question about how to use Heimdall opening an issue after reading the [Opening an issue](./CONTRIBUTING.md#opening-an-issue) section in contributing guidelines.
 
 ## Grafana
 

@@ -1,0 +1,30 @@
+version: "3"
+
+services:
+  grafana:
+    image: grafana/grafana:latest
+    restart: always
+    container_name: grafana
+    #environment:
+    ports:
+      - 3000:3000
+    networks:
+      - heimdall
+    #mem_limit: 1024m
+
+  graphite:
+    image: graphiteapp/graphite-statsd:latest
+    restart: always
+    container_name: graphite
+    ports:
+      - 8081:80
+      - 2003-2004:2003-2004
+      - 2023-2024:2023-2024
+      - 8125:8125/udp
+      - 8126:8126
+    networks:
+      - heimdall
+
+networks:
+  heimdall:
+    external: true
