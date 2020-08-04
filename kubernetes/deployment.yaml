@@ -1,0 +1,40 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: heimdall
+  labels:
+    app: heimdall
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: heimdall
+  template:
+    metadata:
+      labels:
+        app: heimdall
+    spec:
+      containers:
+        - name: heimdall
+          image: lmnsre/heimdall:0.5.0
+      env:
+        - name: CLOUDFLARE_TOKEN
+          valueFrom:
+            secretKeyRef:
+              name: heimdall-system-secret
+              key: HEIMDALL-CLOUDFLARE_TOKEN
+        - name: CLOUDFLARE_EMAIL
+          valueFrom:
+            secretKeyRef:
+              name: heimdall-system-secret
+              key:  HEIMDALL-CLOUDFLARE_EMAIL
+        - name: CLOUDFLARE_ORG_ID
+          valueFrom:
+            secretKeyRef:
+              name: heimdall-system-secret
+              key:  HEIMDALL-CLOUDFLARE_ORG_ID
+        - name: CONFIG_PATH
+          valueFrom:
+            secretKeyRef:
+              name: heimdall-system-secret
+              key:  HEIMDALL-CONFIG_PATH

@@ -1,0 +1,1329 @@
+{
+    "result": [
+        {
+            "id": "ksrdhbgiwerfhwe",
+            "country": "UA",
+            "ip": "37.115.186.101",
+            "protocol": "HTTP/1.1",
+            "method": "GET",
+            "host": "www.play.at",
+            "user_agent": "Mozilla/4.0 (compatible; MSIE 6.0; Windows NT 5.1; SV1; InfoPath.1)",
+            "uri": "/",
+            "request_duration": 8000000,
+            "triggered_rule_ids": [
+                "100043A"
+            ],
+            "action": "challenge",
+            "cloudflare_location": "KBP",
+            "occurred_at": "2019-01-29T13:25:57.42Z",
+            "rule_detail": [
+                {
+                    "id": "",
+                    "description": "REQUEST_HEADERS:HOST"
+                }
+            ],
+            "rule_message": "False IE6 detection [Type B]",
+            "type": "waf",
+            "rule_id": "100043A"
+        },
+        {
+            "id": "4a0c0717dd2e8b04",
+            "country": "UA",
+            "ip": "37.115.186.101",
+            "protocol": "HTTP/1.1",
+            "method": "GET",
+            "host": "www.play.at",
+            "user_agent": "Mozilla/4.0 (compatible; MSIE 6.0; Windows NT 5.1; SV1; InfoPath.1)",
+            "uri": "/",
+            "request_duration": 9999872,
+            "triggered_rule_ids": [
+                "100043A"
+            ],
+            "action": "challenge",
+            "cloudflare_location": "KBP",
+            "occurred_at": "2019-01-29T13:25:57.09Z",
+            "rule_detail": [
+                {
+                    "id": "",
+                    "description": "REQUEST_HEADERS:HOST"
+                }
+            ],
+            "rule_message": "False IE6 detection [Type B]",
+            "type": "waf",
+            "rule_id": "100043A"
+        },
+        {
+            "id": "4a0c07144eb78213",
+            "country": "UA",
+            "ip": "37.115.186.101",
+            "protocol": "HTTP/1.1",
+            "method": "GET",
+            "host": "www.play.at",
+            "user_agent": "Mozilla/4.0 (compatible; MSIE 6.0; Windows NT 5.1; SV1; InfoPath.1)",
+            "uri": "/",
+            "request_duration": 240000000,
+            "triggered_rule_ids": [
+                "100043A"
+            ],
+            "action": "challenge",
+            "cloudflare_location": "KBP",
+            "occurred_at": "2019-01-29T13:25:56.52Z",
+            "rule_detail": [
+                {
+                    "id": "",
+                    "description": "REQUEST_HEADERS:HOST"
+                }
+            ],
+            "rule_message": "False IE6 detection [Type B]",
+            "type": "waf",
+            "rule_id": "100043A"
+        },
+        {
+            "id": "4a0bb5ad82588b0a",
+            "country": "UA",
+            "ip": "46.119.122.127",
+            "protocol": "HTTP/1.1",
+            "method": "GET",
+            "host": "www.play.at",
+            "user_agent": "Mozilla/4.0 (compatible; MSIE 6.0; Windows NT 5.1; MyIE2; Deepnet Explorer)",
+            "uri": "/",
+            "request_duration": 15000064,
+            "triggered_rule_ids": [
+                "100043A"
+            ],
+            "action": "challenge",
+            "cloudflare_location": "KBP",
+            "occurred_at": "2019-01-29T12:30:22.32Z",
+            "rule_detail": [
+                {
+                    "id": "",
+                    "description": "REQUEST_HEADERS:HOST"
+                }
+            ],
+            "rule_message": "False IE6 detection [Type B]",
+            "type": "waf",
+            "rule_id": "100043A"
+        },
+        {
+            "id": "4a0bb5ab794083ee",
+            "country": "UA",
+            "ip": "46.119.122.127",
+            "protocol": "HTTP/1.1",
+            "method": "GET",
+            "host": "www.play.at",
+            "user_agent": "Mozilla/4.0 (compatible; MSIE 6.0; Windows NT 5.1; MyIE2; Deepnet Explorer)",
+            "uri": "/",
+            "request_duration": 2000128,
+            "triggered_rule_ids": [
+                "100043A"
+            ],
+            "action": "challenge",
+            "cloudflare_location": "KBP",
+            "occurred_at": "2019-01-29T12:30:21.99Z",
+            "rule_detail": [
+                {
+                    "id": "",
+                    "description": "REQUEST_HEADERS:HOST"
+                }
+            ],
+            "rule_message": "False IE6 detection [Type B]",
+            "type": "waf",
+            "rule_id": "100043A"
+        },
+        {
+            "id": "4a0bb5a73daf83ee",
+            "country": "UA",
+            "ip": "46.119.122.127",
+            "protocol": "HTTP/1.1",
+            "method": "GET",
+            "host": "www.play.at",
+            "user_agent": "Mozilla/4.0 (compatible; MSIE 6.0; Windows NT 5.1; MyIE2; Deepnet Explorer)",
+            "uri": "/",
+            "request_duration": 267000064,
+            "triggered_rule_ids": [
+                "100043A"
+            ],
+            "action": "challenge",
+            "cloudflare_location": "KBP",
+            "occurred_at": "2019-01-29T12:30:21.31Z",
+            "rule_detail": [
+                {
+                    "id": "",
+                    "description": "REQUEST_HEADERS:HOST"
+                }
+            ],
+            "rule_message": "False IE6 detection [Type B]",
+            "type": "waf",
+            "rule_id": "100043A"
+        },
+        {
+            "id": "4a0b22d3af12821f",
+            "country": "UA",
+            "ip": "46.119.122.127",
+            "protocol": "HTTP/1.1",
+            "method": "GET",
+            "host": "www.play.at",
+            "user_agent": "Mozilla/4.0 (compatible; MSIE 6.0; Windows NT 5.1; .NET CLR 1.1.4322)",
+            "uri": "/",
+            "request_duration": 8999936,
+            "triggered_rule_ids": [
+                "100043A"
+            ],
+            "action": "challenge",
+            "cloudflare_location": "KBP",
+            "occurred_at": "2019-01-29T10:50:07.3Z",
+            "rule_detail": [
+                {
+                    "id": "",
+                    "description": "REQUEST_HEADERS:HOST"
+                }
+            ],
+            "rule_message": "False IE6 detection [Type B]",
+            "type": "waf",
+            "rule_id": "100043A"
+        },
+        {
+            "id": "4a0b22cf59db8213",
+            "country": "UA",
+            "ip": "46.119.122.127",
+            "protocol": "HTTP/1.1",
+            "method": "GET",
+            "host": "www.play.at",
+            "user_agent": "Mozilla/4.0 (compatible; MSIE 6.0; Windows NT 5.1; .NET CLR 1.1.4322)",
+            "uri": "/",
+            "request_duration": 9999872,
+            "triggered_rule_ids": [
+                "100043A"
+            ],
+            "action": "challenge",
+            "cloudflare_location": "KBP",
+            "occurred_at": "2019-01-29T10:50:06.61Z",
+            "rule_detail": [
+                {
+                    "id": "",
+                    "description": "REQUEST_HEADERS:HOST"
+                }
+            ],
+            "rule_message": "False IE6 detection [Type B]",
+            "type": "waf",
+            "rule_id": "100043A"
+        },
+        {
+            "id": "4a0b22ca08298afe",
+            "country": "UA",
+            "ip": "46.119.122.127",
+            "protocol": "HTTP/1.1",
+            "method": "GET",
+            "host": "www.play.at",
+            "user_agent": "Mozilla/4.0 (compatible; MSIE 6.0; Windows NT 5.1; .NET CLR 1.1.4322)",
+            "uri": "/",
+            "request_duration": 375000064,
+            "triggered_rule_ids": [
+                "100043A"
+            ],
+            "action": "challenge",
+            "cloudflare_location": "KBP",
+            "occurred_at": "2019-01-29T10:50:05.76Z",
+            "rule_detail": [
+                {
+                    "id": "",
+                    "description": "REQUEST_HEADERS:HOST"
+                }
+            ],
+            "rule_message": "False IE6 detection [Type B]",
+            "type": "waf",
+            "rule_id": "100043A"
+        },
+        {
+            "id": "4a06af6f3df783e2",
+            "country": "UA",
+            "ip": "178.137.167.167",
+            "protocol": "HTTP/1.1",
+            "method": "GET",
+            "host": "www.play.at",
+            "user_agent": "Mozilla/4.0 (compatible; MSIE 6.0; Windows NT 5.1; .NET CLR 1.1.4322; FDM)",
+            "uri": "/",
+            "request_duration": 9999872,
+            "triggered_rule_ids": [
+                "100043A"
+            ],
+            "action": "challenge",
+            "cloudflare_location": "KBP",
+            "occurred_at": "2019-01-28T21:52:17.79Z",
+            "rule_detail": [
+                {
+                    "id": "",
+                    "description": "REQUEST_HEADERS:HOST"
+                }
+            ],
+            "rule_message": "False IE6 detection [Type B]",
+            "type": "waf",
+            "rule_id": "100043A"
+        },
+        {
+            "id": "4a06af6d710083e8",
+            "country": "UA",
+            "ip": "178.137.167.167",
+            "protocol": "HTTP/1.1",
+            "method": "GET",
+            "host": "www.play.at",
+            "user_agent": "Mozilla/4.0 (compatible; MSIE 6.0; Windows NT 5.1; .NET CLR 1.1.4322; FDM)",
+            "uri": "/",
+            "request_duration": 4000000,
+            "triggered_rule_ids": [
+                "100043A"
+            ],
+            "action": "challenge",
+            "cloudflare_location": "KBP",
+            "occurred_at": "2019-01-28T21:52:17.51Z",
+            "rule_detail": [
+                {
+                    "id": "",
+                    "description": "REQUEST_HEADERS:HOST"
+                }
+            ],
+            "rule_message": "False IE6 detection [Type B]",
+            "type": "waf",
+            "rule_id": "100043A"
+        },
+        {
+            "id": "4a06af68901f83e8",
+            "country": "UA",
+            "ip": "178.137.167.167",
+            "protocol": "HTTP/1.1",
+            "method": "GET",
+            "host": "www.play.at",
+            "user_agent": "Mozilla/4.0 (compatible; MSIE 6.0; Windows NT 5.1; .NET CLR 1.1.4322; FDM)",
+            "uri": "/",
+            "request_duration": 485000192,
+            "triggered_rule_ids": [
+                "100043A"
+            ],
+            "action": "challenge",
+            "cloudflare_location": "KBP",
+            "occurred_at": "2019-01-28T21:52:16.73Z",
+            "rule_detail": [
+                {
+                    "id": "",
+                    "description": "REQUEST_HEADERS:HOST"
+                }
+            ],
+            "rule_message": "False IE6 detection [Type B]",
+            "type": "waf",
+            "rule_id": "100043A"
+        },
+        {
+            "id": "4a06ab0965fa7d63",
+            "country": "BR",
+            "ip": "170.78.84.168",
+            "protocol": "HTTP/1.1",
+            "method": "GET",
+            "host": "www.play.at",
+            "user_agent": "Mozilla/4.0 (compatible; MSIE 6.0; Windows NT 5.1; en) Opera 8.50",
+            "uri": "/",
+            "request_duration": 518000128,
+            "triggered_rule_ids": [
+                "100043B"
+            ],
+            "action": "challenge",
+            "cloudflare_location": "LIM",
+            "occurred_at": "2019-01-28T21:49:17.66Z",
+            "rule_detail": [
+                {
+                    "id": "",
+                    "description": "REQUEST_HEADERS:HOST"
+                }
+            ],
+            "rule_message": "False IE6 detection [Type C]",
+            "type": "waf",
+            "rule_id": "100043B"
+        },
+        {
+            "id": "4a044f57a24ec855",
+            "country": "IE",
+            "ip": "5.188.86.218",
+            "protocol": "HTTP/1.1",
+            "method": "GET",
+            "host": "vol.play.at",
+            "user_agent": "Mozilla/5.0 (X11; U; Linux x86_64; en-US; rv:1.9.2.6) Gecko/20100628 Ubuntu/10.04 (lucid) Firefox/3.6.6 GTB7.1",
+            "uri": "/vol/rumbo/css/rumbo.min.css?1135427919&ZBkA%3D9740%20AND%201%3D1%20UNION%20ALL%20SELECT%201%2CNULL%2C%27%3Cscript%3Ealert%28%22XSS%22%29%3C%2Fscript%3E%27%2Ctable_name%20FROM%20information_schema.tables%20WHERE%202%3E1--%2F%2A%2A%2F%3B%20EXEC%20xp_cmdshell%28%27cat%20..%2F..%2F..%2Fetc%2Fpasswd%27%29%23",
+            "request_duration": 6000128,
+            "triggered_rule_ids": [
+                "100096BASE",
+                "100096HTML",
+                "100096EVIL",
+                "100005U"
+            ],
+            "action": "block",
+            "cloudflare_location": "AMS",
+            "occurred_at": "2019-01-28T14:57:10.34Z",
+            "rule_detail": [
+                {
+                    "id": "",
+                    "description": "00096BASE_MATCHED_VAR_NAME"
+                },
+                {
+                    "id": "100096BASE_MATCHED_VAR=/vol/rumbo/css/rumbo.min.css?1135427919&zbka=9740 and 1=1 union all select 1,null,'<script>alert(\"xss\")</script>',table_name from information_schema.tables where 2>1",
+                    "description": "-/**/; exec xp_cmdshell('cat ../../../etc/passwd')#"
+                },
+                {
+                    "id": "",
+                    "description": "00096BASE_MATCHED_TAG_NAME"
+                },
+                {
+                    "id": "",
+                    "description": "00096BASE_MATCHED_TAG"
+                },
+                {
+                    "id": "",
+                    "description": "REQUEST_URI"
+                }
+            ],
+            "rule_message": "Generic LFI against common paths in URI",
+            "type": "waf",
+            "rule_id": "100005U"
+        },
+        {
+            "id": "4a000b8b3ef4826d",
+            "country": "UA",
+            "ip": "46.119.121.91",
+            "protocol": "HTTP/1.1",
+            "method": "GET",
+            "host": "www.play.at",
+            "user_agent": "Mozilla/4.0 (compatible; MSIE 6.0; Windows NT 5.1; Q312461)",
+            "uri": "/",
+            "request_duration": 9000192,
+            "triggered_rule_ids": [
+                "100043A"
+            ],
+            "action": "challenge",
+            "cloudflare_location": "KBP",
+            "occurred_at": "2019-01-28T02:31:50.27Z",
+            "rule_detail": [
+                {
+                    "id": "",
+                    "description": "REQUEST_HEADERS:HOST"
+                }
+            ],
+            "rule_message": "False IE6 detection [Type B]",
+            "type": "waf",
+            "rule_id": "100043A"
+        },
+        {
+            "id": "4a000b89298d83ee",
+            "country": "UA",
+            "ip": "46.119.121.91",
+            "protocol": "HTTP/1.1",
+            "method": "GET",
+            "host": "www.play.at",
+            "user_agent": "Mozilla/4.0 (compatible; MSIE 6.0; Windows NT 5.1; Q312461)",
+            "uri": "/",
+            "request_duration": 8999936,
+            "triggered_rule_ids": [
+                "100043A"
+            ],
+            "action": "challenge",
+            "cloudflare_location": "KBP",
+            "occurred_at": "2019-01-28T02:31:49.94Z",
+            "rule_detail": [
+                {
+                    "id": "",
+                    "description": "REQUEST_HEADERS:HOST"
+                }
+            ],
+            "rule_message": "False IE6 detection [Type B]",
+            "type": "waf",
+            "rule_id": "100043A"
+        },
+        {
+            "id": "4a000b8450488b0a",
+            "country": "UA",
+            "ip": "46.119.121.91",
+            "protocol": "HTTP/1.1",
+            "method": "GET",
+            "host": "www.play.at",
+            "user_agent": "Mozilla/4.0 (compatible; MSIE 6.0; Windows NT 5.1; Q312461)",
+            "uri": "/",
+            "request_duration": 440000256,
+            "triggered_rule_ids": [
+                "100043A"
+            ],
+            "action": "challenge",
+            "cloudflare_location": "KBP",
+            "occurred_at": "2019-01-28T02:31:49.17Z",
+            "rule_detail": [
+                {
+                    "id": "",
+                    "description": "REQUEST_HEADERS:HOST"
+                }
+            ],
+            "rule_message": "False IE6 detection [Type B]",
+            "type": "waf",
+            "rule_id": "100043A"
+        },
+        {
+            "id": "49ff36c066608219",
+            "country": "UA",
+            "ip": "37.115.186.101",
+            "protocol": "HTTP/1.1",
+            "method": "GET",
+            "host": "www.play.at",
+            "user_agent": "Mozilla/4.0 (compatible; MSIE 6.0; Windows NT 5.1; SV1; .NET CLR 1.1.4322)",
+            "uri": "/",
+            "request_duration": 11000064,
+            "triggered_rule_ids": [
+                "100043A"
+            ],
+            "action": "challenge",
+            "cloudflare_location": "KBP",
+            "occurred_at": "2019-01-28T00:06:34.3Z",
+            "rule_detail": [
+                {
+                    "id": "",
+                    "description": "REQUEST_HEADERS:HOST"
+                }
+            ],
+            "rule_message": "False IE6 detection [Type B]",
+            "type": "waf",
+            "rule_id": "100043A"
+        },
+        {
+            "id": "49ff36c030638406",
+            "country": "UA",
+            "ip": "37.115.186.101",
+            "protocol": "HTTP/1.1",
+            "method": "GET",
+            "host": "www.play.at",
+            "user_agent": "Mozilla/4.0 (compatible; MSIE 6.0; Windows NT 5.1; .NET CLR 1.0.3705)",
+            "uri": "/",
+            "request_duration": 10000128,
+            "triggered_rule_ids": [
+                "100043A"
+            ],
+            "action": "challenge",
+            "cloudflare_location": "KBP",
+            "occurred_at": "2019-01-28T00:06:34.27Z",
+            "rule_detail": [
+                {
+                    "id": "",
+                    "description": "REQUEST_HEADERS:HOST"
+                }
+            ],
+            "rule_message": "False IE6 detection [Type B]",
+            "type": "waf",
+            "rule_id": "100043A"
+        },
+        {
+            "id": "49ff36be61518afe",
+            "country": "UA",
+            "ip": "37.115.186.101",
+            "protocol": "HTTP/1.1",
+            "method": "GET",
+            "host": "www.play.at",
+            "user_agent": "Mozilla/4.0 (compatible; MSIE 6.0; Windows NT 5.1; SV1; .NET CLR 1.1.4322)",
+            "uri": "/",
+            "request_duration": 8999936,
+            "triggered_rule_ids": [
+                "100043A"
+            ],
+            "action": "challenge",
+            "cloudflare_location": "KBP",
+            "occurred_at": "2019-01-28T00:06:33.98Z",
+            "rule_detail": [
+                {
+                    "id": "",
+                    "description": "REQUEST_HEADERS:HOST"
+                }
+            ],
+            "rule_message": "False IE6 detection [Type B]",
+            "type": "waf",
+            "rule_id": "100043A"
+        },
+        {
+            "id": "49ff36be44388af8",
+            "country": "UA",
+            "ip": "37.115.186.101",
+            "protocol": "HTTP/1.1",
+            "method": "GET",
+            "host": "www.play.at",
+            "user_agent": "Mozilla/4.0 (compatible; MSIE 6.0; Windows NT 5.1; .NET CLR 1.0.3705)",
+            "uri": "/",
+            "request_duration": 4000256,
+            "triggered_rule_ids": [
+                "100043A"
+            ],
+            "action": "challenge",
+            "cloudflare_location": "KBP",
+            "occurred_at": "2019-01-28T00:06:33.96Z",
+            "rule_detail": [
+                {
+                    "id": "",
+                    "description": "REQUEST_HEADERS:HOST"
+                }
+            ],
+            "rule_message": "False IE6 detection [Type B]",
+            "type": "waf",
+            "rule_id": "100043A"
+        },
+        {
+            "id": "49ff36bc141c8af8",
+            "country": "UA",
+            "ip": "37.115.186.101",
+            "protocol": "HTTP/1.1",
+            "method": "GET",
+            "host": "www.play.at",
+            "user_agent": "Mozilla/4.0 (compatible; MSIE 6.0; Windows NT 5.1; SV1; .NET CLR 1.1.4322)",
+            "uri": "/",
+            "request_duration": 47000064,
+            "triggered_rule_ids": [
+                "100043A"
+            ],
+            "action": "challenge",
+            "cloudflare_location": "KBP",
+            "occurred_at": "2019-01-28T00:06:33.61Z",
+            "rule_detail": [
+                {
+                    "id": "",
+                    "description": "REQUEST_HEADERS:HOST"
+                }
+            ],
+            "rule_message": "False IE6 detection [Type B]",
+            "type": "waf",
+            "rule_id": "100043A"
+        },
+        {
+            "id": "49ff36ba01ec83e8",
+            "country": "UA",
+            "ip": "37.115.186.101",
+            "protocol": "HTTP/1.1",
+            "method": "GET",
+            "host": "www.play.at",
+            "user_agent": "Mozilla/4.0 (compatible; MSIE 6.0; Windows NT 5.1; .NET CLR 1.0.3705)",
+            "uri": "/",
+            "request_duration": 369999872,
+            "triggered_rule_ids": [
+                "100043A"
+            ],
+            "action": "challenge",
+            "cloudflare_location": "KBP",
+            "occurred_at": "2019-01-28T00:06:33.28Z",
+            "rule_detail": [
+                {
+                    "id": "",
+                    "description": "REQUEST_HEADERS:HOST"
+                }
+            ],
+            "rule_message": "False IE6 detection [Type B]",
+            "type": "waf",
+            "rule_id": "100043A"
+        },
+        {
+            "id": "49fe65cf14d98afe",
+            "country": "UA",
+            "ip": "46.119.122.127",
+            "protocol": "HTTP/1.1",
+            "method": "GET",
+            "host": "www.play.at",
+            "user_agent": "Mozilla/4.0 (compatible; MSIE 6.0; Windows NT 5.1; ru) Opera 8.01",
+            "uri": "/",
+            "request_duration": 14000128,
+            "triggered_rule_ids": [
+                "100043A"
+            ],
+            "action": "challenge",
+            "cloudflare_location": "KBP",
+            "occurred_at": "2019-01-27T21:43:56.01Z",
+            "rule_detail": [
+                {
+                    "id": "",
+                    "description": "REQUEST_HEADERS:HOST"
+                }
+            ],
+            "rule_message": "False IE6 detection [Type B]",
+            "type": "waf",
+            "rule_id": "100043A"
+        },
+        {
+            "id": "49fe65cca0ab83f4",
+            "country": "UA",
+            "ip": "46.119.122.127",
+            "protocol": "HTTP/1.1",
+            "method": "GET",
+            "host": "www.play.at",
+            "user_agent": "Mozilla/4.0 (compatible; MSIE 6.0; Windows NT 5.1; ru) Opera 8.01",
+            "uri": "/",
+            "request_duration": 12000000,
+            "triggered_rule_ids": [
+                "100043A"
+            ],
+            "action": "challenge",
+            "cloudflare_location": "KBP",
+            "occurred_at": "2019-01-27T21:43:55.62Z",
+            "rule_detail": [
+                {
+                    "id": "",
+                    "description": "REQUEST_HEADERS:HOST"
+                }
+            ],
+            "rule_message": "False IE6 detection [Type B]",
+            "type": "waf",
+            "rule_id": "100043A"
+        },
+        {
+            "id": "49fe65c8cf2c8b04",
+            "country": "UA",
+            "ip": "46.119.122.127",
+            "protocol": "HTTP/1.1",
+            "method": "GET",
+            "host": "www.play.at",
+            "user_agent": "Mozilla/4.0 (compatible; MSIE 6.0; Windows NT 5.1; ru) Opera 8.01",
+            "uri": "/",
+            "request_duration": 221000192,
+            "triggered_rule_ids": [
+                "100043A"
+            ],
+            "action": "challenge",
+            "cloudflare_location": "KBP",
+            "occurred_at": "2019-01-27T21:43:55Z",
+            "rule_detail": [
+                {
+                    "id": "",
+                    "description": "REQUEST_HEADERS:HOST"
+                }
+            ],
+            "rule_message": "False IE6 detection [Type B]",
+            "type": "waf",
+            "rule_id": "100043A"
+        },
+        {
+            "id": "49fd0b687fc6820d",
+            "country": "UA",
+            "ip": "46.119.121.91",
+            "protocol": "HTTP/1.1",
+            "method": "GET",
+            "host": "www.play.at",
+            "user_agent": "Mozilla/4.0 (compatible; MSIE 6.0; Windows NT 5.0)",
+            "uri": "/",
+            "request_duration": 5000192,
+            "triggered_rule_ids": [
+                "100043A"
+            ],
+            "action": "challenge",
+            "cloudflare_location": "KBP",
+            "occurred_at": "2019-01-27T17:47:27.43Z",
+            "rule_detail": [
+                {
+                    "id": "",
+                    "description": "REQUEST_HEADERS:HOST"
+                }
+            ],
+            "rule_message": "False IE6 detection [Type B]",
+            "type": "waf",
+            "rule_id": "100043A"
+        },
+        {
+            "id": "49fd0b60298083ee",
+            "country": "UA",
+            "ip": "46.119.121.91",
+            "protocol": "HTTP/1.1",
+            "method": "GET",
+            "host": "www.play.at",
+            "user_agent": "Mozilla/4.0 (compatible; MSIE 6.0; Windows NT 5.0)",
+            "uri": "/",
+            "request_duration": 8000000,
+            "triggered_rule_ids": [
+                "100043A"
+            ],
+            "action": "challenge",
+            "cloudflare_location": "KBP",
+            "occurred_at": "2019-01-27T17:47:26.1Z",
+            "rule_detail": [
+                {
+                    "id": "",
+                    "description": "REQUEST_HEADERS:HOST"
+                }
+            ],
+            "rule_message": "False IE6 detection [Type B]",
+            "type": "waf",
+            "rule_id": "100043A"
+        },
+        {
+            "id": "49fd0b5c9b47820d",
+            "country": "UA",
+            "ip": "46.119.121.91",
+            "protocol": "HTTP/1.1",
+            "method": "GET",
+            "host": "www.play.at",
+            "user_agent": "Mozilla/4.0 (compatible; MSIE 6.0; Windows NT 5.0)",
+            "uri": "/",
+            "request_duration": 111000064,
+            "triggered_rule_ids": [
+                "100043A"
+            ],
+            "action": "challenge",
+            "cloudflare_location": "KBP",
+            "occurred_at": "2019-01-27T17:47:25.53Z",
+            "rule_detail": [
+                {
+                    "id": "",
+                    "description": "REQUEST_HEADERS:HOST"
+                }
+            ],
+            "rule_message": "False IE6 detection [Type B]",
+            "type": "waf",
+            "rule_id": "100043A"
+        },
+        {
+            "id": "49f80858a4d88ae0",
+            "country": "UA",
+            "ip": "46.119.122.127",
+            "protocol": "HTTP/1.1",
+            "method": "GET",
+            "host": "www.play.at",
+            "user_agent": "Mozilla/4.0 (compatible; MSIE 6.0; Windows NT 5.1; FREE; .NET CLR 1.1.4322)",
+            "uri": "/",
+            "request_duration": 5000192,
+            "triggered_rule_ids": [
+                "100043A"
+            ],
+            "action": "challenge",
+            "cloudflare_location": "KBP",
+            "occurred_at": "2019-01-27T03:11:33.22Z",
+            "rule_detail": [
+                {
+                    "id": "",
+                    "description": "REQUEST_HEADERS:HOST"
+                }
+            ],
+            "rule_message": "False IE6 detection [Type B]",
+            "type": "waf",
+            "rule_id": "100043A"
+        },
+        {
+            "id": "49f8085694bf8ae0",
+            "country": "UA",
+            "ip": "46.119.122.127",
+            "protocol": "HTTP/1.1",
+            "method": "GET",
+            "host": "www.play.at",
+            "user_agent": "Mozilla/4.0 (compatible; MSIE 6.0; Windows NT 5.1; FREE; .NET CLR 1.1.4322)",
+            "uri": "/",
+            "request_duration": 4000000,
+            "triggered_rule_ids": [
+                "100043A"
+            ],
+            "action": "challenge",
+            "cloudflare_location": "KBP",
+            "occurred_at": "2019-01-27T03:11:32.89Z",
+            "rule_detail": [
+                {
+                    "id": "",
+                    "description": "REQUEST_HEADERS:HOST"
+                }
+            ],
+            "rule_message": "False IE6 detection [Type B]",
+            "type": "waf",
+            "rule_id": "100043A"
+        },
+        {
+            "id": "49f8084db4308ae0",
+            "country": "UA",
+            "ip": "46.119.122.127",
+            "protocol": "HTTP/1.1",
+            "method": "GET",
+            "host": "www.play.at",
+            "user_agent": "Mozilla/4.0 (compatible; MSIE 6.0; Windows NT 5.1; FREE; .NET CLR 1.1.4322)",
+            "uri": "/",
+            "request_duration": 125999872,
+            "triggered_rule_ids": [
+                "100043A"
+            ],
+            "action": "challenge",
+            "cloudflare_location": "KBP",
+            "occurred_at": "2019-01-27T03:11:31.47Z",
+            "rule_detail": [
+                {
+                    "id": "",
+                    "description": "REQUEST_HEADERS:HOST"
+                }
+            ],
+            "rule_message": "False IE6 detection [Type B]",
+            "type": "waf",
+            "rule_id": "100043A"
+        },
+        {
+            "id": "49f67c3e0f008ae6",
+            "country": "UA",
+            "ip": "37.115.186.101",
+            "protocol": "HTTP/1.1",
+            "method": "GET",
+            "host": "www.play.at",
+            "user_agent": "Mozilla/4.0 (compatible; MSIE 6.0; Windows 98; Win 9x 4.90)",
+            "uri": "/",
+            "request_duration": 9000192,
+            "triggered_rule_ids": [
+                "100043A"
+            ],
+            "action": "challenge",
+            "cloudflare_location": "KBP",
+            "occurred_at": "2019-01-26T22:41:08.8Z",
+            "rule_detail": [
+                {
+                    "id": "",
+                    "description": "REQUEST_HEADERS:HOST"
+                }
+            ],
+            "rule_message": "False IE6 detection [Type B]",
+            "type": "waf",
+            "rule_id": "100043A"
+        },
+        {
+            "id": "49f67c3bf51c8abc",
+            "country": "UA",
+            "ip": "37.115.186.101",
+            "protocol": "HTTP/1.1",
+            "method": "GET",
+            "host": "www.play.at",
+            "user_agent": "Mozilla/4.0 (compatible; MSIE 6.0; Windows 98; Win 9x 4.90)",
+            "uri": "/",
+            "request_duration": 11000064,
+            "triggered_rule_ids": [
+                "100043A"
+            ],
+            "action": "challenge",
+            "cloudflare_location": "KBP",
+            "occurred_at": "2019-01-26T22:41:08.47Z",
+            "rule_detail": [
+                {
+                    "id": "",
+                    "description": "REQUEST_HEADERS:HOST"
+                }
+            ],
+            "rule_message": "False IE6 detection [Type B]",
+            "type": "waf",
+            "rule_id": "100043A"
+        },
+        {
+            "id": "49f67c385eae83e2",
+            "country": "UA",
+            "ip": "37.115.186.101",
+            "protocol": "HTTP/1.1",
+            "method": "GET",
+            "host": "www.play.at",
+            "user_agent": "Mozilla/4.0 (compatible; MSIE 6.0; Windows 98; Win 9x 4.90)",
+            "uri": "/",
+            "request_duration": 257000192,
+            "triggered_rule_ids": [
+                "100043A"
+            ],
+            "action": "challenge",
+            "cloudflare_location": "KBP",
+            "occurred_at": "2019-01-26T22:41:07.89Z",
+            "rule_detail": [
+                {
+                    "id": "",
+                    "description": "REQUEST_HEADERS:HOST"
+                }
+            ],
+            "rule_message": "False IE6 detection [Type B]",
+            "type": "waf",
+            "rule_id": "100043A"
+        },
+        {
+            "id": "49f4da9ded81b76b",
+            "country": "FR",
+            "ip": "78.192.240.207",
+            "protocol": "HTTP/1.1",
+            "method": "GET",
+            "host": "www.play.at",
+            "user_agent": "Mozilla/5.0 (BOT ANNUAIREFRANCAIS.FR PREMSGO.FR",
+            "uri": "/",
+            "request_duration": 34000128,
+            "triggered_rule_ids": [
+                "100027"
+            ],
+            "action": "block",
+            "cloudflare_location": "CDG",
+            "occurred_at": "2019-01-26T17:56:02.86Z",
+            "rule_detail": [
+                {
+                    "id": "",
+                    "description": "REQUEST_HEADERS:USER-AGENT"
+                }
+            ],
+            "rule_message": "Block incorrectly formatted Mozilla User Agents",
+            "type": "waf",
+            "rule_id": "100027"
+        },
+        {
+            "id": "49f4d8d764a86b43",
+            "country": "IE",
+            "ip": "185.234.218.74",
+            "protocol": "HTTP/1.1",
+            "method": "GET",
+            "host": "www.play.at",
+            "user_agent": "Mozilla/5.0 (Windows NT 6.3; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/71.0.3578.98 Safari/537.36",
+            "uri": "/sftp-config.json",
+            "request_duration": 853000192,
+            "triggered_rule_ids": [
+                "100038"
+            ],
+            "action": "block",
+            "cloudflare_location": "WAW",
+            "occurred_at": "2019-01-26T17:54:50.14Z",
+            "rule_detail": [
+                {
+                    "id": "",
+                    "description": "REQUEST_URI"
+                }
+            ],
+            "rule_message": "Block attempts to obtain information that may disclose information about the origin server",
+            "type": "waf",
+            "rule_id": "100038"
+        },
+        {
+            "id": "49f3c46b67a983e8",
+            "country": "UA",
+            "ip": "178.137.167.167",
+            "protocol": "HTTP/1.1",
+            "method": "GET",
+            "host": "www.play.at",
+            "user_agent": "Mozilla/4.0 (compatible; MSIE 6.0; Windows NT 5.1; SV1; FunWebProducts; .NET CLR 1.1.4322; PeoplePal 6.2)",
+            "uri": "/",
+            "request_duration": 12000000,
+            "triggered_rule_ids": [
+                "100043A"
+            ],
+            "action": "challenge",
+            "cloudflare_location": "KBP",
+            "occurred_at": "2019-01-26T14:46:07.9Z",
+            "rule_detail": [
+                {
+                    "id": "",
+                    "description": "REQUEST_HEADERS:HOST"
+                }
+            ],
+            "rule_message": "False IE6 detection [Type B]",
+            "type": "waf",
+            "rule_id": "100043A"
+        },
+        {
+            "id": "49f3c4696ffc83dc",
+            "country": "UA",
+            "ip": "178.137.167.167",
+            "protocol": "HTTP/1.1",
+            "method": "GET",
+            "host": "www.play.at",
+            "user_agent": "Mozilla/4.0 (compatible; MSIE 6.0; Windows NT 5.1; SV1; FunWebProducts; .NET CLR 1.1.4322; PeoplePal 6.2)",
+            "uri": "/",
+            "request_duration": 12000256,
+            "triggered_rule_ids": [
+                "100043A"
+            ],
+            "action": "challenge",
+            "cloudflare_location": "KBP",
+            "occurred_at": "2019-01-26T14:46:07.58Z",
+            "rule_detail": [
+                {
+                    "id": "",
+                    "description": "REQUEST_HEADERS:HOST"
+                }
+            ],
+            "rule_message": "False IE6 detection [Type B]",
+            "type": "waf",
+            "rule_id": "100043A"
+        },
+        {
+            "id": "49f3c466d1028af8",
+            "country": "UA",
+            "ip": "178.137.167.167",
+            "protocol": "HTTP/1.1",
+            "method": "GET",
+            "host": "www.play.at",
+            "user_agent": "Mozilla/4.0 (compatible; MSIE 6.0; Windows NT 5.1; SV1; FunWebProducts; .NET CLR 1.1.4322; PeoplePal 6.2)",
+            "uri": "/",
+            "request_duration": 96999936,
+            "triggered_rule_ids": [
+                "100043A"
+            ],
+            "action": "challenge",
+            "cloudflare_location": "KBP",
+            "occurred_at": "2019-01-26T14:46:07.17Z",
+            "rule_detail": [
+                {
+                    "id": "",
+                    "description": "REQUEST_HEADERS:HOST"
+                }
+            ],
+            "rule_message": "False IE6 detection [Type B]",
+            "type": "waf",
+            "rule_id": "100043A"
+        },
+        {
+            "id": "49f3584eedc583ee",
+            "country": "UA",
+            "ip": "178.137.167.167",
+            "protocol": "HTTP/1.1",
+            "method": "GET",
+            "host": "www.play.at",
+            "user_agent": "Mozilla/4.0 (compatible; MSIE 6.0; Windows NT 5.1; SV1; FunWebProducts; MRA 4.6 (build 01425); .NET CLR 1.1.4322; .NET CLR 2.0.50727)",
+            "uri": "/",
+            "request_duration": 9000192,
+            "triggered_rule_ids": [
+                "100043A"
+            ],
+            "action": "challenge",
+            "cloudflare_location": "KBP",
+            "occurred_at": "2019-01-26T13:32:19.66Z",
+            "rule_detail": [
+                {
+                    "id": "",
+                    "description": "REQUEST_HEADERS:HOST"
+                }
+            ],
+            "rule_message": "False IE6 detection [Type B]",
+            "type": "waf",
+            "rule_id": "100043A"
+        },
+        {
+            "id": "49f3584ce1d18ac2",
+            "country": "UA",
+            "ip": "178.137.167.167",
+            "protocol": "HTTP/1.1",
+            "method": "GET",
+            "host": "www.play.at",
+            "user_agent": "Mozilla/4.0 (compatible; MSIE 6.0; Windows NT 5.1; SV1; FunWebProducts; MRA 4.6 (build 01425); .NET CLR 1.1.4322; .NET CLR 2.0.50727)",
+            "uri": "/",
+            "request_duration": 12000000,
+            "triggered_rule_ids": [
+                "100043A"
+            ],
+            "action": "challenge",
+            "cloudflare_location": "KBP",
+            "occurred_at": "2019-01-26T13:32:19.34Z",
+            "rule_detail": [
+                {
+                    "id": "",
+                    "description": "REQUEST_HEADERS:HOST"
+                }
+            ],
+            "rule_message": "False IE6 detection [Type B]",
+            "type": "waf",
+            "rule_id": "100043A"
+        },
+        {
+            "id": "49f358497c948aec",
+            "country": "UA",
+            "ip": "178.137.167.167",
+            "protocol": "HTTP/1.1",
+            "method": "GET",
+            "host": "www.play.at",
+            "user_agent": "Mozilla/4.0 (compatible; MSIE 6.0; Windows NT 5.1; SV1; FunWebProducts; MRA 4.6 (build 01425); .NET CLR 1.1.4322; .NET CLR 2.0.50727)",
+            "uri": "/",
+            "request_duration": 239000064,
+            "triggered_rule_ids": [
+                "100043A"
+            ],
+            "action": "challenge",
+            "cloudflare_location": "KBP",
+            "occurred_at": "2019-01-26T13:32:18.79Z",
+            "rule_detail": [
+                {
+                    "id": "",
+                    "description": "REQUEST_HEADERS:HOST"
+                }
+            ],
+            "rule_message": "False IE6 detection [Type B]",
+            "type": "waf",
+            "rule_id": "100043A"
+        },
+        {
+            "id": "49f0934d10f88af8",
+            "country": "UA",
+            "ip": "178.137.167.167",
+            "protocol": "HTTP/1.1",
+            "method": "GET",
+            "host": "www.play.at",
+            "user_agent": "Mozilla/4.0 (compatible; MSIE 6.0; Windows NT 5.1) Opera 7.54 [en]",
+            "uri": "/",
+            "request_duration": 14000128,
+            "triggered_rule_ids": [
+                "100043A"
+            ],
+            "action": "challenge",
+            "cloudflare_location": "KBP",
+            "occurred_at": "2019-01-26T05:28:18.73Z",
+            "rule_detail": [
+                {
+                    "id": "",
+                    "description": "REQUEST_HEADERS:HOST"
+                }
+            ],
+            "rule_message": "False IE6 detection [Type B]",
+            "type": "waf",
+            "rule_id": "100043A"
+        },
+        {
+            "id": "49f0934b7e7e8aec",
+            "country": "UA",
+            "ip": "178.137.167.167",
+            "protocol": "HTTP/1.1",
+            "method": "GET",
+            "host": "www.play.at",
+            "user_agent": "Mozilla/4.0 (compatible; MSIE 6.0; MSIE 5.5; Windows NT 4.0) Opera 7.0 [en]",
+            "uri": "/",
+            "request_duration": 6999808,
+            "triggered_rule_ids": [
+                "100043A"
+            ],
+            "action": "challenge",
+            "cloudflare_location": "KBP",
+            "occurred_at": "2019-01-26T05:28:18.47Z",
+            "rule_detail": [
+                {
+                    "id": "",
+                    "description": "REQUEST_HEADERS:HOST"
+                }
+            ],
+            "rule_message": "False IE6 detection [Type B]",
+            "type": "waf",
+            "rule_id": "100043A"
+        },
+        {
+            "id": "49f0934b2e648aec",
+            "country": "UA",
+            "ip": "178.137.167.167",
+            "protocol": "HTTP/1.1",
+            "method": "GET",
+            "host": "www.play.at",
+            "user_agent": "Mozilla/4.0 (compatible; MSIE 6.0; Windows NT 5.1) Opera 7.54 [en]",
+            "uri": "/",
+            "request_duration": 11000320,
+            "triggered_rule_ids": [
+                "100043A"
+            ],
+            "action": "challenge",
+            "cloudflare_location": "KBP",
+            "occurred_at": "2019-01-26T05:28:18.42Z",
+            "rule_detail": [
+                {
+                    "id": "",
+                    "description": "REQUEST_HEADERS:HOST"
+                }
+            ],
+            "rule_message": "False IE6 detection [Type B]",
+            "type": "waf",
+            "rule_id": "100043A"
+        },
+        {
+            "id": "49f093497eb78b04",
+            "country": "UA",
+            "ip": "178.137.167.167",
+            "protocol": "HTTP/1.1",
+            "method": "GET",
+            "host": "www.play.at",
+            "user_agent": "Mozilla/4.0 (compatible; MSIE 6.0; MSIE 5.5; Windows NT 4.0) Opera 7.0 [en]",
+            "uri": "/",
+            "request_duration": 10000128,
+            "triggered_rule_ids": [
+                "100043A"
+            ],
+            "action": "challenge",
+            "cloudflare_location": "KBP",
+            "occurred_at": "2019-01-26T05:28:18.15Z",
+            "rule_detail": [
+                {
+                    "id": "",
+                    "description": "REQUEST_HEADERS:HOST"
+                }
+            ],
+            "rule_message": "False IE6 detection [Type B]",
+            "type": "waf",
+            "rule_id": "100043A"
+        },
+        {
+            "id": "49f09346e48f8ab6",
+            "country": "UA",
+            "ip": "178.137.167.167",
+            "protocol": "HTTP/1.1",
+            "method": "GET",
+            "host": "www.play.at",
+            "user_agent": "Mozilla/4.0 (compatible; MSIE 6.0; MSIE 5.5; Windows NT 4.0) Opera 7.0 [en]",
+            "uri": "/",
+            "request_duration": 121999872,
+            "triggered_rule_ids": [
+                "100043A"
+            ],
+            "action": "challenge",
+            "cloudflare_location": "KBP",
+            "occurred_at": "2019-01-26T05:28:17.74Z",
+            "rule_detail": [
+                {
+                    "id": "",
+                    "description": "REQUEST_HEADERS:HOST"
+                }
+            ],
+            "rule_message": "False IE6 detection [Type B]",
+            "type": "waf",
+            "rule_id": "100043A"
+        },
+        {
+            "id": "49f09346e72183f4",
+            "country": "UA",
+            "ip": "178.137.167.167",
+            "protocol": "HTTP/1.1",
+            "method": "GET",
+            "host": "www.play.at",
+            "user_agent": "Mozilla/4.0 (compatible; MSIE 6.0; Windows NT 5.1) Opera 7.54 [en]",
+            "uri": "/",
+            "request_duration": 385999872,
+            "triggered_rule_ids": [
+                "100043A"
+            ],
+            "action": "challenge",
+            "cloudflare_location": "KBP",
+            "occurred_at": "2019-01-26T05:28:17.74Z",
+            "rule_detail": [
+                {
+                    "id": "",
+                    "description": "REQUEST_HEADERS:HOST"
+                }
+            ],
+            "rule_message": "False IE6 detection [Type B]",
+            "type": "waf",
+            "rule_id": "100043A"
+        },
+        {
+            "id": "49efaa1b5048b783",
+            "country": "FR",
+            "ip": "78.192.240.207",
+            "protocol": "HTTP/1.1",
+            "method": "GET",
+            "host": "www.play.at",
+            "user_agent": "Mozilla/5.0 (BOT ANNUAIREFRANCAIS.FR PREMSGO.FR",
+            "uri": "/",
+            "request_duration": 9999872,
+            "triggered_rule_ids": [
+                "100027"
+            ],
+            "action": "block",
+            "cloudflare_location": "CDG",
+            "occurred_at": "2019-01-26T02:49:07.09Z",
+            "rule_detail": [
+                {
+                    "id": "",
+                    "description": "REQUEST_HEADERS:USER-AGENT"
+                }
+            ],
+            "rule_message": "Block incorrectly formatted Mozilla User Agents",
+            "type": "waf",
+            "rule_id": "100027"
+        }
+    ],
+    "result_info": {
+        "next_page_id": "4xiXGZCKRvWXKWso9niNq3VW0I4e2eV8HUQ++0A="
+    },
+    "success": true,
+    "errors": [],
+    "messages": []
+}

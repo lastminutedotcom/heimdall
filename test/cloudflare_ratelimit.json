@@ -1,0 +1,409 @@
+{
+    "result": [
+        {
+            "ray_id": "49a9216359b78c82",
+            "kind": "firewall",
+            "source": "rateLimit",
+            "action": "simulate",
+            "rule_id": "89bde9c3a3e8474aa0fb4e079956f7be",
+            "ip": "194.48.80.5",
+            "ip_class": "noRecord",
+            "country": "AT",
+            "colo": "VIE",
+            "host": "secure.play.at",
+            "method": "GET",
+            "proto": "HTTP/1.1",
+            "scheme": "https",
+            "ua": "Mozilla/5.0 (Windows NT 10.0; WOW64; Trident/7.0; rv:11.0) like Gecko",
+            "uri": "/booking/api/event/tracking/72861426641CBCFA70A1685511A4E46528CE7ACE9B614CB4BFF859CA7376D36C",
+            "matches": [
+                {
+                    "rule_id": "89bde9c3a3e8474aa0fb4e079956f7be",
+                    "source": "rateLimit",
+                    "action": "simulate",
+                    "metadata": {
+                        "ruleSrc": "user"
+                    }
+                }
+            ],
+            "occurred_at": "2019-01-17T13:22:23Z"
+        },
+        {
+            "ray_id": "49a9216dbeb959ba",
+            "kind": "firewall",
+            "source": "rateLimit",
+            "action": "simulate",
+            "rule_id": "89bde9c3a3e8474aa0fb4e079956f7be",
+            "ip": "194.48.80.5",
+            "ip_class": "noRecord",
+            "country": "AT",
+            "colo": "VIE",
+            "host": "secure.play.at",
+            "method": "POST",
+            "proto": "HTTP/1.1",
+            "scheme": "https",
+            "ua": "Mozilla/5.0 (Windows NT 10.0; WOW64; Trident/7.0; rv:11.0) like Gecko",
+            "uri": "/booking/api/event/tracking/72861426641CBCFA70A1685511A4E46528CE7ACE9B614CB4BFF859CA7376D36C",
+            "matches": [
+                {
+                    "rule_id": "89bde9c3a3e8474aa0fb4e079956f7be",
+                    "source": "rateLimit",
+                    "action": "simulate",
+                    "metadata": {
+                        "ruleSrc": "user"
+                    }
+                }
+            ],
+            "occurred_at": "2019-01-17T13:22:25Z"
+        },
+        {
+            "ray_id": "49a9216dab9d8c82",
+            "kind": "firewall",
+            "source": "rateLimit",
+            "action": "simulate",
+            "rule_id": "89bde9c3a3e8474aa0fb4e079956f7be",
+            "ip": "194.48.80.5",
+            "ip_class": "noRecord",
+            "country": "AT",
+            "colo": "VIE",
+            "host": "secure.play.at",
+            "method": "PUT",
+            "proto": "HTTP/1.1",
+            "scheme": "https",
+            "ua": "Mozilla/5.0 (Windows NT 10.0; WOW64; Trident/7.0; rv:11.0) like Gecko",
+            "uri": "/booking/api/event/tracking/72861426641CBCFA70A1685511A4E46528CE7ACE9B614CB4BFF859CA7376D36C",
+            "matches": [
+                {
+                    "rule_id": "89bde9c3a3e8474aa0fb4e079956f7be",
+                    "source": "rateLimit",
+                    "action": "simulate",
+                    "metadata": {
+                        "ruleSrc": "user"
+                    }
+                }
+            ],
+            "occurred_at": "2019-01-17T13:22:25Z"
+        },
+        {
+            "ray_id": "49a920b55bad96a0",
+            "kind": "firewall",
+            "source": "rateLimit",
+            "action": "simulate",
+            "rule_id": "89bde9c3a3e8474aa0fb4e079956f7be",
+            "ip": "185.180.50.88",
+            "ip_class": "noRecord",
+            "country": "DE",
+            "colo": "FRA",
+            "host": "secure.play.at",
+            "method": "PATCH",
+            "proto": "HTTP/1.1",
+            "scheme": "https",
+            "ua": "Mozilla/5.0 (Windows NT 10.0; WOW64; Trident/7.0; Touch; rv:11.0) like Gecko",
+            "uri": "/booking/api/event/tracking/30749E1FD6AFE99C3A1312F50E15BCA9282F03B4556CBA5B462FB3C45A0CB4F6",
+            "matches": [
+                {
+                    "rule_id": "89bde9c3a3e8474aa0fb4e079956f7be",
+                    "source": "rateLimit",
+                    "action": "simulate",
+                    "metadata": {
+                        "ruleSrc": "user"
+                    }
+                }
+            ],
+            "occurred_at": "2019-01-17T13:22:56Z"
+        },
+        {
+            "ray_id": "49a9212dbc488c64",
+            "kind": "firewall",
+            "source": "rateLimit",
+            "action": "simulate",
+            "rule_id": "89bde9c3a3e8474aa0fb4e079956f7be",
+            "ip": "193.81.214.43",
+            "ip_class": "noRecord",
+            "country": "AT",
+            "colo": "VIE",
+            "host": "secure.play.at",
+            "method": "DELETE",
+            "proto": "HTTP/1.1",
+            "scheme": "https",
+            "ua": "Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:64.0) Gecko/20100101 Firefox/64.0",
+            "uri": "/booking/api/event/tracking/0167954DE73F21BD1F24C76FF7D450CD19FE9695D46E59E948F3796025758E13",
+            "matches": [
+                {
+                    "rule_id": "89bde9c3a3e8474aa0fb4e079956f7be",
+                    "source": "rateLimit",
+                    "action": "simulate",
+                    "metadata": {
+                        "ruleSrc": "user"
+                    }
+                }
+            ],
+            "occurred_at": "2019-01-17T13:22:15Z"
+        },
+        {
+            "ray_id": "49a91f3eacdc96a0",
+            "kind": "firewall",
+            "source": "rateLimit",
+            "action": "drop",
+            "rule_id": "89bde9c3a3e8474aa0fb4e079956f7be",
+            "ip": "185.180.50.88",
+            "ip_class": "noRecord",
+            "country": "DE",
+            "colo": "FRA",
+            "host": "secure.play.at",
+            "method": "POST",
+            "proto": "HTTP/1.1",
+            "scheme": "https",
+            "ua": "Mozilla/5.0 (Windows NT 10.0; WOW64; Trident/7.0; Touch; rv:11.0) like Gecko",
+            "uri": "/booking/api/event/tracking/30749E1FD6AFE99C3A1312F50E15BCA9282F03B4556CBA5B462FB3C45A0CB4F6",
+            "matches": [
+                {
+                    "rule_id": "89bde9c3a3e8474aa0fb4e079956f7be",
+                    "source": "rateLimit",
+                    "action": "simulate",
+                    "metadata": {
+                        "ruleSrc": "user"
+                    }
+                }
+            ],
+            "occurred_at": "2019-01-17T13:22:56Z"
+        },
+        {
+            "ray_id": "49a91f05ef8c3d77",
+            "kind": "firewall",
+            "source": "rateLimit",
+            "action": "drop",
+            "rule_id": "89bde9c3a3e8474aa0fb4e079956f7be",
+            "ip": "5.170.69.43",
+            "ip_class": "noRecord",
+            "country": "IT",
+            "colo": "MXP",
+            "host": "secure.play.at",
+            "method": "POST",
+            "proto": "HTTP/1.1",
+            "scheme": "https",
+            "ua": "Mozilla/5.0 (iPad; CPU OS 10_3_3 like Mac OS X) AppleWebKit/603.3.8 (KHTML, like Gecko) Version/10.0 Mobile/14G60 Safari/602.1",
+            "uri": "/booking/api/event/tracking/A64AB98806313F06682D39E49C7A31AEAA6C93FC7309F18AD2A942FAE8534D47",
+            "matches": [
+                {
+                    "rule_id": "89bde9c3a3e8474aa0fb4e079956f7be",
+                    "source": "rateLimit",
+                    "action": "simulate",
+                    "metadata": {
+                        "ruleSrc": "user"
+                    }
+                }
+            ],
+            "occurred_at": "2019-01-17T13:22:47Z"
+        },
+        {
+            "ray_id": "49a91fb85ddc8c64",
+            "kind": "firewall",
+            "source": "rateLimit",
+            "action": "challenge",
+            "rule_id": "89bde9c3a3e8474aa0fb4e079956f7be",
+            "ip": "193.81.214.43",
+            "ip_class": "noRecord",
+            "country": "AT",
+            "colo": "VIE",
+            "host": "secure.play.at",
+            "method": "POST",
+            "proto": "HTTP/1.1",
+            "scheme": "https",
+            "ua": "Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:64.0) Gecko/20100101 Firefox/64.0",
+            "uri": "/booking/api/event/tracking/0167954DE73F21BD1F24C76FF7D450CD19FE9695D46E59E948F3796025758E13",
+            "matches": [
+                {
+                    "rule_id": "89bde9c3a3e8474aa0fb4e079956f7be",
+                    "source": "rateLimit",
+                    "action": "simulate",
+                    "metadata": {
+                        "ruleSrc": "user"
+                    }
+                }
+            ],
+            "occurred_at": "2019-01-17T13:22:15Z"
+        },
+        {
+            "ray_id": "49a91f1f59ecbe3e",
+            "kind": "firewall",
+            "source": "rateLimit",
+            "action": "challenge",
+            "rule_id": "89bde9c3a3e8474aa0fb4e079956f7be",
+            "ip": "5.170.69.43",
+            "ip_class": "noRecord",
+            "country": "IT",
+            "colo": "MXP",
+            "host": "secure.play.at",
+            "method": "POST",
+            "proto": "HTTP/1.1",
+            "scheme": "https",
+            "ua": "Mozilla/5.0 (iPad; CPU OS 10_3_3 like Mac OS X) AppleWebKit/603.3.8 (KHTML, like Gecko) Version/10.0 Mobile/14G60 Safari/602.1",
+            "uri": "/booking/api/event/tracking/A64AB98806313F06682D39E49C7A31AEAA6C93FC7309F18AD2A942FAE8534D47",
+            "matches": [
+                {
+                    "rule_id": "89bde9c3a3e8474aa0fb4e079956f7be",
+                    "source": "rateLimit",
+                    "action": "simulate",
+                    "metadata": {
+                        "ruleSrc": "user"
+                    }
+                }
+            ],
+            "occurred_at": "2019-01-17T13:22:51Z"
+        },
+        {
+            "ray_id": "49a91ee6e87d8cb2",
+            "kind": "firewall",
+            "source": "rateLimit",
+            "action": "challenge",
+            "rule_id": "89bde9c3a3e8474aa0fb4e079956f7be",
+            "ip": "2a02:8388:6a88:8d00:3c9a:10c8:c2ea:db8b",
+            "ip_class": "noRecord",
+            "country": "AT",
+            "colo": "VIE",
+            "host": "secure.play.at",
+            "method": "POST",
+            "proto": "HTTP/1.1",
+            "scheme": "https",
+            "ua": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/71.0.3578.98 Safari/537.36",
+            "uri": "/booking/api/event/tracking/0871D815441F650C1C84187C649AA2740C7A7110A2BA5CDCCBF2D06B5BC706B0",
+            "matches": [
+                {
+                    "rule_id": "89bde9c3a3e8474aa0fb4e079956f7be",
+                    "source": "rateLimit",
+                    "action": "simulate",
+                    "metadata": {
+                        "ruleSrc": "user"
+                    }
+                }
+            ],
+            "occurred_at": "2019-01-17T13:22:42Z"
+        },
+        {
+            "ray_id": "49a91f1949be594e",
+            "kind": "firewall",
+            "source": "rateLimit",
+            "action": "challenge",
+            "rule_id": "89bde9c3a3e8474aa0fb4e079956f7be",
+            "ip": "2a02:8388:6a88:8d00:3c9a:10c8:c2ea:db8b",
+            "ip_class": "noRecord",
+            "country": "AT",
+            "colo": "VIE",
+            "host": "secure.play.at",
+            "method": "POST",
+            "proto": "HTTP/1.1",
+            "scheme": "https",
+            "ua": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/71.0.3578.98 Safari/537.36",
+            "uri": "/booking/api/event/tracking/0871D815441F650C1C84187C649AA2740C7A7110A2BA5CDCCBF2D06B5BC706B0",
+            "matches": [
+                {
+                    "rule_id": "89bde9c3a3e8474aa0fb4e079956f7be",
+                    "source": "rateLimit",
+                    "action": "simulate",
+                    "metadata": {
+                        "ruleSrc": "user"
+                    }
+                }
+            ],
+            "occurred_at": "2019-01-17T13:22:50Z"
+        },
+        {
+            "ray_id": "49a91ee698408cb2",
+            "kind": "firewall",
+            "source": "rateLimit",
+            "action": "jschallenge",
+            "rule_id": "89bde9c3a3e8474aa0fb4e079956f7be",
+            "ip": "2a02:8388:6a88:8d00:3c9a:10c8:c2ea:db8b",
+            "ip_class": "noRecord",
+            "country": "AT",
+            "colo": "VIE",
+            "host": "secure.play.at",
+            "method": "POST",
+            "proto": "HTTP/1.1",
+            "scheme": "https",
+            "ua": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/71.0.3578.98 Safari/537.36",
+            "uri": "/booking/api/event/tracking/0871D815441F650C1C84187C649AA2740C7A7110A2BA5CDCCBF2D06B5BC706B0",
+            "matches": [
+                {
+                    "rule_id": "89bde9c3a3e8474aa0fb4e079956f7be",
+                    "source": "rateLimit",
+                    "action": "simulate",
+                    "metadata": {
+                        "ruleSrc": "user"
+                    }
+                }
+            ],
+            "occurred_at": "2019-01-17T13:22:42Z"
+        },
+        {
+            "ray_id": "49a91f19dbfb8cb2",
+            "kind": "firewall",
+            "source": "rateLimit",
+            "action": "jschallenge",
+            "rule_id": "89bde9c3a3e8474aa0fb4e079956f7be",
+            "ip": "2a02:8388:6a88:8d00:3c9a:10c8:c2ea:db8b",
+            "ip_class": "noRecord",
+            "country": "AT",
+            "colo": "VIE",
+            "host": "secure.play.at",
+            "method": "POST",
+            "proto": "HTTP/1.1",
+            "scheme": "https",
+            "ua": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/71.0.3578.98 Safari/537.36",
+            "uri": "/booking/api/event/tracking/0871D815441F650C1C84187C649AA2740C7A7110A2BA5CDCCBF2D06B5BC706B0",
+            "matches": [
+                {
+                    "rule_id": "89bde9c3a3e8474aa0fb4e079956f7be",
+                    "source": "rateLimit",
+                    "action": "simulate",
+                    "metadata": {
+                        "ruleSrc": "user"
+                    }
+                }
+            ],
+            "occurred_at": "2019-01-17T13:22:50Z"
+        },
+        {
+            "ray_id": "49a91f191979594e",
+            "kind": "firewall",
+            "source": "rateLimit",
+            "action": "connectionClose",
+            "rule_id": "89bde9c3a3e8474aa0fb4e079956f7be",
+            "ip": "2a02:8388:6a88:8d00:3c9a:10c8:c2ea:db8b",
+            "ip_class": "noRecord",
+            "country": "AT",
+            "colo": "VIE",
+            "host": "secure.play.at",
+            "method": "POST",
+            "proto": "HTTP/1.1",
+            "scheme": "https",
+            "ua": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/71.0.3578.98 Safari/537.36",
+            "uri": "/booking/api/event/tracking/0871D815441F650C1C84187C649AA2740C7A7110A2BA5CDCCBF2D06B5BC706B0",
+            "matches": [
+                {
+                    "rule_id": "89bde9c3a3e8474aa0fb4e079956f7be",
+                    "source": "rateLimit",
+                    "action": "simulate",
+                    "metadata": {
+                        "ruleSrc": "user"
+                    }
+                }
+            ],
+            "occurred_at": "2019-01-17T13:22:50Z"
+        }
+    ],
+    "result_info": {
+        "cursors": {
+            "after": "nxwwlE6hlpC8sK4eE6gYa8ZiLnrG39YfOu2UE2uUfy-oG6-NGH9F_-gA2ccKxdG_HcidNo17MlLIaCXjH40",
+            "before": "BYkrZkEeaoHwzAifWXzfDf4Ec4weTpeMXnbjPnh2VPWhH73ec6Sqm5kzdb37R-_oiNlrhxED4QWN-tALq2Ig"
+        },
+        "scanned_range": {
+            "since": "2019-01-17 12:10:55",
+            "until": "2019-01-17 13:23:02"
+        }
+    },
+    "success": true,
+    "errors": [],
+    "messages": []
+}

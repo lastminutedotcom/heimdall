@@ -1,0 +1,7 @@
+# Created by .ignore support plugin (hsz.mobi)
+heimdall
+heimdall.iml
+config/local/*
+.idea
+pkg/client/cloudflare_graphql_test.go
+pkg/client/cloudflare_graphql_test.go
