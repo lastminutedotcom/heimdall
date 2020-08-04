@@ -4,6 +4,6 @@ import (
 	"github.com/marpaia/graphite-golang"
 )
 
-func PushMetrics(metrics []graphite.Metric, graph *graphite.Graphite) error {
-	return graph.SendMetrics(metrics)
+func Push(metrics []graphite.Metric, toServer *graphite.Graphite) error {
+	return toServer.SendMetrics(metrics)
 }

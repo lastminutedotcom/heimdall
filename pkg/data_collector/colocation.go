@@ -1,55 +1,46 @@
 package data_collector
 
 import (
-	"github.com/lastminutedotcom/heimdall/pkg/client/colocation"
-	"github.com/lastminutedotcom/heimdall/pkg/logging"
 	"github.com/lastminutedotcom/heimdall/pkg/model"
-	"github.com/cloudflare/cloudflare-go"
+	"strconv"
 	"strings"
+	"time"
 )
 
-func GetColocationTotals(aggregates []*model.Aggregate, colocationsClient colocation.ColocationsClient) ([]*model.Aggregate, error) {
-	for _, aggregate := range aggregates {
-		log.Info("collecting co-location metrics for %s", aggregate.ZoneName)
-
-		zoneAnalyticsDataArray, err := colocationsClient.GetColosAPI(aggregate.ZoneID)
-		if err != nil {
-			log.Error("ERROR Getting Analytics for zone %v, %v", aggregate.ZoneName, err)
-			continue
-		}
-
-		collectColocation(zoneAnalyticsDataArray, aggregate)
-	}
-	return aggregates, nil
+func GetColocationTotals(aggregate *model.Aggregate, response *model.Response) (*model.Aggregate, error) {
+	collectColocation(aggregate, response)
+	return aggregate, nil
 }
 
-func collectColocation(zoneAnalyticsDataArray []cloudflare.ZoneAnalyticsColocation, aggregate *model.Aggregate) {
-	for _, zoneAnalyticsData := range zoneAnalyticsDataArray {
-		for _, timeSeries := range zoneAnalyticsData.Timeseries {
+func collectColocation(aggregate *model.Aggregate, response *model.Response) {
+	for _, zone := range response.Data.Viewer.Zones {
+		for _, group := range zone.HttpRequests1mGroups {
+			key := time.Date(group.HttpRequestDimensions.DatetimeMinute.Year(), group.HttpRequestDimensions.DatetimeMinute.Month(),
+				group.HttpRequestDimensions.DatetimeMinute.Day(), group.HttpRequestDimensions.DatetimeMinute.Hour(),
+				group.HttpRequestDimensions.DatetimeMinute.Minute(), 0, 0, group.HttpRequestDimensions.DatetimeMinute.Location())
 
-			counters, present := aggregate.Totals[timeSeries.Until]
+			counters, present := aggregate.Totals[key]
 			if !present {
 				counters = model.NewCounters()
-				aggregate.Totals[timeSeries.Until] = counters
+				aggregate.Totals[key] = counters
 			}
-
-			counters.RequestAll.Value += timeSeries.Requests.All
-			counters.RequestCached.Value += timeSeries.Requests.Cached
-			counters.RequestUncached.Value += timeSeries.Requests.Uncached
-			counters.BandwidthAll.Value += timeSeries.Bandwidth.All
-			counters.BandwidthCached.Value += timeSeries.Bandwidth.Cached
-			counters.BandwidthUncached.Value += timeSeries.Bandwidth.Uncached
-			counters.HTTPStatus = totals(timeSeries.Requests.HTTPStatus, counters.HTTPStatus)
-
+			counters.RequestAll.Value += group.HttpRequestSum.Requests
+			counters.RequestCached.Value += group.HttpRequestSum.CachedRequests
+			counters.RequestUncached.Value += group.HttpRequestSum.Requests - group.HttpRequestSum.CachedRequests
+			counters.BandwidthAll.Value += group.HttpRequestSum.Bytes
+			counters.BandwidthCached.Value += group.HttpRequestSum.CachedBytes
+			counters.BandwidthUncached.Value += group.HttpRequestSum.Bytes - group.HttpRequestSum.CachedBytes
+			counters.HTTPStatus = totals(group.HttpRequestSum.ResponseStatusMap, counters.HTTPStatus)
+			aggregate.Totals[key] = counters
 		}
 	}
 }
 
-func totals(source map[string]int, target map[string]model.Counter) map[string]model.Counter {
-	for k, v := range source {
-		value := target[getKey(k)]
-		value.Value += v
-		target[getKey(k)] = value
+func totals(responseMap []model.ResponseStatusMap, target map[string]model.Counter) map[string]model.Counter {
+	for _, a := range responseMap {
+		value := target[getKey(strconv.Itoa(a.ResponseStatus))]
+		value.Value += a.RequestCount
+		target[getKey(strconv.Itoa(a.ResponseStatus))] = value
 	}
 	return target
 }

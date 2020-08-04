@@ -5,6 +5,7 @@ go 1.13
 require (
 	github.com/cloudflare/cloudflare-go v0.11.7
 	github.com/inconshreveable/mousetrap v1.0.0 // indirect
+	github.com/magiconair/properties v1.8.0
 	github.com/marpaia/graphite-golang v0.0.0-20171231172105-134b9af18cf3
 	github.com/mitchellh/go-homedir v1.1.0
 	github.com/sirupsen/logrus v1.4.2

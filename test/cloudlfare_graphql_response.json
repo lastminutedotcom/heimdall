@@ -1,0 +1,417 @@
+{
+  "data": {
+    "viewer": {
+      "zones": [
+        {
+          "firewallEventsGroups": [
+            {
+              "dimensions": {
+                "action": "challenge",
+                "clientRequestHTTPHost": "www.fr.lastminute.com",
+                "clientRequestHTTPMethodName": "GET",
+                "occurredDatetime": "2020-07-26T10:01:40Z",
+                "source": "securityLevel"
+              }
+            },
+            {
+              "dimensions": {
+                "action": "drop",
+                "clientRequestHTTPHost": "www.fr.lastminute.com",
+                "clientRequestHTTPMethodName": "GET",
+                "occurredDatetime": "2020-07-26T10:01:59Z",
+                "source": "rateLimit"
+              }
+            },
+            {
+              "dimensions": {
+                "action": "drop",
+                "clientRequestHTTPHost": "www.es.lastminute.com",
+                "clientRequestHTTPMethodName": "GET",
+                "occurredDatetime": "2020-07-26T10:02:03Z",
+                "source": "rateLimit"
+              }
+            },
+            {
+              "dimensions": {
+                "action": "drop",
+                "clientRequestHTTPHost": "www.fr.lastminute.com",
+                "clientRequestHTTPMethodName": "GET",
+                "occurredDatetime": "2020-07-26T10:01:46Z",
+                "source": "waf"
+              }
+            },
+            {
+              "dimensions": {
+                "action": "drop",
+                "clientRequestHTTPHost": "www.it.lastminute.com",
+                "clientRequestHTTPMethodName": "GET",
+                "occurredDatetime": "2020-07-26T10:02:16Z",
+                "source": "bic"
+              }
+            },
+            {
+              "dimensions": {
+                "action": "drop",
+                "clientRequestHTTPHost": "trips.lastminute.com",
+                "clientRequestHTTPMethodName": "GET",
+                "occurredDatetime": "2020-07-26T10:03:31Z",
+                "source": "bic"
+              }
+            },
+            {
+              "dimensions": {
+                "action": "drop",
+                "clientRequestHTTPHost": "www.fr.lastminute.com",
+                "clientRequestHTTPMethodName": "GET",
+                "occurredDatetime": "2020-07-26T10:02:34Z",
+                "source": "waf"
+              }
+            },
+            {
+              "dimensions": {
+                "action": "drop",
+                "clientRequestHTTPHost": "www.it.lastminute.com",
+                "clientRequestHTTPMethodName": "GET",
+                "occurredDatetime": "2020-07-26T10:01:49Z",
+                "source": "bic"
+              }
+            },
+            {
+              "dimensions": {
+                "action": "drop",
+                "clientRequestHTTPHost": "www.es.lastminute.com",
+                "clientRequestHTTPMethodName": "GET",
+                "occurredDatetime": "2020-07-26T10:02:06Z",
+                "source": "waf"
+              }
+            },
+            {
+              "dimensions": {
+                "action": "drop",
+                "clientRequestHTTPHost": "reservation.lastminute.com",
+                "clientRequestHTTPMethodName": "GET",
+                "occurredDatetime": "2020-07-26T10:01:39Z",
+                "source": "bic"
+              }
+            },
+            {
+              "dimensions": {
+                "action": "drop",
+                "clientRequestHTTPHost": "www.fr.lastminute.com",
+                "clientRequestHTTPMethodName": "GET",
+                "occurredDatetime": "2020-07-26T10:03:54Z",
+                "source": "waf"
+              }
+            },
+            {
+              "dimensions": {
+                "action": "drop",
+                "clientRequestHTTPHost": "www.it.lastminute.com",
+                "clientRequestHTTPMethodName": "GET",
+                "occurredDatetime": "2020-07-26T10:01:08Z",
+                "source": "bic"
+              }
+            },
+            {
+              "dimensions": {
+                "action": "drop",
+                "clientRequestHTTPHost": "www.lastminute.com",
+                "clientRequestHTTPMethodName": "GET",
+                "occurredDatetime": "2020-07-26T10:00:52Z",
+                "source": "waf"
+              }
+            },
+            {
+              "dimensions": {
+                "action": "drop",
+                "clientRequestHTTPHost": "www.fr.lastminute.com",
+                "clientRequestHTTPMethodName": "GET",
+                "occurredDatetime": "2020-07-26T10:01:45Z",
+                "source": "waf"
+              }
+            },
+            {
+              "dimensions": {
+                "action": "drop",
+                "clientRequestHTTPHost": "www.it.lastminute.com",
+                "clientRequestHTTPMethodName": "GET",
+                "occurredDatetime": "2020-07-26T10:03:00Z",
+                "source": "bic"
+              }
+            }
+          ],
+          "httpRequests1mGroups": [
+            {
+              "dimensions": {
+                "datetimeMinute": "2020-07-26T10:01:00Z"
+              },
+              "sum": {
+                "bytes": 298795160,
+                "cachedBytes": 116641475,
+                "cachedRequests": 11322,
+                "requests": 65621,
+                "responseStatusMap": [
+                  {
+                    "edgeResponseStatus": 200,
+                    "requests": 57348
+                  },
+                  {
+                    "edgeResponseStatus": 201,
+                    "requests": 1742
+                  },
+                  {
+                    "edgeResponseStatus": 202,
+                    "requests": 5
+                  },
+                  {
+                    "edgeResponseStatus": 204,
+                    "requests": 456
+                  },
+                  {
+                    "edgeResponseStatus": 301,
+                    "requests": 321
+                  },
+                  {
+                    "edgeResponseStatus": 302,
+                    "requests": 363
+                  },
+                  {
+                    "edgeResponseStatus": 303,
+                    "requests": 120
+                  },
+                  {
+                    "edgeResponseStatus": 304,
+                    "requests": 2190
+                  },
+                  {
+                    "edgeResponseStatus": 400,
+                    "requests": 6
+                  },
+                  {
+                    "edgeResponseStatus": 401,
+                    "requests": 2286
+                  },
+                  {
+                    "edgeResponseStatus": 403,
+                    "requests": 9
+                  },
+                  {
+                    "edgeResponseStatus": 404,
+                    "requests": 350
+                  },
+                  {
+                    "edgeResponseStatus": 409,
+                    "requests": 1
+                  },
+                  {
+                    "edgeResponseStatus": 410,
+                    "requests": 19
+                  },
+                  {
+                    "edgeResponseStatus": 412,
+                    "requests": 2
+                  },
+                  {
+                    "edgeResponseStatus": 499,
+                    "requests": 374
+                  },
+                  {
+                    "edgeResponseStatus": 500,
+                    "requests": 22
+                  },
+                  {
+                    "edgeResponseStatus": 524,
+                    "requests": 7
+                  }
+                ]
+              }
+            },
+            {
+              "dimensions": {
+                "datetimeMinute": "2020-07-26T10:02:00Z"
+              },
+              "sum": {
+                "bytes": 291712054,
+                "cachedBytes": 117536067,
+                "cachedRequests": 11190,
+                "requests": 64886,
+                "responseStatusMap": [
+                  {
+                    "edgeResponseStatus": 200,
+                    "requests": 56891
+                  },
+                  {
+                    "edgeResponseStatus": 201,
+                    "requests": 1658
+                  },
+                  {
+                    "edgeResponseStatus": 202,
+                    "requests": 5
+                  },
+                  {
+                    "edgeResponseStatus": 204,
+                    "requests": 411
+                  },
+                  {
+                    "edgeResponseStatus": 301,
+                    "requests": 324
+                  },
+                  {
+                    "edgeResponseStatus": 302,
+                    "requests": 294
+                  },
+                  {
+                    "edgeResponseStatus": 303,
+                    "requests": 122
+                  },
+                  {
+                    "edgeResponseStatus": 304,
+                    "requests": 2127
+                  },
+                  {
+                    "edgeResponseStatus": 400,
+                    "requests": 4
+                  },
+                  {
+                    "edgeResponseStatus": 401,
+                    "requests": 2279
+                  },
+                  {
+                    "edgeResponseStatus": 403,
+                    "requests": 5
+                  },
+                  {
+                    "edgeResponseStatus": 404,
+                    "requests": 372
+                  },
+                  {
+                    "edgeResponseStatus": 410,
+                    "requests": 13
+                  },
+                  {
+                    "edgeResponseStatus": 412,
+                    "requests": 2
+                  },
+                  {
+                    "edgeResponseStatus": 499,
+                    "requests": 328
+                  },
+                  {
+                    "edgeResponseStatus": 500,
+                    "requests": 38
+                  },
+                  {
+                    "edgeResponseStatus": 503,
+                    "requests": 4
+                  },
+                  {
+                    "edgeResponseStatus": 524,
+                    "requests": 6
+                  },
+                  {
+                    "edgeResponseStatus": 530,
+                    "requests": 3
+                  }
+                ]
+              }
+            },
+            {
+              "dimensions": {
+                "datetimeMinute": "2020-07-26T10:03:00Z"
+              },
+              "sum": {
+                "bytes": 288527908,
+                "cachedBytes": 116983714,
+                "cachedRequests": 11615,
+                "requests": 64083,
+                "responseStatusMap": [
+                  {
+                    "edgeResponseStatus": 200,
+                    "requests": 56020
+                  },
+                  {
+                    "edgeResponseStatus": 201,
+                    "requests": 1579
+                  },
+                  {
+                    "edgeResponseStatus": 202,
+                    "requests": 6
+                  },
+                  {
+                    "edgeResponseStatus": 204,
+                    "requests": 408
+                  },
+                  {
+                    "edgeResponseStatus": 206,
+                    "requests": 1
+                  },
+                  {
+                    "edgeResponseStatus": 301,
+                    "requests": 339
+                  },
+                  {
+                    "edgeResponseStatus": 302,
+                    "requests": 332
+                  },
+                  {
+                    "edgeResponseStatus": 303,
+                    "requests": 104
+                  },
+                  {
+                    "edgeResponseStatus": 304,
+                    "requests": 2236
+                  },
+                  {
+                    "edgeResponseStatus": 400,
+                    "requests": 5
+                  },
+                  {
+                    "edgeResponseStatus": 401,
+                    "requests": 2336
+                  },
+                  {
+                    "edgeResponseStatus": 403,
+                    "requests": 5
+                  },
+                  {
+                    "edgeResponseStatus": 404,
+                    "requests": 346
+                  },
+                  {
+                    "edgeResponseStatus": 410,
+                    "requests": 22
+                  },
+                  {
+                    "edgeResponseStatus": 412,
+                    "requests": 5
+                  },
+                  {
+                    "edgeResponseStatus": 499,
+                    "requests": 299
+                  },
+                  {
+                    "edgeResponseStatus": 500,
+                    "requests": 33
+                  },
+                  {
+                    "edgeResponseStatus": 502,
+                    "requests": 1
+                  },
+                  {
+                    "edgeResponseStatus": 503,
+                    "requests": 2
+                  },
+                  {
+                    "edgeResponseStatus": 524,
+                    "requests": 4
+                  }
+                ]
+              }
+            }
+          ]
+        }
+      ]
+    }
+  },
+  "errors": null
+}
