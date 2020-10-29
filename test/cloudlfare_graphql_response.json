@@ -3,13 +3,13 @@
     "viewer": {
       "zones": [
         {
-          "firewallEventsGroups": [
+          "firewallEventsAdaptiveGroups": [
             {
               "dimensions": {
                 "action": "challenge",
                 "clientRequestHTTPHost": "www.fr.lastminute.com",
                 "clientRequestHTTPMethodName": "GET",
-                "occurredDatetime": "2020-07-26T10:01:40Z",
+                "datetimeMinute": "2020-07-26T10:01:40Z",
                 "source": "securityLevel"
               }
             },
@@ -18,7 +18,7 @@
                 "action": "drop",
                 "clientRequestHTTPHost": "www.fr.lastminute.com",
                 "clientRequestHTTPMethodName": "GET",
-                "occurredDatetime": "2020-07-26T10:01:59Z",
+                "datetimeMinute": "2020-07-26T10:01:59Z",
                 "source": "rateLimit"
               }
             },
@@ -27,7 +27,7 @@
                 "action": "drop",
                 "clientRequestHTTPHost": "www.es.lastminute.com",
                 "clientRequestHTTPMethodName": "GET",
-                "occurredDatetime": "2020-07-26T10:02:03Z",
+                "datetimeMinute": "2020-07-26T10:02:03Z",
                 "source": "rateLimit"
               }
             },
@@ -36,7 +36,7 @@
                 "action": "drop",
                 "clientRequestHTTPHost": "www.fr.lastminute.com",
                 "clientRequestHTTPMethodName": "GET",
-                "occurredDatetime": "2020-07-26T10:01:46Z",
+                "datetimeMinute": "2020-07-26T10:01:46Z",
                 "source": "waf"
               }
             },
@@ -45,7 +45,7 @@
                 "action": "drop",
                 "clientRequestHTTPHost": "www.it.lastminute.com",
                 "clientRequestHTTPMethodName": "GET",
-                "occurredDatetime": "2020-07-26T10:02:16Z",
+                "datetimeMinute": "2020-07-26T10:02:16Z",
                 "source": "bic"
               }
             },
@@ -54,7 +54,7 @@
                 "action": "drop",
                 "clientRequestHTTPHost": "trips.lastminute.com",
                 "clientRequestHTTPMethodName": "GET",
-                "occurredDatetime": "2020-07-26T10:03:31Z",
+                "datetimeMinute": "2020-07-26T10:03:31Z",
                 "source": "bic"
               }
             },
@@ -63,7 +63,7 @@
                 "action": "drop",
                 "clientRequestHTTPHost": "www.fr.lastminute.com",
                 "clientRequestHTTPMethodName": "GET",
-                "occurredDatetime": "2020-07-26T10:02:34Z",
+                "datetimeMinute": "2020-07-26T10:02:34Z",
                 "source": "waf"
               }
             },
@@ -72,7 +72,7 @@
                 "action": "drop",
                 "clientRequestHTTPHost": "www.it.lastminute.com",
                 "clientRequestHTTPMethodName": "GET",
-                "occurredDatetime": "2020-07-26T10:01:49Z",
+                "datetimeMinute": "2020-07-26T10:01:49Z",
                 "source": "bic"
               }
             },
@@ -81,7 +81,7 @@
                 "action": "drop",
                 "clientRequestHTTPHost": "www.es.lastminute.com",
                 "clientRequestHTTPMethodName": "GET",
-                "occurredDatetime": "2020-07-26T10:02:06Z",
+                "datetimeMinute": "2020-07-26T10:02:06Z",
                 "source": "waf"
               }
             },
@@ -90,7 +90,7 @@
                 "action": "drop",
                 "clientRequestHTTPHost": "reservation.lastminute.com",
                 "clientRequestHTTPMethodName": "GET",
-                "occurredDatetime": "2020-07-26T10:01:39Z",
+                "datetimeMinute": "2020-07-26T10:01:39Z",
                 "source": "bic"
               }
             },
@@ -99,7 +99,7 @@
                 "action": "drop",
                 "clientRequestHTTPHost": "www.fr.lastminute.com",
                 "clientRequestHTTPMethodName": "GET",
-                "occurredDatetime": "2020-07-26T10:03:54Z",
+                "datetimeMinute": "2020-07-26T10:03:54Z",
                 "source": "waf"
               }
             },
@@ -108,7 +108,7 @@
                 "action": "drop",
                 "clientRequestHTTPHost": "www.it.lastminute.com",
                 "clientRequestHTTPMethodName": "GET",
-                "occurredDatetime": "2020-07-26T10:01:08Z",
+                "datetimeMinute": "2020-07-26T10:01:08Z",
                 "source": "bic"
               }
             },
@@ -117,7 +117,7 @@
                 "action": "drop",
                 "clientRequestHTTPHost": "www.lastminute.com",
                 "clientRequestHTTPMethodName": "GET",
-                "occurredDatetime": "2020-07-26T10:00:52Z",
+                "datetimeMinute": "2020-07-26T10:00:52Z",
                 "source": "waf"
               }
             },
@@ -126,7 +126,7 @@
                 "action": "drop",
                 "clientRequestHTTPHost": "www.fr.lastminute.com",
                 "clientRequestHTTPMethodName": "GET",
-                "occurredDatetime": "2020-07-26T10:01:45Z",
+                "datetimeMinute": "2020-07-26T10:01:45Z",
                 "source": "waf"
               }
             },
@@ -135,7 +135,7 @@
                 "action": "drop",
                 "clientRequestHTTPHost": "www.it.lastminute.com",
                 "clientRequestHTTPMethodName": "GET",
-                "occurredDatetime": "2020-07-26T10:03:00Z",
+                "datetimeMinute": "2020-07-26T10:03:00Z",
                 "source": "bic"
               }
             }
