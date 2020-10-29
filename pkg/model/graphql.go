@@ -22,7 +22,7 @@ type Viewer struct {
 }
 
 type Zones struct {
-	FirewallEventsGroups []FirewallEventsGroup `json:"firewallEventsGroups"`
+	FirewallEventsGroups []FirewallEventsGroup `json:"firewallEventsAdaptiveGroups"`
 	HttpRequests1mGroups []HttpRequests1mGroup `json:"httpRequests1mGroups"`
 }
 
@@ -39,7 +39,7 @@ type FirewallEventDimensions struct {
 	Action     string    `json:"action"`
 	Host       string    `json:"clientRequestHTTPHost"`
 	Method     string    `json:"clientRequestHTTPMethodName"`
-	OccurredAt time.Time `json:"occurredDatetime"`
+	OccurredAt time.Time `json:"datetimeMinute"`
 	Source     string    `json:"source"`
 }
 
