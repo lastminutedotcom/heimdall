@@ -49,7 +49,7 @@ func CallGraphQlApi(zoneId string, startDate, endDate time.Time) *model.Response
 func createRequest(zoneId string, startDate, endDate time.Time) *http.Request {
 	url := fmt.Sprintf(CloudFlareGraphQLAPIRoot)
 
-	req := fmt.Sprintf("{viewer{zones(filter: {zoneTag: \"%s\"}) {httpRequests1mGroups(orderBy: [datetimeMinute_ASC], limit: 10000, filter: {datetime_gt: \"%s\", datetime_lt: \"%s\"}) {dimensions {datetimeMinute} sum { bytes cachedBytes cachedRequests requests responseStatusMap { requests edgeResponseStatus}}}firewallEventsGroups(limit: 10000, filter: {datetime_gt: \"%s\", datetime_lt: \"%s\"}) {dimensions { action occurredDatetime clientRequestHTTPHost clientRequestHTTPMethodName source}}}}}",
+	req := fmt.Sprintf("{viewer{zones(filter: {zoneTag: \"%s\"}) {httpRequests1mGroups(orderBy: [datetimeMinute_ASC], limit: 10000, filter: {datetime_gt: \"%s\", datetime_lt: \"%s\"}) {dimensions {datetimeMinute} sum { bytes cachedBytes cachedRequests requests responseStatusMap { requests edgeResponseStatus}}}firewallEventsAdaptiveGroups(limit: 10000, filter: {datetime_gt: \"%s\", datetime_lt: \"%s\"}) {dimensions { action datetimeMinute clientRequestHTTPHost clientRequestHTTPMethodName source}}}}}",
 		zoneId, startDate.Format("2006-01-02T15:04:05Z"), endDate.Format("2006-01-02T15:04:05Z"), startDate.Format("2006-01-02T15:04:05Z"), endDate.Format("2006-01-02T15:04:05Z"))
 
 	var requestBody bytes.Buffer
